@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS | 蕲春人 - 软件开发]]></title>
+  <link href="http://qichunren.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://qichunren.github.com/"/>
+  <updated>2012-04-27T11:49:29+08:00</updated>
+  <id>http://qichunren.github.com/</id>
+  <author>
+    <name><![CDATA[qichunren]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[近期iOS学习点]]></title>
+    <link href="http://qichunren.github.com/blog/2011/12/18/ios-learn-note/"/>
+    <updated>2011-12-18T20:44:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/12/18/ios-learn-note</id>
+    <content type="html"><![CDATA[<p>虽然我业余在学iOS，但是感觉进步缓慢。为了使我的iOS开发的学习效率高一点，我决定先列一个简要的提纲，明确当前一个阶段的学习计划。</p>
+
+<ol>
+<li><p>iOS体系，了解清楚UI组件的体系</p></li>
+<li><p>Objective-C中的基本数据结构使用</p></li>
+<li><p>iOS中的基本的网络编程，主要是iOS客户端方的,如json,http交互等。</p></li>
+</ol>
+
+
+<p>先就这么多，每天要进步一点.</p>
+]]></content>
+  </entry>
+  
+</feed>

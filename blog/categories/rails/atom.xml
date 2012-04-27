@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | 蕲春人 - 软件开发]]></title>
+  <link href="http://qichunren.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://qichunren.github.com/"/>
+  <updated>2012-04-27T11:49:29+08:00</updated>
+  <id>http://qichunren.github.com/</id>
+  <author>
+    <name><![CDATA[qichunren]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在Rails3中使用ajax]]></title>
+    <link href="http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note/"/>
+    <updated>2011-12-22T16:36:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note</id>
+    <content type="html"><![CDATA[<p>今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。</p>
+
+<p>我之前在Rails3项目中使用ajax是这样的：</p>
+
+<p>如果是直接发送一个ajax请求，我就给标签加上:remote => true。如果我在此基础上还要做其它的操作，如ajax表单提交前要对表单字段验证，我之前以为那样UJS就不能搞定了，需要我自己写代码来处理。然后我就使用jquery中的相关ajax操作来处理。</p>
+
+<p>今天我才了解到UJS的AJAX操作已经为我们提供了6个自定义事件方法：</p>
+
+<p><code>
+ajax:before – right before ajax call
+ajax:loading – before ajax call, but after XmlHttpRequest object is created)
+ajax:success – successful ajax call
+ajax:failure – failed ajax call
+ajax:complete – completion of ajax call (after ajax:success and ajax:failure)
+ajax:after – after ajax call is sent (note: not after it returns)
+</code></p>
+
+<p>所以对于上面我说的那个事例，如果要对一个ajax表单在提交前作表单验证或者其它的一些检查，只需要写提交前的检查代码，然后通过事件绑定的方式，将余下的表单ajax提交让UJS来完成，这是多么地简单啊，我以前真是做了好多无用功。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>sample code  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#new_post_comment&quot;</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;ajax:before&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#post_comment_body&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;&quot;</span><span class="p">){</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>参考资料</h3>
+
+<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-unobtrusive-javascript-and-ajax-with-rails-3/">Using Unobtrusive JavaScript and AJAX with Rails 3</a>
+<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms-data-type-with-jquery/">Rails 3 Remote Links and Forms Part 2: Data-type (with jQuery)</a></p>
+]]></content>
+  </entry>
+  
+</feed>

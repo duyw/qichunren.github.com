@@ -1,0 +1,880 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>蕲春人 - 软件开发</title>
+  <meta name="author" content="qichunren">
+
+  
+  <meta name="description" content="这几个地方不知道大家有注意到没有，我今天发现的一个地方就是 1
+2
+3
+4
+5
+6
+class EcGood &lt; ActiveRecord::Bas #商品分类 GoodCategory = Category.find(:all).map{|category|[category.cn_n, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://qichunren.github.com/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6344646-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">蕲春人 - 软件开发</a></h1>
+  
+    <h2>简单就是美.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:qichunren.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/29/mark-rails-write-code/">写Rails程序容易出现的几个不好的地方</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-29T00:00:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这几个地方不知道大家有注意到没有，我今天发现的一个地方就是</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">EcGood</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Bas</span>
+</span><span class='line'>  <span class="c1">#商品分类</span>
+</span><span class='line'>  <span class="no">GoodCategory</span> <span class="o">=</span> <span class="no">Category</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">category</span><span class="o">|[</span><span class="n">category</span><span class="o">.</span><span class="n">cn_n</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">id</span><span class="o">]</span> <span class="p">}</span>
+</span><span class='line'>  <span class="c1">#商品品牌</span>
+</span><span class='line'>  <span class="no">GoodBrand</span> <span class="o">=</span> <span class="no">EcBrand</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">brand</span><span class="o">|[</span><span class="n">brand</span><span class="o">.</span><span class="n">brand_name</span><span class="p">,</span> <span class="n">brand</span><span class="o">.</span><span class="n">id</span><span class="o">]</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在ActiveRecord中有这样的代码，实在不应该啊。</p>
+
+<p>初次一看没有什么问题，可是Ruby代码是自上而下来执行的，这样会给数据库带来无关的查询。解决办法就是将这个封装到方法中去，另外也说明全局变量要少用。</p>
+
+<p>有时间再更新一下这篇文章来反思一下自己。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/29/get-oracle-unlocked/">Oracle解锁</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-29T00:00:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天在Plsql中，给Oracle数据库中一个表添加字段的时候，出错了错误，提示：</p>
+
+<p>Oracle资源正忙,要求指定NOWAIT</p>
+
+<p>在网上一查，是表给锁住了，用如下的方法来解决。</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">select</span> <span class="n">t2</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="n">t2</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">t2</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="n">t2</span><span class="p">.</span><span class="n">logon_time</span>
+</span><span class='line'><span class="k">from</span> <span class="n">v</span><span class="err">$</span><span class="n">locked_object</span> <span class="n">t1</span><span class="p">,</span><span class="n">v</span><span class="err">$</span><span class="k">session</span> <span class="n">t2</span>
+</span><span class='line'><span class="k">where</span> <span class="n">t1</span><span class="p">.</span><span class="n">session_id</span><span class="o">=</span><span class="n">t2</span><span class="p">.</span><span class="n">sid</span> <span class="k">order</span> <span class="k">by</span> <span class="n">t2</span><span class="p">.</span><span class="n">logon_time</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>  USERNAME                              SID    SERIAL# LOGON_TIME
+  ——————————————— -———- -———- -————
+  QICHUNREN                                   37       9731 2010-4-10 1  
+</code></pre>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>
+</span><span class='line'>   <span class="k">alter</span> <span class="k">system</span> <span class="n">kill</span> <span class="k">session</span> <span class="s1">&#39;37,9731&#39;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>System altered</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>
+</span><span class='line'>   <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">v</span><span class="err">$</span><span class="k">session</span> <span class="k">where</span> <span class="n">sid</span><span class="o">=?</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>相关的博客：</h3>
+
+<ul>
+<li><a href="http://bot.javaeye.com/blog/429478">OraclePLSQL中不能for update的解决办法</a></li>
+<li><a href="http://hi.baidu.com/shuyangwhj/blog/item/c321aa133812f4846538dbc5.html">Oracle资源正忙,要求指定NOWAIT——Oracle解锁问题</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/08/show-more-info-on-will-paginate-bar/">Show More Detail Info on Will_paginate Bar</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-08T00:00:00+08:00" pubdate data-updated="true">Aug 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just create an extension in lib directory:</p>
+
+<figure class='code'><figcaption><span>in Rails.root/lib  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PaginationDetailLinkRenderer</span> <span class="o">&lt;</span> <span class="no">WillPaginate</span><span class="o">::</span><span class="no">LinkRenderer</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># useage: &lt;%=will_paginate @auctions, :renderer =&gt; PaginationDetailLinkRenderer %&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_html</span>
+</span><span class='line'>    <span class="n">links</span> <span class="o">=</span> <span class="vi">@options</span><span class="o">[</span><span class="ss">:page_links</span><span class="o">]</span> <span class="p">?</span> <span class="n">windowed_links</span> <span class="p">:</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">links</span><span class="o">.</span><span class="n">unshift</span> <span class="n">page_link_or_span</span><span class="p">(</span><span class="vi">@collection</span><span class="o">.</span><span class="n">previous_page</span><span class="p">,</span> <span class="s1">&#39;disabled prev_page&#39;</span><span class="p">,</span> <span class="vi">@options</span><span class="o">[</span><span class="ss">:previous_label</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">links</span><span class="o">.</span><span class="n">push</span>    <span class="n">page_link_or_span</span><span class="p">(</span><span class="vi">@collection</span><span class="o">.</span><span class="n">next_page</span><span class="p">,</span>     <span class="s1">&#39;disabled next_page&#39;</span><span class="p">,</span> <span class="vi">@options</span><span class="o">[</span><span class="ss">:next_label</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">html</span> <span class="o">=</span> <span class="n">links</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="vi">@options</span><span class="o">[</span><span class="ss">:separator</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;每页显示&lt;b&gt;</span><span class="si">#{</span><span class="vi">@collection</span><span class="o">.</span><span class="n">per_page</span><span class="si">}</span><span class="s2">&lt;/b&gt;条数据,共有&lt;b&gt;</span><span class="si">#{</span><span class="n">total_pages</span><span class="si">}</span><span class="s2">&lt;/b&gt;页,  共有&lt;b&gt;</span><span class="si">#{</span><span class="vi">@collection</span><span class="o">.</span><span class="n">total_entries</span><span class="si">}</span><span class="s2">&lt;/b&gt;条数据&quot;</span> <span class="o">+</span> <span class="n">html</span>
+</span><span class='line'>    <span class="vi">@options</span><span class="o">[</span><span class="ss">:container</span><span class="o">]</span> <span class="p">?</span> <span class="vi">@template</span><span class="o">.</span><span class="n">content_tag</span><span class="p">(</span><span class="ss">:div</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">html_attributes</span><span class="p">)</span> <span class="p">:</span> <span class="n">html</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the result is like this:
+<img src="/images/posts/2010-08-08-paginate-bar.jpg" title="will_paginate bar" alt="will_paginate bar" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/08/jekyll-usage/">Jekyll Usage</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-08T00:00:00+08:00" pubdate data-updated="true">Aug 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>首先建立一个新的目录，如mkdir qichunren_blog，然后在目录中建立如图中所示的文件和目录结构。</p>
+
+<p><img src="/images/posts/2010-08-08-jekyll-project.jpg" title="Jekyll project" alt="Jekyll project" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/06/create-a-blog-use-jekyll-at-github/">Create a Blog at Github Using Jekyll</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-06T00:00:00+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>First thing you should have to do is:
+create a repos at github named <em>yourid.github.com</em></p>
+
+<p>Then</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install jekyll</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commint -am "firt commit"
+</span><span class='line'>git push          </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now your blog is http://yourdid.github.com</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/28/my-first-post/">My First Post Here</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Lol..
+This is my first post,using markdon.
+When I first meet jeklyy, I fall in love with it.</p>
+
+<ul>
+<li>I love it&#8217;s simple,</li>
+<li>I love git way,</li>
+<li>I love free.</li>
+<li>I love &#8230;</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/05/create-a-blog-at-github/">Create a Blog at Github</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>First ,of course you must have an account at github.
+ assume your loign id at github is &#8220;xiaofeiren&#8221;,
+Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p>
+
+<p>Now in your pc(Linux platform,and git)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir xiaofeiren.github.com
+</span><span class='line'>cd xiaofeiren.github.com
+</span><span class='line'>git init
+</span><span class='line'>touch README
+</span><span class='line'>touch index.html
+</span><span class='line'>echo "This is my git blog" &gt;&gt; index.html
+</span><span class='line'>git add README
+</span><span class='line'>git commit -m 'first commit'
+</span><span class='line'>git remote add origin git@github.com:xiaofeiren/xiaofeiren.github.com.git
+</span><span class='line'>git push origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, your can visit http://xiaofeiren.github.com, this is your github blog home-url.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/06/create-static-page-class-in-model/">Static Site Using Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-06T00:00:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原文地址：<a href="http://railstech.com/?p=89">Static site using rails</a>.</p>
+
+<p>As we know rails is mainly used for dynamic website.we can also display static web pages or we can deploy full static website using rails.
+The following code can help us to display static pages.</p>
+
+<ul>
+<li>Step 1:-Create Rails project</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rails static_site</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Step 2:-Generate StaticPage Controller</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby script/generate controller static_pages page</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Step 3:- Create StaticPage Class in Model</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">StaticPage</span>
+</span><span class='line'>  <span class="no">Formats</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>      <span class="s2">&quot;html&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="s2">&quot;png&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="s2">&quot;jpg&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;image/jpg&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Step 4:- Add following line in routes.rb</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">map</span><span class="o">.</span><span class="n">page</span> <span class="s2">&quot;page/:filename.:format&quot;</span><span class="p">,</span> <span class="ss">:controller</span> <span class="o">=&gt;</span> <span class="s1">&#39;static_pages&#39;</span><span class="p">,</span> <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">&#39;page&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Step 5:- Now add following line into static_pages controller</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">page</span>
+</span><span class='line'> <span class="n">send_file</span>
+</span><span class='line'> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/app/views/static_pages/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:filename</span><span class="o">]</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:format</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="ss">:disposition</span> <span class="o">=&gt;</span><span class="s1">&#39;inline&#39;</span><span class="p">,</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="no">StaticPage</span><span class="o">::</span><span class="no">Formats</span><span class="o">[</span><span class="n">params</span><span class="o">[</span><span class="ss">:format</span><span class="o">]]</span>
+</span><span class='line'> <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Step 6:- All the static pages place in RAILS_ROOT/app/views/static_pages/ folder</li>
+</ul>
+
+
+<p>Step 7 :- Start server and Type url as shown below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby script/server</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/07/connect-to-oracle-in-rails/">Rails中连接Oracle数据库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-07T00:00:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>步骤</h3>
+
+<ul>
+<li><p>在Oracle官方网站下载sdk-10.2.0.5.0-linux-x64.zip和basic-10.2.0.5.0-linux-x64.zip这两个文件。将这两个文件放在同一个地方，然后分别执行：</p>
+
+<p>  unzip sdk-10.2.0.5.0-linux-x64.zip
+  unzip basic-10.2.0.5.0-linux-x64.zip</p></li>
+</ul>
+
+
+<p>这样执行后，会在当前目录下有一个instantclient_10_2目录，刚才解压的zip文件的内容就在其中。<br/>
+* 安装Ruby-OCI2:
+在安装Ruby-OCI2之前必须要先配置LD_LIBRARY_PATH变量</p>
+
+<pre><code>    export LD_LIBRARY_PATH=/opt/instantclient_10_2/ 
+</code></pre>
+
+<ul>
+<li><p>然后</p>
+
+<pre><code>  gem install ruby-oci8     
+</code></pre></li>
+<li><p>安装adapter for rails:</p>
+
+<pre><code>  gem install activerecord-oracle_enhanced-adapter   
+</code></pre></li>
+</ul>
+
+
+<h3>Resources</h3>
+
+<ul>
+<li><a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">OracleInstantClient下载</a></li>
+<li><a href="http://github.com/rsim/oracle-enhanced">oracle-enhanced adapter</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/09/use-benchmark/">Benchmark用法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-09T00:00:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://rubybenchmark.com/">Benchmark</a>可以用来测试某个函数或者任何代码的执行时间。</p>
+
+<p>用法很简单：</p>
+
+<div>
+  <pre>
+    <code class='ruby'>require 'benchmark'
+n = 1500
+Benchmark.bmbm do |x|
+    x.report(&quot;+ method&quot;) { n.times {string1 = &quot;ddd&quot; + &quot;11111&quot; + &quot;Helodd&quot; } }
+    x.report(&quot;&lt;&lt; method&quot;) { n.times {string2 = &quot;ddd&quot; &lt;&lt; &quot;11111&quot; &lt;&lt; &quot;Helodd&quot;} }  
+end</code>
+  </pre>
+</div>
+
+
+<p>结果如下：</p>
+
+<div>
+  <pre>
+    <code class='text'>usermatoMacBook-Pro:test qichunren$ ruby test.rb 
+Rehearsal ---------------------------------------------
++ method    0.000000   0.000000   0.000000 (  0.001722)
+&lt;&lt; method   0.000000   0.000000   0.000000 (  0.001073)
+------------------------------------ total: 0.000000sec
+
+                user     system      total        real
++ method    0.000000   0.000000   0.000000 (  0.001040)
+&lt;&lt; method   0.000000   0.000000   0.000000 (  0.000719)</code>
+  </pre>
+</div>
+
+
+<h3>参考资料</h3>
+
+<ul>
+<li><a href="http://ruby-doc.org/stdlib/libdoc/benchmark/rdoc/index.html">Benchmark Rdoc</a></li>
+<li><a href="http://www.kuqin.com/rubycndocument/man/addlib/benchmark.html">Ruby参考手册</a></li>
+<li><a href="https://github.com/acangiano/ruby-benchmark-suite">ruby-benchmark-suite</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/">Use Rubyencoder encrypt ruby code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create custom tags in Smarty 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/qichunren">@qichunren</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'qichunren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - qichunren -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'qichunrensblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
