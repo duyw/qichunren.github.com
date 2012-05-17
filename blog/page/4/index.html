@@ -9,12 +9,7 @@
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="昨天晚上遇到记录不能保存成功，一直遭遇ActiveRecord::RecordNotSaved异常，弄了半小时，找到了原因。 我发现了我在model中的before_create中是这样写的 1
-2
-3
-4
-5
-before_create :set_default_value # 创建站内信时， &hellip;">
+  <meta name="description" content="capybara 是一个基于 webrat 修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。 使用capybara可以良好地访问有javascript脚本的页面，但是有一个问题就是如果你页面中有confirm这个的等待用户点击“确定” &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +76,52 @@ before_create :set_default_value # 创建站内信时， &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/25/use-capybara-to-integrate-test/">使用capybara来自动化测试业务流程</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/jnicklas/capybara">capybara</a> 是一个基于 <a href="https://github.com/brynary/webrat">webrat</a></p>
+
+<p>修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。<br/>
+  使用capybara可以良好地访问有javascript脚本的页面，但是有一个问题就是如果你页面中有confirm这个的等待用户点击“确定”的对话框时capybaray就无能为力了，我在stackoverfollow上找到了解决办法，就是直接让confirm方法返回true:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>   <span class="nx">page</span><span class="p">.</span><span class="nx">evaluate_script</span><span class="p">(</span><span class="s1">&#39;window.confirm = function() { return true; }&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>   下面这个例子来自我项目中 <a href="https://gist.github.com/884682">真实的代码</a> 可以测试一个用户的认证操作，以test开头的方法都会执行。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -867,60 +908,6 @@ routing</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/10/things-in-rails-test/">Rails中的测试那些事</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-10T00:00:00+08:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这个本早该记一下的。</p>
-
-<p>现在RUBY社区发展得太快了，各种新技术层出不穷，测试方面同样如此。</p>
-
-<p>我记下我在Rails3项目中所用的测试方面的技术点。</p>
-
-<p>首先是rspec-rails，它是rspec 2的对rails3项目支持的一个gem，只需要在Gemfile中指定rspec-rails就可以了，不用指定rspec2依赖。</p>
-
-<p>然后我还要用到factorygirl-rails，它同样是factorygirl对于rails3项目支持的一个gem，只需要在Gemfile中指定factorygirl-rails就可以了，不用指定factorygirl依赖。</p>
-
-<p>还有一个rspec的match封装gem，remarkable/active_record，用它可以测试 validates,association(关联等)，说到这里，“测试”这个词我觉得不合适，我用到来感觉这个gem太强大了，它简直就是一个代码监管的工具。</p>
-
-<p>另外，<a href="https://github.com/EmmanuelOga/ffaker">ffaker</a> 这个是用来产生随机数据的gem，它可以用来产生email, name, company name等，另外我提交了可以产生中文姓名的<a href="https://github.com/EmmanuelOga/ffaker/pull/9">代码</a> ，可是到现在作者还没有将其融合进去，真希望他快点啊。</p>
-
-<p>其它的如cucumber太过先进的东西我还没有在项目中常用。感觉上面介绍的组合就够我用了。</p>
-
-<p>最后持续集成测试方面我还没有在项目中用到，有时间的时候我打算研究一下 <a href="https://github.com/rails/rails/blob/master/ci/ci_setup_notes.txt">cinabox</a> ，为什么要研究这个呢，因为我看到rails项目中就是到的这个来作为它的持续测试的工具，它是基本ubuntu系统上的一个项目，看介绍，安装很方便的，到时候试试。</p>
-
-<p>我以下写下这些，一是作了大致的记录，另外也防止自己out了，如果大家有更好用的工具，也请分享一下。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -938,6 +925,10 @@ routing</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
       </li>
     
@@ -951,10 +942,6 @@ routing</p>
     
       <li class="post">
         <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
       </li>
     
   </ul>

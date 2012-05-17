@@ -9,9 +9,8 @@
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="什么是 HTML5？ HTML5 将成为 HTML、XHTML 以及 HTML DOM 的新标准。
-HTML 的上一个版本诞生于 1999 年。自从那以后，Web 世界已经经历了巨变。
-HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。 新特性 HTML5 &hellip;">
+  <meta name="description" content="gitX是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。 安装方法： 最简单的安装方法就是下载它的二进制包，直接运行。
+在它的wiki页面找到二进制包的下载地址,下载后，解压，直接运行，程序界面就出来了。 然后点菜单“GitX”中的 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +77,55 @@ HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了�
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/11/use-gitX-on-mac/">在Mac上使用gitX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-11T00:00:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/pieter/gitx">gitX</a>是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。</p>
+
+<p>安装方法：</p>
+
+<p>最简单的安装方法就是下载它的二进制包，直接运行。
+在它的wiki页面找到二进制包的<a href="http://gitx.frim.nl/Downloads/GitXStable.app.zip">下载地址</a>,下载后，解压，直接运行，程序界面就出来了。</p>
+
+<p>然后点菜单“GitX”中的&#8217;Enable Terminal Usage &#8230;&#8217;, 这样可以直接在命令行窗口中，在项目的根目录中直接运行gitx来启动gitX了。</p>
+
+<p><img src="/images/posts/2011-05-11-gitX-on-mac.png" title="GitX on Mac" alt="My current project" /></p>
+
+<p><em>更新</em></p>
+
+<p><a href="https://github.com/pieter/gitx">gitX官方的这个版</a>本已经好久没有更新了，另外它也有一些缺点，如不能方便从文件中复制代码（很难选中代码的），我找到这个<a href="https://github.com/laullon/gitx/tree/">版本</a>，它从原官方的版本更流行。另外它真的很好用，比官方的版本提高了很多功能点。你自己慢慢体会吧。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1353,52 +1401,6 @@ Don&#8217;t ever leave me, don&#8217;t ever go.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/25/use-capybara-to-integrate-test/">使用capybara来自动化测试业务流程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/jnicklas/capybara">capybara</a> 是一个基于 <a href="https://github.com/brynary/webrat">webrat</a></p>
-
-<p>修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。<br/>
-  使用capybara可以良好地访问有javascript脚本的页面，但是有一个问题就是如果你页面中有confirm这个的等待用户点击“确定”的对话框时capybaray就无能为力了，我在stackoverfollow上找到了解决办法，就是直接让confirm方法返回true:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'>   <span class="nx">page</span><span class="p">.</span><span class="nx">evaluate_script</span><span class="p">(</span><span class="s1">&#39;window.confirm = function() { return true; }&#39;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>   下面这个例子来自我项目中 <a href="https://gist.github.com/884682">真实的代码</a> 可以测试一个用户的认证操作，以test开头的方法都会执行。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1416,6 +1418,10 @@ Don&#8217;t ever leave me, don&#8217;t ever go.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
       </li>
     
@@ -1429,10 +1435,6 @@ Don&#8217;t ever leave me, don&#8217;t ever go.</p>
     
       <li class="post">
         <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
       </li>
     
   </ul>

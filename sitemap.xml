@@ -213,11 +213,17 @@
         <lastmod>2012-04-27T11:36:05+08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/
+        </loc>
+        <lastmod>2012-05-17T15:08:40+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://qichunren.github.com/blog/archives/</loc>
-        <lastmod>2012-04-27T11:36:05+08:00</lastmod>
+        <lastmod>2012-05-17T15:08:40+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/</loc>
-        <lastmod>2012-04-27T11:36:05+08:00</lastmod>
+        <lastmod>2012-05-17T15:08:40+08:00</lastmod>
     </url>
 </urlset>

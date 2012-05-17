@@ -9,27 +9,7 @@
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了： 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-caojinhua:tts_cacher caojinhua$ &hellip;">
+  <meta name="description" content="最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +76,144 @@ caojinhua:tts_cacher caojinhua$ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/18/learning-shell-tip-note/">Shell学习小记录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-18T00:00:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。以前认为用Ruby来做这个事情是一个不错的选择，现在知道了，那是因为相比起Shell来，更熟悉Ruby，程序员总是喜欢自己熟悉的领域，而排斥自己不熟悉的领域。其实多了解一下其它方面的，更利用自己工作的开展，提高工作效率。</p>
+
+<p>我随便总结一下几个知识点</p>
+
+<h4>字符串</h4>
+
+<p>声明一个字符串变量后，使用的时候，在变量名前面加一个$符号才能将其值取出来</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_FILE=data.tar.gz
+</span><span class='line'>echo $DATA_FILE</span></code></pre></td></tr></table></div></figure>
+
+
+<p>字符串拼接</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_DIR=/Users/caojinhua/code/
+</span><span class='line'>DATA_FILE=data.tar.gz
+</span><span class='line'>DATA_PATH=$DATA_DIR""$DATA_FILE</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将命令执行的结果保存在变量中</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sha1=`ls -al`</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>if语句结构</h4>
+
+<p>if语句条件测试命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ -d DIR ]   如果DIR存在并且是一个目录则为真
+</span><span class='line'>[ -f FILE ]   如果FILE存在且是一个普通文件则为真
+</span><span class='line'>[ -z STRING ] 如果STRING的长度为零则为真
+</span><span class='line'>[ -n STRING ] 如果STRING的长度非零则为真
+</span><span class='line'>[ STRING1 = STRING2 ] 如果两个字符串相同则为真
+</span><span class='line'>[ STRING1 != STRING2 ]    如果字符串不相同则为真
+</span><span class='line'>[ ARG1 OP ARG2 ]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ARG1和ARG2应该是整数或者取值为整数的变量，OP是-eq（等于）-ne（不等于）-lt（小于）-le（小于等于）-gt（大于）-ge（大于等于）之中的一个</p>
+
+<p>之前弄错好几次，中括号前后的空格不能少。</p>
+
+<p>if语句的结构</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if [ xxx ]
+</span><span class='line'>then
+</span><span class='line'>fi
+</span><span class='line'>
+</span><span class='line'>if [ xxx ]; then
+</span><span class='line'>
+</span><span class='line'>else
+</span><span class='line'>
+</span><span class='line'>fi
+</span><span class='line'>
+</span><span class='line'>if [ xxx ]; then
+</span><span class='line'>
+</span><span class='line'>elif [ ! xxx ]; then
+</span><span class='line'>
+</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>时间格式化</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>date  +%Y%m%d
+</span><span class='line'>
+</span><span class='line'>a=`date +%Y%m%d`
+</span><span class='line'>echo $a</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>参考资料</h4>
+
+<p><a href="http://learn.akae.cn/media/ch31s05.html">Shell脚本语法</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1157,55 +1275,6 @@ bundle exec unicorn_rails to start rails app at 8080 port.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/11/use-gitX-on-mac/">在Mac上使用gitX</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-11T00:00:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/pieter/gitx">gitX</a>是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。</p>
-
-<p>安装方法：</p>
-
-<p>最简单的安装方法就是下载它的二进制包，直接运行。
-在它的wiki页面找到二进制包的<a href="http://gitx.frim.nl/Downloads/GitXStable.app.zip">下载地址</a>,下载后，解压，直接运行，程序界面就出来了。</p>
-
-<p>然后点菜单“GitX”中的&#8217;Enable Terminal Usage &#8230;&#8217;, 这样可以直接在命令行窗口中，在项目的根目录中直接运行gitx来启动gitX了。</p>
-
-<p><img src="/images/posts/2011-05-11-gitX-on-mac.png" title="GitX on Mac" alt="My current project" /></p>
-
-<p><em>更新</em></p>
-
-<p><a href="https://github.com/pieter/gitx">gitX官方的这个版</a>本已经好久没有更新了，另外它也有一些缺点，如不能方便从文件中复制代码（很难选中代码的），我找到这个<a href="https://github.com/laullon/gitx/tree/">版本</a>，它从原官方的版本更流行。另外它真的很好用，比官方的版本提高了很多功能点。你自己慢慢体会吧。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1223,6 +1292,10 @@ bundle exec unicorn_rails to start rails app at 8080 port.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
       </li>
     
@@ -1236,10 +1309,6 @@ bundle exec unicorn_rails to start rails app at 8080 port.</p>
     
       <li class="post">
         <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
       </li>
     
   </ul>

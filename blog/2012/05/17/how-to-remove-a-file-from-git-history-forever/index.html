@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Create a blog at github - 蕲春人 - 软件开发</title>
+  <title>怎么样从git提交历史里永久删除一个文件? - 蕲春人 - 软件开发</title>
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="First ,of course you must have an account at github. assume your loign id at github is &#8220;xiaofeiren&#8221;,
-Then create a new repost at github &hellip;">
+  <meta name="description" content="需要整理 参考资料 Remove sensitive data
+How do I remove sensitive files from git&#8217;s history
+git: forever remove files or folders from history ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Then create a new repost at github &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github">
+  <link rel="canonical" href="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +81,7 @@ Then create a new repost at github &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Create a Blog at Github</h1>
+      <h1 class="entry-title">怎么样从git提交历史里永久删除一个文件?</h1>
     
     
       <p class="meta">
@@ -96,42 +97,23 @@ Then create a new repost at github &hellip;">
   
 
 
-<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time>
+<time datetime="2012-05-17T15:04:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>First ,of course you must have an account at github.
- assume your loign id at github is &#8220;xiaofeiren&#8221;,
-Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p>
+<div class="entry-content"><p>需要整理</p>
 
-<p>Now in your pc(Linux platform,and git)</p>
+<h2>参考资料</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir xiaofeiren.github.com
-</span><span class='line'>cd xiaofeiren.github.com
-</span><span class='line'>git init
-</span><span class='line'>touch README
-</span><span class='line'>touch index.html
-</span><span class='line'>echo "This is my git blog" &gt;&gt; index.html
-</span><span class='line'>git add README
-</span><span class='line'>git commit -m 'first commit'
-</span><span class='line'>git remote add origin git@github.com:xiaofeiren/xiaofeiren.github.com.git
-</span><span class='line'>git push origin master</span></code></pre></td></tr></table></div></figure>
+<ul>
+<li><a href="http://help.github.com/remove-sensitive-data/">Remove sensitive data</a></li>
+<li><a href="http://stackoverflow.com/questions/872565/how-do-i-remove-sensitive-files-from-gits-history">How do I remove sensitive files from git&#8217;s history</a></li>
+<li><a href="http://dound.com/2009/04/git-forever-remove-files-or-folders-from-history/">git: forever remove files or folders from history</a></li>
+</ul>
 
-
-<p>Now, your can visit http://xiaofeiren.github.com, this is your github blog home-url.</p>
 </div>
 
 
@@ -154,15 +136,21 @@ Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p
   
 
 
-<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time>
+<time datetime="2012-05-17T15:04:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>GIT</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github/" data-via="" data-counturl="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/" data-via="" data-counturl="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/" >Tweet</a>
   
   
   
@@ -171,14 +159,18 @@ Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/04/06/create-static-page-class-in-model/" title="Previous Post: Static site using rails">&laquo; Static site using rails</a>
+        <a class="basic-alignment left" href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/" title="Previous Post: 通过update-rc.d来管理Ubuntu系统的自动启动程序">&laquo; 通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/07/28/my-first-post/" title="Next Post: My first post here">My first post here &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -263,7 +255,10 @@ Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p
       var disqus_shortname = 'qichunrensblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/';
+        var disqus_url = 'http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

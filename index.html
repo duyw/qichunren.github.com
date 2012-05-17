@@ -9,8 +9,9 @@
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="转载, 并记下我的使用心得。 Linux services can be started, stopped and reloaded with the use of scripts stocked in /etc/init.d/.
-However, during start up or when &hellip;">
+  <meta name="description" content="需要整理 参考资料 Remove sensitive data
+How do I remove sensitive files from git&#8217;s history
+git: forever remove files or folders from history ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +78,51 @@ However, during start up or when &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-17T15:04:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>需要整理</p>
+
+<h2>参考资料</h2>
+
+<ul>
+<li><a href="http://help.github.com/remove-sensitive-data/">Remove sensitive data</a></li>
+<li><a href="http://stackoverflow.com/questions/872565/how-do-i-remove-sensitive-files-from-gits-history">How do I remove sensitive files from git&#8217;s history</a></li>
+<li><a href="http://dound.com/2009/04/git-forever-remove-files-or-folders-from-history/">git: forever remove files or folders from history</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1292,144 +1338,6 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/18/learning-shell-tip-note/">Shell学习小记录</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-18T00:00:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。以前认为用Ruby来做这个事情是一个不错的选择，现在知道了，那是因为相比起Shell来，更熟悉Ruby，程序员总是喜欢自己熟悉的领域，而排斥自己不熟悉的领域。其实多了解一下其它方面的，更利用自己工作的开展，提高工作效率。</p>
-
-<p>我随便总结一下几个知识点</p>
-
-<h4>字符串</h4>
-
-<p>声明一个字符串变量后，使用的时候，在变量名前面加一个$符号才能将其值取出来</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_FILE=data.tar.gz
-</span><span class='line'>echo $DATA_FILE</span></code></pre></td></tr></table></div></figure>
-
-
-<p>字符串拼接</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_DIR=/Users/caojinhua/code/
-</span><span class='line'>DATA_FILE=data.tar.gz
-</span><span class='line'>DATA_PATH=$DATA_DIR""$DATA_FILE</span></code></pre></td></tr></table></div></figure>
-
-
-<p>将命令执行的结果保存在变量中</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sha1=`ls -al`</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>if语句结构</h4>
-
-<p>if语句条件测试命令：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[ -d DIR ]   如果DIR存在并且是一个目录则为真
-</span><span class='line'>[ -f FILE ]   如果FILE存在且是一个普通文件则为真
-</span><span class='line'>[ -z STRING ] 如果STRING的长度为零则为真
-</span><span class='line'>[ -n STRING ] 如果STRING的长度非零则为真
-</span><span class='line'>[ STRING1 = STRING2 ] 如果两个字符串相同则为真
-</span><span class='line'>[ STRING1 != STRING2 ]    如果字符串不相同则为真
-</span><span class='line'>[ ARG1 OP ARG2 ]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ARG1和ARG2应该是整数或者取值为整数的变量，OP是-eq（等于）-ne（不等于）-lt（小于）-le（小于等于）-gt（大于）-ge（大于等于）之中的一个</p>
-
-<p>之前弄错好几次，中括号前后的空格不能少。</p>
-
-<p>if语句的结构</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>if [ xxx ]
-</span><span class='line'>then
-</span><span class='line'>fi
-</span><span class='line'>
-</span><span class='line'>if [ xxx ]; then
-</span><span class='line'>
-</span><span class='line'>else
-</span><span class='line'>
-</span><span class='line'>fi
-</span><span class='line'>
-</span><span class='line'>if [ xxx ]; then
-</span><span class='line'>
-</span><span class='line'>elif [ ! xxx ]; then
-</span><span class='line'>
-</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>时间格式化</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>date  +%Y%m%d
-</span><span class='line'>
-</span><span class='line'>a=`date +%Y%m%d`
-</span><span class='line'>echo $a</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>参考资料</h4>
-
-<p><a href="http://learn.akae.cn/media/ch31s05.html">Shell脚本语法</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1445,6 +1353,10 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
       </li>
     
@@ -1458,10 +1370,6 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
     
       <li class="post">
         <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
       </li>
     
   </ul>

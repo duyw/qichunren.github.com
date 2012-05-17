@@ -4,7 +4,7 @@
   <title><![CDATA[蕲春人 - 软件开发]]></title>
   <link href="http://qichunren.github.com/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-04-27T11:49:29+08:00</updated>
+  <updated>2012-05-17T15:09:17+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[怎么样从git提交历史里永久删除一个文件?]]></title>
+    <link href="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/"/>
+    <updated>2012-05-17T15:04:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever</id>
+    <content type="html"><![CDATA[<p>需要整理</p>
+
+<h2>参考资料</h2>
+
+<ul>
+<li><a href="http://help.github.com/remove-sensitive-data/">Remove sensitive data</a></li>
+<li><a href="http://stackoverflow.com/questions/872565/how-do-i-remove-sensitive-files-from-gits-history">How do I remove sensitive files from git&#8217;s history</a></li>
+<li><a href="http://dound.com/2009/04/git-forever-remove-files-or-folders-from-history/">git: forever remove files or folders from history</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[通过update-rc.d来管理Ubuntu系统的自动启动程序]]></title>
@@ -1909,28 +1927,6 @@ bundle exec unicorn_rails to start rails app at 8080 port.</p>
 
 
 <p>另外在启动了Juggernaut后，它默认在8080端口上有一个Helloword的应用，可以了解一下。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在Mac上使用gitX]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/11/use-gitX-on-mac/"/>
-    <updated>2011-05-11T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/11/use-gitX-on-mac</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/pieter/gitx">gitX</a>是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。</p>
-
-<p>安装方法：</p>
-
-<p>最简单的安装方法就是下载它的二进制包，直接运行。
-在它的wiki页面找到二进制包的<a href="http://gitx.frim.nl/Downloads/GitXStable.app.zip">下载地址</a>,下载后，解压，直接运行，程序界面就出来了。</p>
-
-<p>然后点菜单“GitX”中的&#8217;Enable Terminal Usage &#8230;&#8217;, 这样可以直接在命令行窗口中，在项目的根目录中直接运行gitx来启动gitX了。</p>
-
-<p><img src="http://qichunren.github.com/images/posts/2011-05-11-gitX-on-mac.png" title="GitX on Mac" alt="My current project" /></p>
-
-<p><em>更新</em></p>
-
-<p><a href="https://github.com/pieter/gitx">gitX官方的这个版</a>本已经好久没有更新了，另外它也有一些缺点，如不能方便从文件中复制代码（很难选中代码的），我找到这个<a href="https://github.com/laullon/gitx/tree/">版本</a>，它从原官方的版本更流行。另外它真的很好用，比官方的版本提高了很多功能点。你自己慢慢体会吧。</p>
 ]]></content>
   </entry>
   

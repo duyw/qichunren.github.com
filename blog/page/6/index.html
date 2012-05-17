@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Create a blog at github - 蕲春人 - 软件开发</title>
+  <title>蕲春人 - 软件开发</title>
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="First ,of course you must have an account at github. assume your loign id at github is &#8220;xiaofeiren&#8221;,
-Then create a new repost at github &hellip;">
+  <meta name="description" content="Benchmark可以用来测试某个函数或者任何代码的执行时间。 用法很简单： require 'benchmark'
+n = 1500
+Benchmark.bmbm do |x| x.report(&quot;+ method&quot;) { n.times {string1 = &quot; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Then create a new repost at github &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github">
+  <link rel="canonical" href="http://qichunren.github.com/blog/page/6">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,12 +76,15 @@ Then create a new repost at github &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Create a Blog at Github</h1>
+      <h1 class="entry-title"><a href="/blog/2008/10/09/use-benchmark/">Benchmark用法</a></h1>
     
     
       <p class="meta">
@@ -96,92 +100,69 @@ Then create a new repost at github &hellip;">
   
 
 
-<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time>
+<time datetime="2008-10-09T00:00:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2008</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>First ,of course you must have an account at github.
- assume your loign id at github is &#8220;xiaofeiren&#8221;,
-Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p>
+  <div class="entry-content"><p><a href="http://rubybenchmark.com/">Benchmark</a>可以用来测试某个函数或者任何代码的执行时间。</p>
 
-<p>Now in your pc(Linux platform,and git)</p>
+<p>用法很简单：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir xiaofeiren.github.com
-</span><span class='line'>cd xiaofeiren.github.com
-</span><span class='line'>git init
-</span><span class='line'>touch README
-</span><span class='line'>touch index.html
-</span><span class='line'>echo "This is my git blog" &gt;&gt; index.html
-</span><span class='line'>git add README
-</span><span class='line'>git commit -m 'first commit'
-</span><span class='line'>git remote add origin git@github.com:xiaofeiren/xiaofeiren.github.com.git
-</span><span class='line'>git push origin master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now, your can visit http://xiaofeiren.github.com, this is your github blog home-url.</p>
+<div>
+  <pre>
+    <code class='ruby'>require 'benchmark'
+n = 1500
+Benchmark.bmbm do |x|
+    x.report(&quot;+ method&quot;) { n.times {string1 = &quot;ddd&quot; + &quot;11111&quot; + &quot;Helodd&quot; } }
+    x.report(&quot;&lt;&lt; method&quot;) { n.times {string2 = &quot;ddd&quot; &lt;&lt; &quot;11111&quot; &lt;&lt; &quot;Helodd&quot;} }  
+end</code>
+  </pre>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
+<p>结果如下：</p>
+
+<div>
+  <pre>
+    <code class='text'>usermatoMacBook-Pro:test qichunren$ ruby test.rb 
+Rehearsal ---------------------------------------------
++ method    0.000000   0.000000   0.000000 (  0.001722)
+&lt;&lt; method   0.000000   0.000000   0.000000 (  0.001073)
+------------------------------------ total: 0.000000sec
+
+                user     system      total        real
++ method    0.000000   0.000000   0.000000 (  0.001040)
+&lt;&lt; method   0.000000   0.000000   0.000000 (  0.000719)</code>
+  </pre>
+</div>
+
+
+<h3>参考资料</h3>
+
+<ul>
+<li><a href="http://ruby-doc.org/stdlib/libdoc/benchmark/rdoc/index.html">Benchmark Rdoc</a></li>
+<li><a href="http://www.kuqin.com/rubycndocument/man/addlib/benchmark.html">Ruby参考手册</a></li>
+<li><a href="https://github.com/acangiano/ruby-benchmark-suite">ruby-benchmark-suite</a></li>
+</ul>
+
+</div>
+  
   
 
-<span class="byline author vcard">Posted by <span class="fn">qichunren</span></span>
 
-      
-
-
-
-
-
-
-
-
+    </article>
   
-
-
-<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time>
-      
-
-
-    </p>
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github/" data-via="" data-counturl="http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github/" >Tweet</a>
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2010/04/06/create-static-page-class-in-model/" title="Previous Post: Static site using rails">&laquo; Static site using rails</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2010/07/28/my-first-post/" title="Next Post: My first post here">My first post here &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
+    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -214,7 +195,7 @@ Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/qichunren">@qichunren</a> on GitHub
@@ -247,7 +228,6 @@ Then create a new repost at github called &#8220;xiaofeiren.github.com&#8221;</p
 
   
 </aside>
-
 
     </div>
   </div>

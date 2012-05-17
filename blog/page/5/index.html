@@ -9,13 +9,7 @@
   <meta name="author" content="qichunren">
 
   
-  <meta name="description" content="这几个地方不知道大家有注意到没有，我今天发现的一个地方就是 1
-2
-3
-4
-5
-6
-class EcGood &lt; ActiveRecord::Bas #商品分类 GoodCategory = Category.find(:all).map{|category|[category.cn_n, &hellip;">
+  <meta name="description" content="这个本早该记一下的。 现在RUBY社区发展得太快了，各种新技术层出不穷，测试方面同样如此。 我记下我在Rails3项目中所用的测试方面的技术点。 首先是rspec-rails，它是rspec 2的对rails3项目支持的一个gem，只需要在Gemfile中指定rspec-rails就可以了， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +76,60 @@ class EcGood &lt; ActiveRecord::Bas #商品分类 GoodCategory = Category.find(:
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/10/things-in-rails-test/">Rails中的测试那些事</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-10T00:00:00+08:00" pubdate data-updated="true">Dec 10<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这个本早该记一下的。</p>
+
+<p>现在RUBY社区发展得太快了，各种新技术层出不穷，测试方面同样如此。</p>
+
+<p>我记下我在Rails3项目中所用的测试方面的技术点。</p>
+
+<p>首先是rspec-rails，它是rspec 2的对rails3项目支持的一个gem，只需要在Gemfile中指定rspec-rails就可以了，不用指定rspec2依赖。</p>
+
+<p>然后我还要用到factorygirl-rails，它同样是factorygirl对于rails3项目支持的一个gem，只需要在Gemfile中指定factorygirl-rails就可以了，不用指定factorygirl依赖。</p>
+
+<p>还有一个rspec的match封装gem，remarkable/active_record，用它可以测试 validates,association(关联等)，说到这里，“测试”这个词我觉得不合适，我用到来感觉这个gem太强大了，它简直就是一个代码监管的工具。</p>
+
+<p>另外，<a href="https://github.com/EmmanuelOga/ffaker">ffaker</a> 这个是用来产生随机数据的gem，它可以用来产生email, name, company name等，另外我提交了可以产生中文姓名的<a href="https://github.com/EmmanuelOga/ffaker/pull/9">代码</a> ，可是到现在作者还没有将其融合进去，真希望他快点啊。</p>
+
+<p>其它的如cucumber太过先进的东西我还没有在项目中常用。感觉上面介绍的组合就够我用了。</p>
+
+<p>最后持续集成测试方面我还没有在项目中用到，有时间的时候我打算研究一下 <a href="https://github.com/rails/rails/blob/master/ci/ci_setup_notes.txt">cinabox</a> ，为什么要研究这个呢，因为我看到rails项目中就是到的这个来作为它的持续测试的工具，它是基本ubuntu系统上的一个项目，看介绍，安装很方便的，到时候试试。</p>
+
+<p>我以下写下这些，一是作了大致的记录，另外也防止自己out了，如果大家有更好用的工具，也请分享一下。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -683,83 +731,9 @@ The following code can help us to display static pages.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/09/use-benchmark/">Benchmark用法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-09T00:00:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://rubybenchmark.com/">Benchmark</a>可以用来测试某个函数或者任何代码的执行时间。</p>
-
-<p>用法很简单：</p>
-
-<div>
-  <pre>
-    <code class='ruby'>require 'benchmark'
-n = 1500
-Benchmark.bmbm do |x|
-    x.report(&quot;+ method&quot;) { n.times {string1 = &quot;ddd&quot; + &quot;11111&quot; + &quot;Helodd&quot; } }
-    x.report(&quot;&lt;&lt; method&quot;) { n.times {string2 = &quot;ddd&quot; &lt;&lt; &quot;11111&quot; &lt;&lt; &quot;Helodd&quot;} }  
-end</code>
-  </pre>
-</div>
-
-
-<p>结果如下：</p>
-
-<div>
-  <pre>
-    <code class='text'>usermatoMacBook-Pro:test qichunren$ ruby test.rb 
-Rehearsal ---------------------------------------------
-+ method    0.000000   0.000000   0.000000 (  0.001722)
-&lt;&lt; method   0.000000   0.000000   0.000000 (  0.001073)
------------------------------------- total: 0.000000sec
-
-                user     system      total        real
-+ method    0.000000   0.000000   0.000000 (  0.001040)
-&lt;&lt; method   0.000000   0.000000   0.000000 (  0.000719)</code>
-  </pre>
-</div>
-
-
-<h3>参考资料</h3>
-
-<ul>
-<li><a href="http://ruby-doc.org/stdlib/libdoc/benchmark/rdoc/index.html">Benchmark Rdoc</a></li>
-<li><a href="http://www.kuqin.com/rubycndocument/man/addlib/benchmark.html">Ruby参考手册</a></li>
-<li><a href="https://github.com/acangiano/ruby-benchmark-suite">ruby-benchmark-suite</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -772,6 +746,10 @@ Rehearsal ---------------------------------------------
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
@@ -787,10 +765,6 @@ Rehearsal ---------------------------------------------
     
       <li class="post">
         <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing rails generator templates</a>
       </li>
     
   </ul>
