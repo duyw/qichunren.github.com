@@ -1,37 +1,26 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>蕲春人 - 软件开发</title>
-  <meta name="author" content="qichunren">
+    <meta charset="utf-8">
+    <title>蕲春人 - 软件开发</title>
+    <meta name="author" content="qichunren">
 
-  
-  <meta name="description" content="需要整理 参考资料 Remove sensitive data
+    
+    <meta name="description" content="怎么样从git提交历史里永久删除一个文件? 需要整理 参考资料 Remove sensitive data
 How do I remove sensitive files from git&#8217;s history
-git: forever remove files or folders from history ">
-  
+git: forever remove files or folders &hellip;">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://qichunren.github.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
+    <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
+    <link rel="canonical" href="">
+    <link href="/favicon.png" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-6344646-4']);
@@ -47,67 +36,57 @@ git: forever remove files or folders from history ">
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">蕲春人 - 软件开发</a></h1>
-  
-    <h2>简单就是美.</h2>
-  
-</hgroup>
+<body>
+	<header class="inner"><h1 class="left"><a href="/">蕲春人 - 软件开发</a></h1>
+<nav class="menu left"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<div class="right">
+	<form class="search right" action="http://google.com/search" method="get">
+		<input class="left" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:qichunren.github.com">
+	</form>
+	<div class="social right">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/qichunren" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/qichunren" title="GitHub">GitHub</a>
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</div>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:qichunren.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+	
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('qichunren', 4, false);
+	})(jQuery);
+</script>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a></h1>
-    
-    
-      <p class="meta">
-        
+	<div id="content" class="inner">
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-17T15:04:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>需要整理</p>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a></h1>
+    <div class="entry">
+        <p>需要整理</p>
 
 <h2>参考资料</h2>
 
@@ -117,42 +96,42 @@ git: forever remove files or folders from history ">
 <li><a href="http://dound.com/2009/04/git-forever-remove-files-or-folders-from-history/">git: forever remove files or folders from history</a></li>
 </ul>
 
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-17T15:04:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/git/'>GIT</a>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a></h1>
-    
-    
-      <p class="meta">
+</div>
         
+    </div>
+</article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-14T11:30:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>转载, 并记下我的使用心得。</p>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a></h1>
+    <div class="entry">
+        <p>转载, 并记下我的使用心得。</p>
 
 <p>Linux services can be started, stopped and reloaded with the use of scripts stocked in /etc/init.d/.
 However, during start up or when changing runlevel, those scripts are searched in /etc/rcX.d/ where X is the runlevel number.
@@ -490,42 +469,42 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 <h2>Resources:</h2>
 
 <p><a href="http://www.debuntu.org/how-to-manage-services-with-update-rc.d">How-To: Managing services with update-rc.d</a></p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-14T11:30:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/">Use Rubyencoder Encrypt Ruby Code</a></h1>
-    
-    
-      <p class="meta">
+</div>
         
+    </div>
+</article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-27T13:10:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前些时候研究了一下ruby encoder的加密技术应用，在这里记录一下它的使用过程。</p>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/">Use Rubyencoder Encrypt Ruby Code</a></h1>
+    <div class="entry">
+        <p>前些时候研究了一下ruby encoder的加密技术应用，在这里记录一下它的使用过程。</p>
 
 <p><a href="http://rubyencoder.com/">Ruby Encoder</a>将ruby代码加密成不易阅读的格式，然后通过它提供的加载类型来载入ruby代码，从而达到加密的目的。它是一个付费软件，一个许可证要159美金，提供试用版，可以试用一个星期，支持Linux \ FreeBSD \ Mac OS X \ Windows系统。</p>
 
@@ -704,42 +683,42 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 </span><span class='line'>
 </span><span class='line'>Feel free to contact me if you have any further questions.</span></code></pre></td></tr></table></div></figure>
 
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-27T13:10:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create Custom Tags in Smarty 3</a></h1>
-    
-    
-      <p class="meta">
+</div>
         
+    </div>
+</article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-26T14:21:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码</p>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create Custom Tags in Smarty 3</a></h1>
+    <div class="entry">
+        <p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -836,42 +815,42 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 
 <p>这个function中有四个参数，$params参数存储的是标签中的属性信息，如上面的limit。$content是标签中间的内容，$smarty是smarty的实例对象，$repeat用于指定block是否重复执行。
 解释完了function的参数，我想其中的执行原理应该很容易看明白了吧。</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T14:21:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/php/'>PHP</a>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty Template in CodeIgniter</a></h1>
-    
-    
-      <p class="meta">
+</div>
         
+    </div>
+</article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-11T16:57:00+08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty Template in CodeIgniter</a></h1>
+    <div class="entry">
+        <p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
 
 <p><a href="http://www.smarty.net/">Smarty</a>是目前业界最著名的PHP模板引擎之一。它分离了逻辑代码和外在的内容，提供了一种易于管理和使用的方法，用来将原本与HTML代码混杂在一起的PHP代码逻辑分离。</p>
 
@@ -1030,397 +1009,52 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 
 
 
-</div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/12/customizing-rails-generator-templates/">Customizing Rails Generator Templates</a></h1>
-    
-    
-      <p class="meta">
         
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-12T13:49:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2012</time>
         
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Rails framework and twitter bootstrap are good for your startup project, build-in generators generate source code by its way. It is  a good starting point.</p>
-
-<p>But I often have to change default generted source code:</p>
-
-<ul>
-<li>Add <strong>encoding: utf-8</strong> into ruby file header, for Ruby 1.9.2 encoding.</li>
-<li>Change scaffold view files to apply <a href="http://twitter.github.com/bootstrap/">bootstrap</a> css.</li>
-<li>Other things you want to override default templates.</li>
-</ul>
-
-
-<p>Rails provides the mechanism to custom generator behavior.</p>
-
-<p>I have already got it, and source code is on <a href="https://github.com/qichunren/rails_generator_override_templates">github</a>, follow README for usage.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/09/update-forked-repository-from-original-repository-at-github/">How to Update a Forked Repository From Original Repository at Github?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-09T12:39:00+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you use github, you can follow this.</p>
-
-<p>I use <a href="https://github.com/huacnlee/ruby-china">huachlee/ruby-china</a> repository for example.</p>
-
-<p>At huacnlee/ruby-china repository homepage, clicked &#8220;Fork&#8221; button, then after serval minutes, you will have you own forked repository copy.Then you clone to local.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:qichunren/ruby-china.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then you commit your changes, and push to it.When you found the original repository has some updated feature,you can do as follow:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd ruby-china
-</span><span class='line'>git remote add upstream git://github.com/huacnlee/ruby-china.git
-</span><span class='line'>caojinhua:ruby-china caojinhua$ git fetch upstream
-</span><span class='line'>remote: Counting objects: 345, done.
-</span><span class='line'>remote: Compressing objects: 100% (164/164), done.
-</span><span class='line'>remote: Total 266 (delta 196), reused 156 (delta 98)
-</span><span class='line'>Receiving objects: 100% (266/266), 31.92 KiB | 25 KiB/s, done.
-</span><span class='line'>Resolving deltas: 100% (196/196), completed with 67 local objects.
-</span><span class='line'>From git://github.com/huacnlee/ruby-china
-</span><span class='line'> * [new branch]      github_autocomplete -&gt; upstream/github_autocomplete
-</span><span class='line'> * [new branch]      markdown   -&gt; upstream/markdown
-</span><span class='line'> * [new branch]      master     -&gt; upstream/master
-</span><span class='line'> * [new branch]      post       -&gt; upstream/post
-</span><span class='line'>caojinhua:ruby-china caojinhua$ git merge upstream/master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That is it.</p>
-
-<h2>Resources:</h2>
-
-<ul>
-<li><a href="http://help.github.com/fork-a-repo/">Fork A Repo</a></li>
-<li><a href="http://bradlyfeeley.com/2008/09/03/update-a-github-fork-from-the-original-repo/">Update a Github Fork from the Original Repo</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/22/use-ajax-in-rails3-note/">在Rails3中使用ajax</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-22T16:36:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。</p>
-
-<p>我之前在Rails3项目中使用ajax是这样的：</p>
-
-<p>如果是直接发送一个ajax请求，我就给标签加上:remote => true。如果我在此基础上还要做其它的操作，如ajax表单提交前要对表单字段验证，我之前以为那样UJS就不能搞定了，需要我自己写代码来处理。然后我就使用jquery中的相关ajax操作来处理。</p>
-
-<p>今天我才了解到UJS的AJAX操作已经为我们提供了6个自定义事件方法：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ajax:before – right before ajax call
-</span><span class='line'>ajax:loading – before ajax call, but after XmlHttpRequest object is created)
-</span><span class='line'>ajax:success – successful ajax call
-</span><span class='line'>ajax:failure – failed ajax call
-</span><span class='line'>ajax:complete – completion of ajax call (after ajax:success and ajax:failure)
-</span><span class='line'>ajax:after – after ajax call is sent (note: not after it returns)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>所以对于上面我说的那个事例，如果要对一个ajax表单在提交前作表单验证或者其它的一些检查，只需要写提交前的检查代码，然后通过事件绑定的方式，将余下的表单ajax提交让UJS来完成，这是多么地简单啊，我以前真是做了好多无用功。</p>
-
-<figure class='code'><figcaption><span>sample code  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#new_post_comment&quot;</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;ajax:before&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#post_comment_body&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;&quot;</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>参考资料</h3>
-
-<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-unobtrusive-javascript-and-ajax-with-rails-3/">Using Unobtrusive JavaScript and AJAX with Rails 3</a>
-<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms-data-type-with-jquery/">Rails 3 Remote Links and Forms Part 2: Data-type (with jQuery)</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/20/mongodb-ui-client-mongohub/">mongodb的可视化客户端工具:MongoHub</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-20T17:31:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近在使用mongodb,经常要调试，然后找到了MongoHub这款工具，感觉很好。</p>
-
-<p><a href="mongohub.todayclose.com/download">MongoHub网站</a></p>
-
-<p><img src="/assets/posts/2011-12-20-mongohub.png" title="will_paginate bar" alt="MongoHub" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/18/ios-learn-note/">近期iOS学习点</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-18T20:44:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>虽然我业余在学iOS，但是感觉进步缓慢。为了使我的iOS开发的学习效率高一点，我决定先列一个简要的提纲，明确当前一个阶段的学习计划。</p>
-
-<ol>
-<li><p>iOS体系，了解清楚UI组件的体系</p></li>
-<li><p>Objective-C中的基本数据结构使用</p></li>
-<li><p>iOS中的基本的网络编程，主要是iOS客户端方的,如json,http交互等。</p></li>
-</ol>
-
-
-<p>先就这么多，每天要进步一点.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/">Use Rubyencoder encrypt ruby code</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create custom tags in Smarty 3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/qichunren">@qichunren</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'qichunren',
-            count: 3,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-
-  
-</aside>
-
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - qichunren -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-11T16:57:00+08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/php/'>PHP</a>
+  
+</div>
+
+</div>
+        
+    </div>
+</article>
+
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <a href="/blog/archives" class="center">Blog Archives</a>
+</nav></div>
+	<footer class="inner">Copyright &copy; 2012
+
+    qichunren
 
 </footer>
-  
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script src="/javascripts/slash.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'qichunrensblog';
@@ -1434,24 +1068,6 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
 
 
 

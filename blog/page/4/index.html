@@ -1,35 +1,45 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>蕲春人 - 软件开发</title>
-  <meta name="author" content="qichunren">
+    <meta charset="utf-8">
+    <title>蕲春人 - 软件开发</title>
+    <meta name="author" content="qichunren">
 
-  
-  <meta name="description" content="capybara 是一个基于 webrat 修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。 使用capybara可以良好地访问有javascript脚本的页面，但是有一个问题就是如果你页面中有confirm这个的等待用户点击“确定” &hellip;">
-  
+    
+    <meta name="description" content="Install Mongo on Mac 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+caojinhuamatoMacBook-Pro:code caojinhua$ brew install mongodb
+==&gt; &hellip;">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://qichunren.github.com/blog/page/4">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
+    <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
+    <link rel="canonical" href="">
+    <link href="/favicon.png" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-6344646-4']);
@@ -45,259 +55,57 @@
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">蕲春人 - 软件开发</a></h1>
-  
-    <h2>简单就是美.</h2>
-  
-</hgroup>
+<body>
+	<header class="inner"><h1 class="left"><a href="/">蕲春人 - 软件开发</a></h1>
+<nav class="menu left"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<div class="right">
+	<form class="search right" action="http://google.com/search" method="get">
+		<input class="left" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:qichunren.github.com">
+	</form>
+	<div class="social right">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/qichunren" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/qichunren" title="GitHub">GitHub</a>
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</div>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:qichunren.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/25/use-capybara-to-integrate-test/">使用capybara来自动化测试业务流程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/jnicklas/capybara">capybara</a> 是一个基于 <a href="https://github.com/brynary/webrat">webrat</a></p>
-
-<p>修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。<br/>
-  使用capybara可以良好地访问有javascript脚本的页面，但是有一个问题就是如果你页面中有confirm这个的等待用户点击“确定”的对话框时capybaray就无能为力了，我在stackoverfollow上找到了解决办法，就是直接让confirm方法返回true:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'>   <span class="nx">page</span><span class="p">.</span><span class="nx">evaluate_script</span><span class="p">(</span><span class="s1">&#39;window.confirm = function() { return true; }&#39;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>   下面这个例子来自我项目中 <a href="https://gist.github.com/884682">真实的代码</a> 可以测试一个用户的认证操作，以test开头的方法都会执行。</p>
+	
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
 </div>
-  
-  
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('qichunren', 4, false);
+	})(jQuery);
+</script>
+
+	<div id="content" class="inner">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/27/active-record-exception/">当心ActiveRecord::RecordNotSaved异常</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-27T00:00:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨天晚上遇到记录不能保存成功，一直遭遇ActiveRecord::RecordNotSaved异常，弄了半小时，找到了原因。</p>
-
-<p> 我发现了我在model中的before_create中是这样写的</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">before_create</span> <span class="ss">:set_default_value</span> <span class="c1"># 创建站内信时，设置记录的默认值 </span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">set_default_value</span>
-</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">is_trash</span> <span class="o">=</span> <span class="kp">false</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p> 这个callback方法是返回false，导致记录不能保存成功，抛出ActiveRecord::RecordNotSaved异常。</p>
-
-<p> 我之前以为出现 ActiveRecord::RecordNotSaved异常，是由于model的验证不通过导致的。我把model中的验证全都去掉了，还是不成功。 解决方法是让这个方法返回true</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">before_create</span> <span class="ss">:set_default_value</span> <span class="c1"># 创建站内信时，设置记录的默认值 </span>
-</span><span class='line'><span class="k">def</span> <span class="nf">set_default_value</span>
-</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">is_trash</span> <span class="o">=</span> <span class="kp">false</span>
-</span><span class='line'>  <span class="kp">true</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/19/use-ffaker/">使用ffaker来产生随机数据</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-19T00:00:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/EmmanuelOga/ffaker">ffaker</a>是一个用来产生随机name\email之类的工具，可以用在开发时先产生一些有意义的随机数据，将数据写在db/seeds.rb中，这样你就不用每次急燥地添加一些asasddfdsf这样的数据。一个好的工作开发环境，可以让心情舒畅，效率加倍。</p>
-
-<p>在db/seeds.rb中，如果要产生100个用户名，直接这样做：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;ffaker&#39;</span>
-</span><span class='line'>
-</span><span class='line'> <span class="mi">100</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
-</span><span class='line'>   <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Name</span><span class="o">.</span><span class="n">name</span> <span class="o">=&gt;</span> <span class="s2">&quot;David Cao&quot;</span>
-</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Internet</span><span class="o">.</span><span class="n">email</span> <span class="o">=&gt;</span> <span class="s2">&quot;qichunren@cqror.com&quot;</span>
-</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">save</span>
-</span><span class='line'> <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>我前一段时间，提交了<a href="https://github.com/EmmanuelOga/ffaker/pull/9">一点代码</a> ，可以产生天朝的姓名：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;ffaker&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">first_name</span> <span class="c1"># =&gt; 鑫洋</span>
-</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">last_name</span> <span class="c1"># =&gt; 禹</span>
-</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">name</span> <span class="c1"># =&gt; 俊伶漫</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ffaker目前最新的版本是1.2，可以产生中文的姓名。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/09/fetch-popular-rubygems/">分析rubygems.org上受欢迎的gem包</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-09T00:00:00+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>用下载量来作为一个gem包的爱欢迎度的标准。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/06/04/install-mongodb/">Install Mongo on Mac</a></h1>
+    <div class="entry">
+        <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -317,682 +125,348 @@
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># encoding: utf-8</span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhuamatoMacBook-Pro:code caojinhua$ brew install mongodb
+</span><span class='line'>==&gt; Downloading http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-1.8.1.tgz
+</span><span class='line'>######################################################################## 100.0%
+</span><span class='line'>==&gt; Caveats
+</span><span class='line'>If this is your first install, automatically load on login with:
+</span><span class='line'>    mkdir -p ~/Library/LaunchAgents
+</span><span class='line'>    cp /usr/local/Cellar/mongodb/1.8.1-x86_64/org.mongodb.mongod.plist ~/Library/LaunchAgents/
+</span><span class='line'>    launchctl load -w ~/Library/LaunchAgents/org.mongodb.mongod.plist
 </span><span class='line'>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+</span><span class='line'>If this is an upgrade and you already have the org.mongodb.mongod.plist loaded:
+</span><span class='line'>    launchctl unload -w ~/Library/LaunchAgents/org.mongodb.mongod.plist
+</span><span class='line'>    cp /usr/local/Cellar/mongodb/1.8.1-x86_64/org.mongodb.mongod.plist ~/Library/LaunchAgents/
+</span><span class='line'>    launchctl load -w ~/Library/LaunchAgents/org.mongodb.mongod.plist
 </span><span class='line'>
-</span><span class='line'><span class="no">GEM_LIST_URL</span> <span class="o">=</span> <span class="s2">&quot;http://rubygems.org/gems&quot;</span>
-</span><span class='line'><span class="no">MIN_DOWNLOAD_COUNT</span> <span class="o">=</span> <span class="mi">30_0000</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">.</span><span class="n">.</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">letter</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">document</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="no">GEM_LIST_URL</span> <span class="o">+</span> <span class="s2">&quot;?letter=</span><span class="si">#{</span><span class="n">letter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
-</span><span class='line'>  <span class="n">last_page_number</span> <span class="o">=</span>  <span class="n">document</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;div.pagination a&quot;</span><span class="p">)</span><span class="o">[-</span><span class="mi">2</span><span class="o">].</span><span class="n">inner_text</span><span class="o">.</span><span class="n">to_i</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;There are &quot;</span> <span class="o">+</span> <span class="n">document</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;p.entries b&quot;</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">inner_text</span> <span class="o">+</span> <span class="s2">&quot; gems start with </span><span class="si">#{</span><span class="n">letter</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">last_page_number</span><span class="si">}</span><span class="s2"> pages.&quot;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">1</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">last_page_number</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span>
-</span><span class='line'>    <span class="n">every_page</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="no">GEM_LIST_URL</span> <span class="o">+</span> <span class="s2">&quot;?letter=</span><span class="si">#{</span><span class="n">letter</span><span class="si">}</span><span class="s2">&amp;page=</span><span class="si">#{</span><span class="n">page</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">every_page</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;div.gems ol li&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">li</span><span class="o">|</span>
-</span><span class='line'>      <span class="n">downloads_count</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;div.downloads strong&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">inner_text</span><span class="o">.</span><span class="n">to_i</span>
-</span><span class='line'>      <span class="n">gem_info</span>        <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">inner_text</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">downloads_count</span> <span class="o">&gt;=</span> <span class="no">MIN_DOWNLOAD_COUNT</span>
-</span><span class='line'>        <span class="nb">puts</span> <span class="n">gem_info</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
+</span><span class='line'>Or start it manually:
+</span><span class='line'>    mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+</span><span class='line'>MongoDB 1.8+ includes a feature for Write Ahead Logging (Journaling), which has been enabled by default.
+</span><span class='line'>This is not the default in production (Journaling is disabled); to disable journaling, use --nojournal.
+</span><span class='line'>==&gt; Summary
+</span><span class='line'>/usr/local/Cellar/mongodb/1.8.1-x86_64: 16 files, 93M, built in 2 seconds</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/03/install-homebrew-on-mac/">在Mac上安装homebrew</a></h1>
-    
-    
-      <p class="meta">
         
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-03T00:00:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2011</time>
         
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/mxcl/homebrew">homebrew</a>是为mac打造的一个软件包管理工具</p>
-
-<p>首先需要安装好Xcode,其它是需要它其中的gcc等编译器。</p>
-
-<p><a href="https://github.com/mxcl/homebrew/wiki/Installation">安装方法</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ruby -e "$(curl -fsSLk https://gist.github.com/raw/323731/install_homebrew.rb)"</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Install Xcode.</p>
-
-<p>then brew install git first.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/02/install-rvm-on-mac/">在Mac上安装RVM</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-02T00:00:00+08:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://beginrescueend.com/rvm/install/">安装方法</a></p>
-
-<p>首先需要安装好git
-然后，</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bash &lt; &lt;(curl -s https://rvm.beginrescueend.com/install/rvm)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后配置一下，</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' &gt;&gt; ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
-
-
-<p>使配置文件生效，</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>source .bash_profile</span></code></pre></td></tr></table></div></figure>
-
-
-<p>rvm notes:</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/01/my-useful-tools/">我的常用工具</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-01T00:00:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Textmate
-OmniGraffle
-<a href="https://github.com/mxcl/homebrew">Homebrew</a>
-gitK
-Redmine <br/>
-Firebug    <br/>
-VMware Funsion
-Sequel Pro: MySQL database management for Mac OS X
-Air Mouse
-<a href="http://7zx.en.softonic.com/mac">7zX</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/23/use-compass-in-rails/">在Rails项目中使用compass来管理css</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-23T00:00:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>对如今的web项目开发（个人开发），用Rails来快速实现，但是前端这一块会花掉比较多的时间，其中CSS的管理维护是一个越来越麻烦的事情，由于它只是一门单纯的静态标记的语法（说法不准确），我的意思是，比如我设计一个三栏的网页，页面宽度是960px，那么每栏应该是960px的三分之一宽度320px，在css文件中，需要“硬编码”写入单栏的宽度： .box{width:320px;}
-   然后有一天，某某人说要改网站页面宽度，要调成1200px，这样需要找出css文件中相关的地方都要改成新的400px的宽度。对我来说，做这种事情一点也不爽。如果能自动计算出每栏是网页宽度的三分之一那多好。 <a href="http://sass-lang.com/">Sass</a> 就是做这事情的，而 <a href="https://github.com/chriseppstein/compass">Compass</a> 是基于Sass之上的一个集成，它让我们在Rails项目中可以更为容易地使用sass，它集成了如 <a href="http://www.blueprintcss.org/">blueprint</a> 这样的css框架。
-   以上都是废话，哈哈，看看在项目中如何使用起compass，通过它来高级地管理项目的css。
-   # 在Gemfile中加入gem &#8220;compass&#8221;, 然后bundle install # 在项目的根目录执行compass init rails .
-   # 以上两步搭建好了基础，接下来就是编写sass和引入css文件.
-   # in application.html.erb</p>
-
-<div>
-  <pre>
-    <code class='html'>&lt;%= stylesheet_link_tag &quot;compiled/screen.css&quot;, :media =&gt; &quot;screen, projection&quot; %&gt; &lt;%= stylesheet_link_tag &quot;compiled/print.css&quot;, :media =&gt; &quot;print&quot; %&gt; 
-   接上开头说的那个问题，我可以在/app/stylesheets/screen.scss中这样来写：
-    
-   $page_width: 960px; body { width: $page_width; } .box { width: $page_width / 3; }</code>
-  </pre>
-</div>
-
-
-<p>   具体的操作信息从我这里可以看出：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:weixiaoshuo qichunren$ compass init rails .
-</span><span class='line'>Compass recommends that you keep your stylesheets in app/stylesheets
-</span><span class='line'>instead of the Sass default location of public/stylesheets/sass.
-</span><span class='line'>Is this OK? (Y/n) y
-</span><span class='line'>
-</span><span class='line'>Compass recommends that you keep your compiled css in public/stylesheets/compiled/
-</span><span class='line'>instead the Sass default of public/stylesheets/.
-</span><span class='line'>However, if you're exclusively using Sass, then public/stylesheets/ is recommended.
-</span><span class='line'>Emit compiled stylesheets to public/stylesheets/compiled/? (Y/n) y
-</span><span class='line'>directory ./app/stylesheets/
-</span><span class='line'>directory ./public/stylesheets/compiled/
-</span><span class='line'> exists ./config
-</span><span class='line'> create ./config/compass.rb
-</span><span class='line'> exists ./config/initializers
-</span><span class='line'> create ./config/initializers/compass.rb
-</span><span class='line'>convert screen.sass
-</span><span class='line'> create ./app/stylesheets/screen.scss
-</span><span class='line'>convert print.sass
-</span><span class='line'> create ./app/stylesheets/print.scss
-</span><span class='line'>convert ie.sass
-</span><span class='line'> create ./app/stylesheets/ie.scss
-</span><span class='line'>
-</span><span class='line'>Congratulations! Your rails project has been configured to use Compass.
-</span><span class='line'>Just one more thing left to do: Register the compass gem.
-</span><span class='line'>
-</span><span class='line'>In Rails 2.2 & 2.3, add the following to your environment.rb:
-</span><span class='line'>
-</span><span class='line'>config.gem "compass", :version =&gt; "&gt;= 0.10.6"
-</span><span class='line'>
-</span><span class='line'>In Rails 3, add the following to your Gemfile:
-</span><span class='line'>
-</span><span class='line'>gem "compass", "&gt;= 0.10.6"
-</span><span class='line'>
-</span><span class='line'>Then, make sure you restart your server.
-</span><span class='line'>
-</span><span class='line'>Sass will automatically compile your stylesheets during the next
-</span><span class='line'>page request and keep them up to date when they change.
-</span><span class='line'>
-</span><span class='line'>Next add these lines to the head of your layouts:
-</span><span class='line'>%head
-</span><span class='line'>= stylesheet_link_tag 'compiled/screen.css', :media =&gt; 'screen, projection'
-</span><span class='line'>= stylesheet_link_tag 'compiled/print.css', :media =&gt; 'print'
-</span><span class='line'>/[if IE]
-</span><span class='line'>  = stylesheet_link_tag 'compiled/ie.css', :media =&gt; 'screen, projection'
-</span><span class='line'>
-</span><span class='line'>(You are using haml, aren't you?)
-</span><span class='line'>usermatoMacBook-Pro:weixiaoshuo qichunren$  </span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/21/talk-about-rspec-1/">说说rspec的测试(1)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>虽然之前就用过rspec来测试系统的各种业务流程和业务逻辑，最近又在开始一个新的系统的测试，写起来又感觉很开心，很安心。所以就想说说用rspec来写rails项目测试的总结和体会。</p>
-
-<p>rspec项目 在github上很活跃，rspec2较之 1.x的版本变得更模块化了，从<a href="https://github.com/rspec/">这里</a> 看以到rspec的各个子项目，rspec2依赖于<a href="https://github.com/rspec/rspec-core">rspec-core</a> <a href="https://github.com/rspec/rspec-expectations">rspec-expectations</a> <a href="https://github.com/rspec/rspec-mocks">rspec-mocks</a></p>
-
-<p>在Rails 3项目中，只需要在指定rspec-rails这个gem即可，它会自动依赖rspec2。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s2">&quot;rspec-rails&quot;</span><span class="p">,</span> <span class="s2">&quot;2.3.1&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在rspec2中，Rails3项的测试被分成控制器（controller）、模型（model）、请求（request）、路由（routing）、助手（helper）、视图（view）六大块的测试。从中可以看出rspec2力图让你的测试变得更为职责清楚和模块化，减少各种类型测试的影响，让测试变得更有效率和保证。我个人最喜欢的是模型（model）和请求的测试（request），这两个测试写得最为直接和有效，其它类型的测试如controller测试在复杂一点的业务中需要mock、stub等等，会将代码弄得有些复杂，当然这其中也有我对mock和stub没有用得理解的原因，不过我感觉测试controller还不如直接测试request来得直接。另外在factory-girl的帮助下能很快地写出有保证的测试。</p>
-
-<p>在这里我贴出我系统中登录测试这一块的例子，从中可以看出测试目的是很明显的，测试效率是很高的。</p>
-
-<p>这里的管理员(Admin)登录系统(AdminSession)是用到authlogic这个gem的。</p>
-
-<p>这个是factory-girl的数据文件：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/factories/admins.rb</span>
-</span><span class='line'><span class="c1"># encoding: utf-8</span>
-</span><span class='line'><span class="no">Factory</span><span class="o">.</span><span class="n">define</span> <span class="ss">:admin</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">sequence</span><span class="p">(</span><span class="ss">:login</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="s2">&quot;worker</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">name</span>             <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">login</span>      <span class="p">}</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">email</span>            <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">login</span><span class="si">}</span><span class="s2">@gmail.com&quot;</span> <span class="p">}</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">password</span>         <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">login</span> <span class="p">}</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">password_confirmation</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">login</span> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">active</span>           <span class="kp">false</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">dept</span>             <span class="mi">0</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Factory</span><span class="o">.</span><span class="n">define</span> <span class="ss">:actived_admin</span><span class="p">,</span> <span class="ss">:parent</span> <span class="o">=&gt;</span> <span class="ss">:admin</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">login</span> <span class="s2">&quot;actived_admin&quot;</span>
-</span><span class='line'>  <span class="n">a</span><span class="o">.</span><span class="n">active</span>  <span class="kp">true</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Factory</span><span class="o">.</span><span class="n">define</span> <span class="ss">:unactived_admin</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="no">Admin</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这里测试管理员登录系统的逻辑：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/requests/root_request_spec.rb</span>
-</span><span class='line'><span class="c1"># encoding: utf-8 </span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">describe</span> <span class="s2">&quot;AdminSessions&quot;</span> <span class="k">do</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">login_with</span><span class="p">(</span><span class="n">admin_login</span><span class="p">,</span> <span class="n">admin_password</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">post</span> <span class="s2">&quot;/admin_session&quot;</span><span class="p">,</span> <span class="ss">:admin_session</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:login</span> <span class="o">=&gt;</span> <span class="n">admin_login</span><span class="p">,</span>
-</span><span class='line'>                                               <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">admin_password</span> <span class="p">}</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">describe</span> <span class="s2">&quot;GET /&quot;</span> <span class="k">do</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">it</span> <span class="s2">&quot;should redirect to login page&quot;</span> <span class="k">do</span>
-</span><span class='line'>      <span class="n">get</span> <span class="s2">&quot;/&quot;</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">redirect_to</span><span class="p">(</span><span class="n">new_admin_session_path</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">get</span> <span class="n">new_admin_session_path</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">contain</span><span class="p">(</span><span class="s2">&quot;你还没有登录，请先登录&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">it</span> <span class="s2">&quot;should not redirect to loign page if logged&quot;</span> <span class="k">do</span>
-</span><span class='line'>      <span class="n">current_admin</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="s2">&quot;actived_admin&quot;</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">login_with</span><span class="p">(</span><span class="s2">&quot;actived_admin&quot;</span><span class="p">,</span> <span class="s2">&quot;actived_admin&quot;</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">redirect_to</span><span class="p">(</span><span class="n">root_path</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">get</span> <span class="s2">&quot;/&quot;</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">be_success</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">contain</span><span class="p">(</span><span class="s2">&quot;登录成功!&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">it</span> <span class="s2">&quot;should show error info with wrong loign id&quot;</span> <span class="k">do</span>
-</span><span class='line'>      <span class="n">current_admin</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="s2">&quot;actived_admin&quot;</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">login_with</span><span class="p">(</span><span class="s2">&quot;actived_admin&quot;</span><span class="p">,</span> <span class="s2">&quot;adminpassword_error&quot;</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">contain</span><span class="p">(</span><span class="s2">&quot;你输入的帐号或密码不正确!&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/12/setup-rspec-test-for-rails-project/">建立rspec测试的环境</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-12T00:00:00+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我个人感觉rspec的风格比rails自带项目的test好用多了。在这里记录一下rspec的搭建方法，说是搭建，其实没有那么烦琐，就是一些工具的组合起来，这样测试更方便，效率更高。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># in Gemfile</span>
-</span><span class='line'><span class="n">group</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s2">&quot;rspec-rails&quot;</span><span class="p">,</span> <span class="s2">&quot;~&gt; 2.5.0&quot;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;shoulda-matchers&#39;</span><span class="p">,</span> <span class="s2">&quot;1.0.0.beta1&quot;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;factory_girl_rails&#39;</span><span class="p">,</span> <span class="s2">&quot;1.0.1&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后bundle install,
-然后rails g rspec:install
-然后rm -rf test/ 呵呵。</p>
-
-<p>然后，rails g controller pages test来试试，现在生成的测试代码再也不是原来的unit test代码了，是用了新的rspec了。</p>
-
-<p>rspec2将rails项目中的测试分为几块：
-controllers
-models
-helpers
-lib
-views
-requests
-routing</p>
-
-<p>分得蛮细的，呵呵。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/5/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/">通过update-rc.d来管理Ubuntu系统的自动启动程序</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/">Use Rubyencoder encrypt ruby code</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create custom tags in Smarty 3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty template in CodeIgniter</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/qichunren">@qichunren</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'qichunren',
-            count: 3,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-
-  
-</aside>
-
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - qichunren -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-04T00:00:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/16/remove-hidden-space-soure-code/">去掉textmate源代码中的隐形空格</a></h1>
+    <div class="entry">
+        <p>有这个需要，主要是因为不想在git提交后的diff中无看到不有意思的diff显示。使用textmate的同学可以用<a href="https://github.com/glennr/uber-glory-tmbundle">这个工具</a>来解决这个小问题。</p>
+
+<h3>安装方法</h3>
+
+<figure class='code'><figcaption><span>install step  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/TextMate/Bundles/
+</span><span class='line'>git clone git://github.com/glennr/uber-glory-tmbundle.git Uber<span class="se">\ </span>Glory.tmbundle
+</span><span class='line'><span class="nb">cd </span>Uber<span class="se">\ </span>Glory.tmbundle
+</span><span class='line'>git submodule update --init
+</span><span class='line'>osascript -e <span class="s1">&#39;tell app &quot;TextMate&quot; to reload bundles&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/13/learn-redis-db/">学习和了解Redis</a></h1>
+    <div class="entry">
+        <p><a href="http://redis.io/">Redis</a>
+<a href="https://github.com/ezmobius/redis-rb">redis-rb</a> gem install redis <br/>
+<a href="https://github.com/nateware/redis-objects">redis-objects</a>是基于redis-rb的一个ruby对象与redis对象映射的gem</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/12/use-unicorn-in-rails/">使用Unicorn</a></h1>
+    <div class="entry">
+        <h3>Install</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install unicorn</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then add gem &#8216;unicorn&#8217; to Gemfile.
+bundle exec unicorn_rails to start rails app at 8080 port.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:qichunren.github.com caojinhua$ unicorn_rails --help
+</span><span class='line'>Usage: unicorn_rails [ruby options] [unicorn_rails options] [rackup config file]
+</span><span class='line'>Ruby options:
+</span><span class='line'>  -e, --eval LINE          evaluate a LINE of code
+</span><span class='line'>  -d, --debug              set debugging flags (set $DEBUG to true)
+</span><span class='line'>  -w, --warn               turn warnings on for your script
+</span><span class='line'>  -I, --include PATH       specify $LOAD_PATH (may be used more than once)
+</span><span class='line'>  -r, --require LIBRARY    require the library, before executing your script
+</span><span class='line'>unicorn_rails options:
+</span><span class='line'>  -o, --host HOST          listen on HOST (default: 0.0.0.0)
+</span><span class='line'>  -p, --port PORT          use PORT (default: 8080)
+</span><span class='line'>  -E, --env RAILS_ENV      use RAILS_ENV for defaults (default: development)
+</span><span class='line'>  -D, --daemonize          run daemonized in the background
+</span><span class='line'>  -l {HOST:PORT|PATH},     listen on HOST:PORT or PATH
+</span><span class='line'>      --listen             this may be specified multiple times
+</span><span class='line'>                           (default: 0.0.0.0:8080)
+</span><span class='line'>  -c, --config-file FILE   Unicorn-specific config file
+</span><span class='line'>
+</span><span class='line'>      --path PATH          Runs Rails app mounted at a specific path.
+</span><span class='line'>                           (default: /)
+</span><span class='line'>Common options:
+</span><span class='line'>  -h, --help               Show this message
+</span><span class='line'>  -v, --version            Show version</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is a smaple unicorn config file:</p>
+
+<figure class='code'><figcaption><span>config/unicorn.conf.rb  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">worker_processes</span> <span class="mi">2</span>
+</span><span class='line'><span class="n">working_directory</span> <span class="s2">&quot;/www/temp/ntmenu2/current&quot;</span>
+</span><span class='line'><span class="n">listen</span> <span class="mi">3000</span><span class="p">,</span> <span class="ss">:tcp_nopush</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'><span class="n">timeout</span> <span class="mi">30</span>
+</span><span class='line'><span class="n">pid</span> <span class="s2">&quot;/www/temp/ntmenu2/current/tmp/pids/unicorn.pid&quot;</span>
+</span><span class='line'><span class="n">stderr_path</span> <span class="s2">&quot;/www/temp/unicorn.stderr.log&quot;</span>
+</span><span class='line'><span class="n">stdout_path</span> <span class="s2">&quot;/www/temp/unicorn.stdout.log&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/12/use-juggernaut-for-realtime-app/">使用Juggernaut</a></h1>
+    <div class="entry">
+        <p><a href="https://github.com/maccman/juggernaut">Juggernaut</a>是基于<a href="http://nodejs.org/">Node.js</a>的一个实时(Realtime)Web的解决方案。使用起来很方便。</p>
+
+<h3>安装方法</h3>
+
+<ol>
+<li>安装Node.js: brew install node</li>
+<li>安装<a href="http://code.google.com/p/redis">Redis</a>: brew install redis</li>
+<li>安装<a href="http://npmjs.org/">NPM</a>: curl http://npmjs.org/install.sh | sh</li>
+<li>安装Juggernaut: 这个会把Juggernaut安装到当前目录，所以我应该先进行项目的/vendor/third目录，然后执行 npm install juggernaut</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:third qichunren$ npm install juggernaut
+</span><span class='line'>redis@0.5.11 ./node_modules/juggernaut/node_modules/redis
+</span><span class='line'>node-static-maccman@0.5.3 ./node_modules/juggernaut/node_modules/node-static-maccman
+</span><span class='line'>socket.io@0.6.17 ./node_modules/juggernaut/node_modules/socket.io
+</span><span class='line'>juggernaut@2.0.4 ./node_modules/juggernaut
+</span><span class='line'>usermatoMacBook-Pro:third qichunren$  </span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>安装Juggernaut gem:</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install juggernaut</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>使用方法</h3>
+
+<p>我们在自己的项目中只需要引入http://localhost:8080/application.js 这个js文件即可。
+然后在页面中可以这样接收服务器端的消息：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">jug</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juggernaut</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">jug</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got data: &quot;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>服务器端直接发消息：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s2">&quot;juggernaut&quot;</span>
+</span><span class='line'><span class="no">Juggernaut</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="s2">&quot;Some data&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>另外在启动了Juggernaut后，它默认在8080端口上有一个Helloword的应用，可以了解一下。</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+<nav id="pagenavi">
+    
+        <a href="/blog/page/3/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/5/" class="next">Next</a>
+    
+    <a href="/blog/archives" class="center">Blog Archives</a>
+</nav></div>
+	<footer class="inner">Copyright &copy; 2012
+
+    qichunren
 
 </footer>
-  
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script src="/javascripts/slash.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'qichunrensblog';
@@ -1006,24 +480,6 @@ routing</p>
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
 
 
 
