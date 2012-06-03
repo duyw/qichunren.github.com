@@ -64,20 +64,6 @@
 
 </header>
 	
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('qichunren', 4, false);
-	})(jQuery);
-</script>
-
 	<div id="content" class="inner"><article class="post">
     <h1 class="title">说说rspec的测试(1)</h1>
     <div class="entry"><p>虽然之前就用过rspec来测试系统的各种业务流程和业务逻辑，最近又在开始一个新的系统的测试，写起来又感觉很开心，很安心。所以就想说说用rspec来写rails项目测试的总结和体会。</p>
@@ -238,8 +224,14 @@
   
 
 
-<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time></div>
+<time datetime="2010-12-21T17:12:12+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time></div>
         <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/test/'>test</a>
+  
+</div>
 
 </div>
         
@@ -257,6 +249,12 @@
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer class="inner">Copyright &copy; 2012
 
@@ -271,7 +269,10 @@
       var disqus_shortname = 'qichunrensblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://qichunren.github.com/blog/2010/12/21/talk-about-rspec-1/';
+        var disqus_url = 'http://qichunren.github.com/blog/2010/12/21/talk-about-rspec-1/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

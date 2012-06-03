@@ -10,7 +10,7 @@
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2009/12/17/i-fell-unhappy/</loc>
-        <lastmod>2012-05-29T12:39:11+08:00</lastmod>
+        <lastmod>2012-06-03T23:05:53+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/02/01/buy-tickets/</loc>
@@ -18,7 +18,7 @@
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/04/06/create-static-page-class-in-model/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T23:04:40+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/05/05/create-a-blog-at-github/</loc>
@@ -30,11 +30,7 @@
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/08/06/create-a-blog-use-jekyll-at-github/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://qichunren.github.com/blog/2010/08/08/jekyll-usage/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T22:58:37+08:00</lastmod>
     </url>
     <url>
         <loc>
@@ -43,16 +39,20 @@
         <lastmod>2012-05-29T12:10:04+08:00</lastmod>
     </url>
     <url>
+        <loc>http://qichunren.github.com/blog/2010/08/09/jekyll-usage/</loc>
+        <lastmod>2012-06-03T22:58:40+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://qichunren.github.com/blog/2010/10/29/get-oracle-unlocked/</loc>
         <lastmod>2012-05-29T12:10:04+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2010/10/29/mark-rails-write-code/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2010/10/30/mark-rails-write-code/</loc>
+        <lastmod>2012-06-03T23:15:25+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2010/12/10/things-in-rails-test/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2010/12/11/things-in-rails-test/</loc>
+        <lastmod>2012-06-03T23:14:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/12/12/setup-rspec-test-for-rails-project/</loc>
@@ -60,11 +60,11 @@
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2010/12/21/talk-about-rspec-1/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T23:05:13+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2010/12/23/use-compass-in-rails/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2010/12/24/use-compass-in-rails/</loc>
+        <lastmod>2012-06-03T23:05:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/01/01/my-useful-tools/</loc>
@@ -87,38 +87,38 @@
         <lastmod>2012-06-03T22:27:21+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/03/25/use-capybara-to-integrate-test/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/03/26/use-capybara-to-integrate-test/</loc>
+        <lastmod>2012-06-03T23:06:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/04/18/write-buautiful-ruby-business-code/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/04/19/write-buautiful-ruby-business-code/</loc>
+        <lastmod>2012-06-03T23:06:49+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/04/19/rails-test-note/</loc>
-        <lastmod>2012-05-29T12:36:33+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://qichunren.github.com/blog/2011/05/03/listen-to-sara/</loc>
-        <lastmod>2012-05-29T12:36:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/04/20/rails-test-note/</loc>
+        <lastmod>2012-06-03T23:01:05+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://qichunren.github.com/blog/2011/05/03/use-rails-erd-to-generate-erd-diagrams/
+            http://qichunren.github.com/blog/2011/04/26/use-rails-erd-to-generate-erd-diagrams/
         </loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T23:15:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://qichunren.github.com/blog/2011/05/03/listen-to-sara/</loc>
+        <lastmod>2012-06-03T23:03:39+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/05/04/export_data_to_excel_in_rails/</loc>
         <lastmod>2012-05-29T12:10:04+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/05/04/use_feedzirra_to_fetch_feed/</loc>
+        <loc>http://qichunren.github.com/blog/2011/05/05/try_rails_31_beta/</loc>
         <lastmod>2012-05-29T12:10:04+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/05/05/try_rails_31_beta/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/05/05/use_feedzirra_to_fetch_feed/</loc>
+        <lastmod>2012-06-03T23:04:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/05/07/add-rspec2-task-to-rakefile/</loc>
@@ -134,19 +134,19 @@
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T23:02:50+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/05/12/use-unicorn-in-rails/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/05/13/use-unicorn-in-rails/</loc>
+        <lastmod>2012-06-03T23:02:17+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/05/13/learn-redis-db/</loc>
-        <lastmod>2012-05-29T12:41:14+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/05/14/learn-redis-db/</loc>
+        <lastmod>2012-06-03T23:01:45+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/05/16/remove-hidden-space-soure-code/</loc>
-        <lastmod>2012-05-29T12:41:25+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/05/17/remove-hidden-space-soure-code/</loc>
+        <lastmod>2012-06-03T23:16:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/06/03/fix-annotate-gem-with-rails3-1-1/</loc>
@@ -158,21 +158,21 @@
     </url>
     <url>
         <loc>
-            http://qichunren.github.com/blog/2011/08/17/proxy-in-server-side-for-ajax-crossing-domain/
+            http://qichunren.github.com/blog/2011/08/18/proxy-in-server-side-for-ajax-crossing-domain/
         </loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <lastmod>2012-06-03T23:00:24+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/08/26/deploy-rails-project-with-jruby/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/08/27/deploy-rails-project-with-jruby/</loc>
+        <lastmod>2012-06-03T23:13:50+08:00</lastmod>
     </url>
     <url>
-        <loc>http://qichunren.github.com/blog/2011/10/12/capture-webpage/</loc>
-        <lastmod>2012-05-29T12:10:04+08:00</lastmod>
+        <loc>http://qichunren.github.com/blog/2011/10/13/capture-webpage/</loc>
+        <lastmod>2012-06-03T22:59:15+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/10/18/learning-shell-tip-note/</loc>
-        <lastmod>2012-06-03T22:26:39+08:00</lastmod>
+        <lastmod>2012-06-03T22:58:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/2011/12/18/ios-learn-note/</loc>
@@ -232,16 +232,16 @@
     </url>
     <url>
         <loc>
-            http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background/
+            http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d/
         </loc>
-        <lastmod>2012-06-03T22:23:23+08:00</lastmod>
+        <lastmod>2012-06-03T23:19:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/blog/archives/</loc>
-        <lastmod>2012-06-03T22:55:06+08:00</lastmod>
+        <lastmod>2012-06-03T23:19:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://qichunren.github.com/</loc>
-        <lastmod>2012-06-03T22:55:06+08:00</lastmod>
+        <lastmod>2012-06-04T00:24:35+08:00</lastmod>
     </url>
 </urlset>

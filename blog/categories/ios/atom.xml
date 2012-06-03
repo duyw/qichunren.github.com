@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-03T22:55:17+08:00</updated>
+  <updated>2012-06-04T00:27:31+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Fixed a problem with creating texture background]]></title>
-    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background/"/>
+    <title type="html"><![CDATA[Fixed a problem with creating texture background in cocos2d]]></title>
+    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d/"/>
     <updated>2012-06-03T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background</id>
+    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d</id>
     <content type="html"><![CDATA[<p>我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下:</p>
 
 <p><code>

@@ -66,20 +66,6 @@ gem install &hellip;">
 
 </header>
 	
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('qichunren', 4, false);
-	})(jQuery);
-</script>
-
 	<div id="content" class="inner"><article class="post">
     <h1 class="title">Create a Blog at Github Using Jekyll</h1>
     <div class="entry"><p>First thing you should have to do is:
@@ -118,8 +104,14 @@ create a repos at github named <em>yourid.github.com</em></p>
   
 
 
-<time datetime="2010-08-06T00:00:00+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2010</time></div>
+<time datetime="2010-08-06T20:24:22+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2010</time></div>
         <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/tool/'>tool</a>
+  
+</div>
 
 </div>
         
@@ -137,6 +129,12 @@ create a repos at github named <em>yourid.github.com</em></p>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer class="inner">Copyright &copy; 2012
 
@@ -151,7 +149,10 @@ create a repos at github named <em>yourid.github.com</em></p>
       var disqus_shortname = 'qichunrensblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://qichunren.github.com/blog/2010/08/06/create-a-blog-use-jekyll-at-github/';
+        var disqus_url = 'http://qichunren.github.com/blog/2010/08/06/create-a-blog-use-jekyll-at-github/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

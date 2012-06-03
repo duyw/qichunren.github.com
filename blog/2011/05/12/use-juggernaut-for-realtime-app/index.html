@@ -66,20 +66,6 @@
 
 </header>
 	
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('qichunren', 4, false);
-	})(jQuery);
-</script>
-
 	<div id="content" class="inner"><article class="post">
     <h1 class="title">使用Juggernaut</h1>
     <div class="entry"><p><a href="https://github.com/maccman/juggernaut">Juggernaut</a>是基于<a href="http://nodejs.org/">Node.js</a>的一个实时(Realtime)Web的解决方案。使用起来很方便。</p>
@@ -161,8 +147,14 @@
   
 
 
-<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+<time datetime="2011-05-12T17:12:12+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
         <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/web/'>web</a>
+  
+</div>
 
 </div>
         
@@ -180,6 +172,12 @@
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer class="inner">Copyright &copy; 2012
 
@@ -194,7 +192,10 @@
       var disqus_shortname = 'qichunrensblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app/';
+        var disqus_url = 'http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

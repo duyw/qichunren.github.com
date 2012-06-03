@@ -4,7 +4,7 @@
   <title><![CDATA[蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-03T22:55:17+08:00</updated>
+  <updated>2012-06-04T00:27:31+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Fixed a problem with creating texture background]]></title>
-    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background/"/>
+    <title type="html"><![CDATA[Fixed a problem with creating texture background in cocos2d]]></title>
+    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d/"/>
     <updated>2012-06-03T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background</id>
+    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d</id>
     <content type="html"><![CDATA[<p>我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1234,9 +1234,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[网页截屏的方法]]></title>
-    <link href="http://qichunren.github.com/blog/2011/10/12/capture-webpage/"/>
-    <updated>2011-10-12T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/10/12/capture-webpage</id>
+    <link href="http://qichunren.github.com/blog/2011/10/13/capture-webpage/"/>
+    <updated>2011-10-13T06:09:09+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/10/13/capture-webpage</id>
     <content type="html"><![CDATA[<p>曾经很想有这样一个app, 它可以将微博上用户的微博用图片的形式自动保存起来，留此存照。前几个月的那段时间，微博上很
 网页截屏的基本原理就是通过取得webkit渲染（render）的数据来生成图片的，我经过一段时间研究，找到了两个方法来解决这个问题。</p>
 
@@ -1349,9 +1349,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[使用Jruby来部署Rails应用]]></title>
-    <link href="http://qichunren.github.com/blog/2011/08/26/deploy-rails-project-with-jruby/"/>
-    <updated>2011-08-26T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/08/26/deploy-rails-project-with-jruby</id>
+    <link href="http://qichunren.github.com/blog/2011/08/27/deploy-rails-project-with-jruby/"/>
+    <updated>2011-08-27T06:36:22+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/08/27/deploy-rails-project-with-jruby</id>
     <content type="html"><![CDATA[<p>为了保护最近做的产品的源代码，需要将项目中的源代码进行保护起来。我目前了解到的方案有以下两种：</p>
 
 <ol>
@@ -1694,9 +1694,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Set proxy in server side to get crossing domain ajax request]]></title>
-    <link href="http://qichunren.github.com/blog/2011/08/17/proxy-in-server-side-for-ajax-crossing-domain/"/>
-    <updated>2011-08-17T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/08/17/proxy-in-server-side-for-ajax-crossing-domain</id>
+    <link href="http://qichunren.github.com/blog/2011/08/18/proxy-in-server-side-for-ajax-crossing-domain/"/>
+    <updated>2011-08-18T07:12:12+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/08/18/proxy-in-server-side-for-ajax-crossing-domain</id>
     <content type="html"><![CDATA[
 
 <figure class='code'><figcaption><span>proxy_controller.rb  </span></figcaption>
@@ -1856,9 +1856,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[去掉textmate源代码中的隐形空格]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/16/remove-hidden-space-soure-code/"/>
-    <updated>2011-05-16T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/16/remove-hidden-space-soure-code</id>
+    <link href="http://qichunren.github.com/blog/2011/05/17/remove-hidden-space-soure-code/"/>
+    <updated>2011-05-17T01:20:33+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/05/17/remove-hidden-space-soure-code</id>
     <content type="html"><![CDATA[<p>有这个需要，主要是因为不想在git提交后的diff中无看到不有意思的diff显示。使用textmate的同学可以用<a href="https://github.com/glennr/uber-glory-tmbundle">这个工具</a>来解决这个小问题。</p>
 
 <h3>安装方法</h3>

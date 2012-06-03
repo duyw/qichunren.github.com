@@ -7,7 +7,7 @@
     <meta name="author" content="qichunren">
 
     
-    <meta name="description" content="在Rails3中使用ajax 今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。 我之前在Rails3项目中使用ajax是这样的： 如果是直接发送一个ajax请求，我就给标签加上:remote => true。如果我在此基础上还要做其它的操作， &hellip;">
+    <meta name="description" content="Dec 21st, 2010 说说rspec的测试(1) Dec 12th, 2010 建立rspec测试的环境 Dec 11th, 2010 Rails中的测试那些事 Oct 30th, 2010 写Rails程序容易出现的几个不好的地方 Oct 29th, 2010 Oracle解锁 Aug &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -64,77 +64,12 @@
 
 </header>
 	
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/qichunren">qichunren</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('qichunren', 4, false);
-	})(jQuery);
-</script>
-
-	<div id="content" class="inner">
+	<div id="content" class="inner"><div class="posts_list">
+    <ul>
 
 
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/12/22/use-ajax-in-rails3-note/">在Rails3中使用ajax</a></h1>
-    <div class="entry">
-        <p>今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。</p>
 
-<p>我之前在Rails3项目中使用ajax是这样的：</p>
-
-<p>如果是直接发送一个ajax请求，我就给标签加上:remote => true。如果我在此基础上还要做其它的操作，如ajax表单提交前要对表单字段验证，我之前以为那样UJS就不能搞定了，需要我自己写代码来处理。然后我就使用jquery中的相关ajax操作来处理。</p>
-
-<p>今天我才了解到UJS的AJAX操作已经为我们提供了6个自定义事件方法：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ajax:before – right before ajax call
-</span><span class='line'>ajax:loading – before ajax call, but after XmlHttpRequest object is created)
-</span><span class='line'>ajax:success – successful ajax call
-</span><span class='line'>ajax:failure – failed ajax call
-</span><span class='line'>ajax:complete – completion of ajax call (after ajax:success and ajax:failure)
-</span><span class='line'>ajax:after – after ajax call is sent (note: not after it returns)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>所以对于上面我说的那个事例，如果要对一个ajax表单在提交前作表单验证或者其它的一些检查，只需要写提交前的检查代码，然后通过事件绑定的方式，将余下的表单ajax提交让UJS来完成，这是多么地简单啊，我以前真是做了好多无用功。</p>
-
-<figure class='code'><figcaption><span>sample code  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#new_post_comment&quot;</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;ajax:before&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#post_comment_body&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;&quot;</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>参考资料</h3>
-
-<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-unobtrusive-javascript-and-ajax-with-rails-3/">Using Unobtrusive JavaScript and AJAX with Rails 3</a>
-<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms-data-type-with-jquery/">Rails 3 Remote Links and Forms Part 2: Data-type (with jQuery)</a></p>
-
-        
-        
-    </div>
-    <div class="meta">
+    <li>
         <div class="date">
 
 
@@ -147,34 +82,11 @@
   
 
 
-<time datetime="2011-12-22T16:36:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2011</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/rails/'>rails</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
+<time datetime="2010-12-21T17:12:12+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time></div>
+        <a href="/blog/2010/12/21/talk-about-rspec-1/">说说rspec的测试(1)</a></li>
 
 
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/12/20/mongodb-ui-client-mongohub/">mongodb的可视化客户端工具:MongoHub</a></h1>
-    <div class="entry">
-        <p>最近在使用mongodb,经常要调试，然后找到了MongoHub这款工具，感觉很好。</p>
-
-<p><a href="http://mongohub.todayclose.com/">MongoHub网站</a></p>
-
-<p><img src="http://mongohub.todayclose.com/media/img/icon.png" alt="MongoHub" /></p>
-
-        
-        
-    </div>
-    <div class="meta">
+    <li>
         <div class="date">
 
 
@@ -187,39 +99,11 @@
   
 
 
-<time datetime="2011-12-20T17:31:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2011</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/database/'>database</a>, <a class='category' href='/blog/categories/mongodb/'>mongodb</a>, <a class='category' href='/blog/categories/nosql/'>nosql</a>, <a class='category' href='/blog/categories/tool/'>tool</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
+<time datetime="2010-12-12T00:00:00+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/12/12/setup-rspec-test-for-rails-project/">建立rspec测试的环境</a></li>
 
 
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/12/18/ios-learn-note/">近期iOS学习点</a></h1>
-    <div class="entry">
-        <p>虽然我业余在学iOS，但是感觉进步缓慢。为了使我的iOS开发的学习效率高一点，我决定先列一个简要的提纲，明确当前一个阶段的学习计划。</p>
-
-<ol>
-<li><p>iOS体系，了解清楚UI组件的体系</p></li>
-<li><p>Objective-C中的基本数据结构使用</p></li>
-<li><p>iOS中的基本的网络编程，主要是iOS客户端方的,如json,http交互等。</p></li>
-</ol>
-
-
-<p>先就这么多，每天要进步一点.</p>
-
-        
-        
-    </div>
-    <div class="meta">
+    <li>
         <div class="date">
 
 
@@ -232,132 +116,11 @@
   
 
 
-<time datetime="2011-12-18T20:44:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2011</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/ios/'>ios</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
+<time datetime="2010-12-11T07:23:33+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/12/11/things-in-rails-test/">Rails中的测试那些事</a></li>
 
 
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/10/18/learning-shell-tip-note/">Shell学习小记录</a></h1>
-    <div class="entry">
-        <p>最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。以前认为用Ruby来做这个事情是一个不错的选择，现在知道了，那是因为相比起Shell来，更熟悉Ruby，程序员总是喜欢自己熟悉的领域，而排斥自己不熟悉的领域。其实多了解一下其它方面的，更利用自己工作的开展，提高工作效率。</p>
-
-<p>我随便总结一下几个知识点</p>
-
-<h4>字符串</h4>
-
-<p>声明一个字符串变量后，使用的时候，在变量名前面加一个$符号才能将其值取出来</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_FILE=data.tar.gz
-</span><span class='line'>echo $DATA_FILE</span></code></pre></td></tr></table></div></figure>
-
-
-<p>字符串拼接</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>DATA_DIR=/Users/caojinhua/code/
-</span><span class='line'>DATA_FILE=data.tar.gz
-</span><span class='line'>DATA_PATH=$DATA_DIR""$DATA_FILE</span></code></pre></td></tr></table></div></figure>
-
-
-<p>将命令执行的结果保存在变量中</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sha1=`ls -al`</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>if语句结构</h4>
-
-<p>if语句条件测试命令：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[ -d DIR ]   如果DIR存在并且是一个目录则为真
-</span><span class='line'>[ -f FILE ]   如果FILE存在且是一个普通文件则为真
-</span><span class='line'>[ -z STRING ] 如果STRING的长度为零则为真
-</span><span class='line'>[ -n STRING ] 如果STRING的长度非零则为真
-</span><span class='line'>[ STRING1 = STRING2 ] 如果两个字符串相同则为真
-</span><span class='line'>[ STRING1 != STRING2 ]    如果字符串不相同则为真
-</span><span class='line'>[ ARG1 OP ARG2 ]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ARG1和ARG2应该是整数或者取值为整数的变量，OP是-eq（等于）-ne（不等于）-lt（小于）-le（小于等于）-gt（大于）-ge（大于等于）之中的一个</p>
-
-<p>之前弄错好几次，中括号前后的空格不能少。</p>
-
-<p>if语句的结构</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>if [ xxx ]
-</span><span class='line'>then
-</span><span class='line'>fi
-</span><span class='line'>
-</span><span class='line'>if [ xxx ]; then
-</span><span class='line'>
-</span><span class='line'>else
-</span><span class='line'>
-</span><span class='line'>fi
-</span><span class='line'>
-</span><span class='line'>if [ xxx ]; then
-</span><span class='line'>
-</span><span class='line'>elif [ ! xxx ]; then
-</span><span class='line'>
-</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>时间格式化</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>date  +%Y%m%d
-</span><span class='line'>
-</span><span class='line'>a=`date +%Y%m%d`
-</span><span class='line'>echo $a</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>参考资料</h4>
-
-<p><a href="http://learn.akae.cn/media/ch31s05.html">Shell脚本语法</a></p>
-
-        
-        
-    </div>
-    <div class="meta">
+    <li>
         <div class="date">
 
 
@@ -370,136 +133,11 @@
   
 
 
-<time datetime="2011-10-18T20:44:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2011</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
+<time datetime="2010-10-30T05:20:33+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/10/30/mark-rails-write-code/">写Rails程序容易出现的几个不好的地方</a></li>
 
 
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/10/12/capture-webpage/">网页截屏的方法</a></h1>
-    <div class="entry">
-        <p>曾经很想有这样一个app, 它可以将微博上用户的微博用图片的形式自动保存起来，留此存照。前几个月的那段时间，微博上很
-网页截屏的基本原理就是通过取得webkit渲染（render）的数据来生成图片的，我经过一段时间研究，找到了两个方法来解决这个问题。</p>
-
-<p>一个工具叫<a href="http://www.phantomjs.org/">phantomjs</a>，另一个工具叫<a href="http://cutycapt.sourceforge.net/">cutycapt</a></p>
-
-<p>两个工具都不错，个人比较喜欢使用cutycapt这个工具，它是直接提供一个命令行来生成网页截图的，而前者是通过javascript来调用底层webkit接品(page.render方法)来实现的，两者的侧重点不一样。
-并且cutycapt是将整个网截下来，phantomjs是将浏览器当前视区的一屏截下来。</p>
-
-<p>Cutycapt的用法如下</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qichunren@qichunren-desktop:~/github/cutycapt/CutyCapt$ ./CutyCapt 
-</span><span class='line'> -----------------------------------------------------------------------------
-</span><span class='line'> Usage: CutyCapt --url=http://www.example.org/ --out=localfile.png            
-</span><span class='line'> -----------------------------------------------------------------------------
-</span><span class='line'>  --help                         Print this help page and exit                
-</span><span class='line'>  --url=&lt;url&gt;                    The URL to capture (http:...|file:...|...)   
-</span><span class='line'>  --out=&lt;path&gt;                   The target file (.png|pdf|ps|svg|jpeg|...)   
-</span><span class='line'>  --out-format=&lt;f&gt;               Like extension in --out, overrides heuristic 
-</span><span class='line'>  --min-width=&lt;int&gt;              Minimal width for the image (default: 800)   
-</span><span class='line'>  --min-height=&lt;int&gt;             Minimal height for the image (default: 600)  
-</span><span class='line'>  --max-wait=&lt;ms&gt;                Don't wait more than (default: 90000, inf: 0)
-</span><span class='line'>  --delay=&lt;ms&gt;                   After successful load, wait (default: 0)     
-</span><span class='line'>  --user-style-path=&lt;path&gt;       Location of user style sheet file, if any    
-</span><span class='line'>  --user-style-string=&lt;css&gt;      User style rules specified as text           
-</span><span class='line'>  --header=&lt;name&gt;:&lt;value&gt;        request header; repeatable; some can't be set
-</span><span class='line'>  --method=&lt;get|post|put&gt;        Specifies the request method (default: get)  
-</span><span class='line'>  --body-string=&lt;string&gt;         Unencoded request body (default: none)       
-</span><span class='line'>  --body-base64=&lt;base64&gt;         Base64-encoded request body (default: none)  
-</span><span class='line'>  --app-name=&lt;name&gt;              appName used in User-Agent; default is none  
-</span><span class='line'>  --app-version=&lt;version&gt;        appVers used in User-Agent; default is none  
-</span><span class='line'>  --user-agent=&lt;string&gt;          Override the User-Agent header Qt would set  
-</span><span class='line'>  --javascript=&lt;on|off&gt;          JavaScript execution (default: on)           
-</span><span class='line'>  --java=&lt;on|off&gt;                Java execution (default: unknown)            
-</span><span class='line'>  --plugins=&lt;on|off&gt;             Plugin execution (default: unknown)          
-</span><span class='line'>  --private-browsing=&lt;on|off&gt;    Private browsing (default: unknown)          
-</span><span class='line'>  --auto-load-images=&lt;on|off&gt;    Automatic image loading (default: on)        
-</span><span class='line'>  --js-can-open-windows=&lt;on|off&gt; Script can open windows? (default: unknown)  
-</span><span class='line'>  --js-can-access-clipboard=&lt;on|off&gt; Script clipboard privs (default: unknown)
-</span><span class='line'>  --print-backgrounds=&lt;on|off&gt;   Backgrounds in PDF/PS output (default: off)  
-</span><span class='line'>  --zoom-factor=&lt;float&gt;          Page zoom factor (default: no zooming)       
-</span><span class='line'>  --zoom-text-only=&lt;on|off&gt;      Whether to zoom only the text (default: off) 
-</span><span class='line'>  --http-proxy=&lt;url&gt;             Address for HTTP proxy server (default: none)
-</span><span class='line'> -----------------------------------------------------------------------------
-</span><span class='line'>  &lt;f&gt; is svg,ps,pdf,itext,html,rtree,png,jpeg,mng,tiff,gif,bmp,ppm,xbm,xpm    
-</span><span class='line'> -----------------------------------------------------------------------------
-</span><span class='line'> http://cutycapt.sf.net - (c) 2003-2010 Bjoern Hoehrmann - bjoern@hoehrmann.de
-</span><span class='line'>qichunren@qichunren-desktop:~/github/cutycapt/CutyCapt$</span></code></pre></td></tr></table></div></figure>
-
-
-<p>phantomjs截屏的用法如下：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qichunren@qichunren-desktop:~/github$ cd phantomjs/
-</span><span class='line'>qichunren@qichunren-desktop:~/github/phantomjs$ ls
-</span><span class='line'>bin         ChangeLog  ff.png     iteye.png    Makefile       python     src
-</span><span class='line'>capture.js  examples   hello.png  LICENSE.BSD  phantomjs.pro  README.md           
-</span><span class='line'>qichunren@qichunren-desktop:~/github/phantomjs$ ./bin/phantomjs examples/rasterize.js 
-</span><span class='line'>Usage: rasterize.js URL filename [paperwidth*paperheight|paperformat]
-</span><span class='line'>  paper (pdf output) examples: "5in*7.5in", "10cm*20cm", "A4", "Letter"
-</span><span class='line'>qichunren@qichunren-desktop:~/github/phantomjs$ ./bin/phantomjs examples/rasterize.js http://www.iteye.com iteye.png
-</span><span class='line'>qichunren@qichunren-desktop:~/github/phantomjs$</span></code></pre></td></tr></table></div></figure>
-
-
-        
-        
-    </div>
-    <div class="meta">
+    <li>
         <div class="date">
 
 
@@ -512,23 +150,197 @@
   
 
 
-<time datetime="2011-10-12T00:00:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2011</time></div>
-        <div class="tags">
+<time datetime="2010-10-29T00:00:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/10/29/get-oracle-unlocked/">Oracle解锁</a></li>
 
-</div>
-        
-    </div>
-</article>
 
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-09T06:20:32+08:00" pubdate data-updated="true">Aug 9<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/08/09/jekyll-usage/">Jekyll Usage</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-08T00:00:00+08:00" pubdate data-updated="true">Aug 8<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/08/08/show-more-info-on-will-paginate-bar/">Show More Detail Info on Will_paginate Bar</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-06T20:24:22+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/08/06/create-a-blog-use-jekyll-at-github/">Create a Blog at Github Using Jekyll</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/07/28/my-first-post/">My First Post Here</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/05/05/create-a-blog-at-github/">Create a Blog at Github</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-06T17:12:12+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2010</time></div>
+        <a href="/blog/2010/04/06/create-static-page-class-in-model/">Static Site Using Rails</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-01T11:54:00+08:00" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
+        <a href="/blog/2010/02/01/buy-tickets/">买票记</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-17T16:30:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2009</time></div>
+        <a href="/blog/2009/12/17/i-fell-unhappy/">最近有些郁闷</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-07T12:01:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2009</time></div>
+        <a href="/blog/2009/05/07/connect-to-oracle-in-rails/">Rails中连接Oracle数据库</a></li>
+
+
+    <li>
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-09T12:01:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2008</time></div>
+        <a href="/blog/2008/10/09/use-benchmark/">Benchmark用法</a></li>
+
+</ul>
 <nav id="pagenavi">
     
         <a href="/blog/page/2/" class="prev">Prev</a>
     
     
-        <a href="/blog/page/4/" class="next">Next</a>
-    
     <a href="/blog/archives" class="center">Blog Archives</a>
-</nav></div>
+</nav>
+</div>
+
+<ul id="categories">
+    <li><a href="/blog/categories/ruby/">Ruby</a></li>
+    <li><a href="/blog/categories/php/">PHP</a></li>
+    <li><a href="/blog/categories/test/">Test</a></li>
+    <li><a href="/blog/categories/ios/">iOS</a></li>
+    <li><a href="/blog/categories/tool/">Tool</a></li>
+    <li><a href="/blog/categories/life/">Life</a></li>
+</ul></div>
 	<footer class="inner">Copyright &copy; 2012
 
     qichunren

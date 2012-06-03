@@ -4,7 +4,7 @@
   <title><![CDATA[Category: database | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-03T22:55:17+08:00</updated>
+  <updated>2012-06-04T00:27:31+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[学习和了解Redis]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/13/learn-redis-db/"/>
-    <updated>2011-05-13T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/13/learn-redis-db</id>
+    <link href="http://qichunren.github.com/blog/2011/05/14/learn-redis-db/"/>
+    <updated>2011-05-14T07:12:12+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/05/14/learn-redis-db</id>
     <content type="html"><![CDATA[<p><a href="http://redis.io/">Redis</a>
 <a href="https://github.com/ezmobius/redis-rb">redis-rb</a> gem install redis <br/>
 <a href="https://github.com/nateware/redis-objects">redis-objects</a>是基于redis-rb的一个ruby对象与redis对象映射的gem</p>
