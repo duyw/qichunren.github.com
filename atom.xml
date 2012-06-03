@@ -4,7 +4,7 @@
   <title><![CDATA[蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-03T22:52:48+08:00</updated>
+  <updated>2012-06-03T22:55:17+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -51,68 +51,6 @@
 <p>我想可能是我的图片尺寸不符合规格，检查了一下，果然发现纹理图片的不是2的次方的正方形。</p>
 
 <p><em>总结，使用小图片重复平铺来创建背景纹理图片的小图片尺寸必须设置成2的n次方的正方形大小。</em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Fix problem annotate is broken with rails 3.1.1]]></title>
-    <link href="http://qichunren.github.com/blog/2012/06/03/fix-annotate-gem-with-rails3-1-1/"/>
-    <updated>2012-06-03T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/06/03/fix-annotate-gem-with-rails3-1-1</id>
-    <content type="html"><![CDATA[<p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:tts_cacher caojinhua$ annotate
-</span><span class='line'>/Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railties/databases.rake:3:in `&lt;top (required)&gt;': undefined method `namespace' for main:Object (NoMethodError)
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `block in &lt;class:Railtie&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `call'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `block in load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `each'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `block in load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `each'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `all'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application.rb:103:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
-</span><span class='line'>  from Rakefile:7:in `&lt;top (required)&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/bin/annotate:66:in `&lt;top (required)&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `&lt;main&gt;'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后在stackoverflow上找到了解决方法，就是使用最新的annotate.</p>
-
-<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;git://github.com/ctran/annotate_models.git&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Resources:</h3>
-
-<p><a href="http://stackoverflow.com/questions/7295505/annotate-gem-and-rails-3-1">annotate-gem-and-rails-3-1</a></p>
 ]]></content>
   </entry>
   
@@ -1851,6 +1789,68 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 </span><span class='line'>==&gt; Summary
 </span><span class='line'>/usr/local/Cellar/mongodb/1.8.1-x86_64: 16 files, 93M, built in 2 seconds</span></code></pre></td></tr></table></div></figure>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fix problem annotate is broken with rails 3.1.1]]></title>
+    <link href="http://qichunren.github.com/blog/2011/06/03/fix-annotate-gem-with-rails3-1-1/"/>
+    <updated>2011-06-03T22:01:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/06/03/fix-annotate-gem-with-rails3-1-1</id>
+    <content type="html"><![CDATA[<p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:tts_cacher caojinhua$ annotate
+</span><span class='line'>/Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railties/databases.rake:3:in `&lt;top (required)&gt;': undefined method `namespace' for main:Object (NoMethodError)
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `block in &lt;class:Railtie&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `call'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `all'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application.rb:103:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
+</span><span class='line'>  from Rakefile:7:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/bin/annotate:66:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `&lt;main&gt;'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后在stackoverflow上找到了解决方法，就是使用最新的annotate.</p>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;git://github.com/ctran/annotate_models.git&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Resources:</h3>
+
+<p><a href="http://stackoverflow.com/questions/7295505/annotate-gem-and-rails-3-1">annotate-gem-and-rails-3-1</a></p>
 ]]></content>
   </entry>
   
