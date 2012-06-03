@@ -3,17 +3,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>蕲春人 - 软件开发</title>
+    <title>蕲春人的博客</title>
     <meta name="author" content="qichunren">
 
     
-    <meta name="description" content="怎么样从git提交历史里永久删除一个文件? 需要整理 参考资料 Remove sensitive data
-How do I remove sensitive files from git&#8217;s history
-git: forever remove files or folders &hellip;">
+    <meta name="description" content="Fixed a Problem With Creating Texture Background 我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下: 1
+Terminating app due to uncaught exception ' &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-    <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
+    <link href="/atom.xml" rel="alternate" title="蕲春人的博客" type="application/atom+xml">
     <link rel="canonical" href="">
     <link href="/favicon.png" rel="shortcut icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -37,7 +36,7 @@ git: forever remove files or folders &hellip;">
 </head>
 
 <body>
-	<header class="inner"><h1 class="left"><a href="/">蕲春人 - 软件开发</a></h1>
+	<header class="inner"><h1 class="left"><a href="/">蕲春人的博客</a></h1>
 <nav class="menu left"><ul class="main">
 	<li><a href="/">Blog</a></li>
 	<li><a href="/blog/archives">Archives</a></li>
@@ -84,6 +83,163 @@ git: forever remove files or folders &hellip;">
 
 
     <article class="post">
+    <h1 class="title"><a href="/blog/2012/06/03/fixed-a-problem-with-creating-texture-background/">Fixed a Problem With Creating Texture Background</a></h1>
+    <div class="entry">
+        <p>我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'GL_CLAMP_TO_EDGE should be used in NPOT dimensions'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我的代码是这样的:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CCSprite *wall = [CCSprite spriteWithFile:@"pattern1.png" rect:CGRectMake(0, 0, 320, 480)];
+</span><span class='line'>wall.anchorPoint = ccp(0,0);
+</span><span class='line'>[self addChild:wall z:-1 tag:111];
+</span><span class='line'>ccTexParams params = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT};
+</span><span class='line'>//ccTexParams params = {GL_LINEAR,GL_LINEAR,GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE};
+</span><span class='line'>[wall.texture setTexParameters:&params];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我运行cocos2d项目的测试例子, 却发现它的例子是工作正常的, 百思不得其解啊. 然后我看到它代码的注释中写着:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// The .png image MUST be power of 2 in order to create a continue effect.
+</span><span class='line'>// eg: 32x64, 512x128, 256x1024, 64x64, etc..</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我想可能是我的图片尺寸不符合规格，检查了一下，果然发现纹理图片的不是2的次方的正方形。</p>
+
+<p><em>总结，使用小图片重复平铺来创建背景纹理图片的小图片尺寸必须设置成2的n次方的正方形大小。</em></p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-03T22:01:00+08:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/cocos2d/'>cocos2d</a>, <a class='category' href='/blog/categories/ios/'>ios</a>
+  
+</div>
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/06/03/fix-annotate-gem-with-rails3-1-1/">Fix Problem Annotate Is Broken With Rails 3.1.1</a></h1>
+    <div class="entry">
+        <p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:tts_cacher caojinhua$ annotate
+</span><span class='line'>/Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railties/databases.rake:3:in `&lt;top (required)&gt;': undefined method `namespace' for main:Object (NoMethodError)
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `block in &lt;class:Railtie&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `call'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `all'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application.rb:103:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
+</span><span class='line'>  from Rakefile:7:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/bin/annotate:66:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `&lt;main&gt;'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后在stackoverflow上找到了解决方法，就是使用最新的annotate.</p>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;git://github.com/ctran/annotate_models.git&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Resources:</h3>
+
+<p><a href="http://stackoverflow.com/questions/7295505/annotate-gem-and-rails-3-1">annotate-gem-and-rails-3-1</a></p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-03T22:01:00+08:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2012</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</div>
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
     <h1 class="title"><a href="/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/">怎么样从git提交历史里永久删除一个文件?</a></h1>
     <div class="entry">
         <p>需要整理</p>
@@ -118,7 +274,7 @@ git: forever remove files or folders &hellip;">
 
 <div class="cat">
   
-    <a class='category' href='/blog/categories/git/'>GIT</a>
+    <a class='category' href='/blog/categories/git/'>git</a>
   
 </div>
 
@@ -491,7 +647,7 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 
 <div class="cat">
   
-    <a class='category' href='/blog/categories/linux/'>Linux</a>
+    <a class='category' href='/blog/categories/linux/'>linux</a>
   
 </div>
 
@@ -705,333 +861,7 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 
 <div class="cat">
   
-    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2012/02/26/create-custom-tags-in-smarty/">Create Custom Tags in Smarty 3</a></h1>
-    <div class="entry">
-        <p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;h2&gt;最近新闻&lt;/h2&gt;
-</span><span class='line'>&lt;ul&gt;
-</span><span class='line'>    {dede:arclist typeid='1' row='10'}
-</span><span class='line'>    &lt;li&gt;[field:textlink/]&lt;/li&gt;
-</span><span class='line'>    {/dede:arclist}
-</span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>就可以显示最近type id为1的10条新闻。在Smarty中创建属于自己的标签是很容易的，我之前在网络上搜索的关于创建smarty标签的内容大多数都是基于Smarty2的，我基于Smarty3中的plugins目录的代码了解到在Smarty3中创建自定义标签更为简单直观。</p>
-
-<p>在smarty程序包的plugins目录中，可以看到有block \ function \ modifier 等几种前缀的php文件。像block前缀的php文件可以创建闭合的标签，就如上文提到的那个dede cms新闻标签的例子。现在我正是要创建这样类型的标签。</p>
-
-<p>我结合CodeIgniter来说明，我现在创建一个用户列表的标签，可以显示最近注册的用户。
-在smarty的plugins目录中创建的文件会自动被smarty加载而识别的，文件名和其中的function 名称需要特定的约定好的格式。
-我现在想创建一个users标签,还有一个limit参数，用来显示取多少条数据</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>用户列表：
-</span><span class='line'>&lt;ul&gt;
-</span><span class='line'>    &lt;{users limit='3'}&gt;
-</span><span class='line'>        &lt;li&gt;&lt;{$user-&gt;login}&gt;&lt;/li&gt;
-</span><span class='line'>    &lt;{/users}&gt;
-</span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>那么文件名就应该指定为block.users.php，然后function应该命名为smarty_block_users：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'><span class="k">function</span> <span class="nf">smarty_block_users</span><span class="p">(</span><span class="nv">$params</span><span class="p">,</span> <span class="nv">$content</span><span class="p">,</span> <span class="nv">$smarty</span><span class="p">,</span> <span class="o">&amp;</span><span class="nv">$repeat</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$content</span><span class="p">)){</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">]))</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nv">$limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nv">$limit</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">];</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>        <span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
-</span><span class='line'>        <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;select * from users order by created_at desc limit </span><span class="si">$limit</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="k">NULL</span> <span class="o">&amp;&amp;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span>
-</span><span class='line'>        <span class="nv">$user</span> <span class="o">=</span> <span class="nb">array_shift</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">]);</span>
-</span><span class='line'>        <span class="nv">$smarty</span><span class="o">-&gt;</span><span class="na">assign</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nv">$user</span><span class="p">);</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
-</span><span class='line'>            <span class="nb">unset</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">]);</span>
-</span><span class='line'>            <span class="nv">$repeat</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>        <span class="nv">$repeat</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nv">$repeat</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="nv">$content</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个function中有四个参数，$params参数存储的是标签中的属性信息，如上面的limit。$content是标签中间的内容，$smarty是smarty的实例对象，$repeat用于指定block是否重复执行。
-解释完了function的参数，我想其中的执行原理应该很容易看明白了吧。</p>
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-26T14:21:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/php/'>PHP</a>
-  
-</div>
-
-</div>
-        
-    </div>
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2012/02/11/use-smarty-template-in-codeigniter/">Use Smarty Template in CodeIgniter</a></h1>
-    <div class="entry">
-        <p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
-
-<p><a href="http://www.smarty.net/">Smarty</a>是目前业界最著名的PHP模板引擎之一。它分离了逻辑代码和外在的内容，提供了一种易于管理和使用的方法，用来将原本与HTML代码混杂在一起的PHP代码逻辑分离。</p>
-
-<p>一般来说使用原生PHP作为视图会比使用模板引擎高效，一些简单的项目或者个人开发者可以直接使用PHP，如果是大一点的项目，再加上要和美工配合，使用模板引擎会是分工明确，合作高效一些。</p>
-
-<p>在CodeIgniter使用Smarty模板引擎一点也不复杂，这是因为CodeIgniter提供了<a href="http://codeigniter.org.cn/user_guide/general/creating_libraries.html">创建类库</a>的方便方法。</p>
-
-<p>我这里使用的CodeIgniter和Smarty都是最新版本,2.1.0和3.1.7</p>
-
-<p>1: 将Smarty包下载后，解压后，放入CodeIgniter项目中的application/libraries目录.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:company caojinhua$ ls application/libraries/
-</span><span class='line'>Smarty.php    index.html  smarty/
-</span><span class='line'>caojinhua:company caojinhua$ ls application/libraries/smarty/
-</span><span class='line'>Smarty.class.php  SmartyBC.class.php  debug.tpl       plugins/        sysplugins/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>2: 在application/libraries目录中创建Smarty.php文件。</p>
-
-<figure class='code'><figcaption><span>application/libraries/Smarty.php  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">require_once</span><span class="p">(</span><span class="s1">&#39;smarty/Smarty.class.php&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">CI_Smarty</span> <span class="k">extends</span> <span class="nx">Smarty</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">function</span> <span class="nf">__construct</span><span class="p">(){</span>
-</span><span class='line'>          <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">compile_dir</span> <span class="o">=</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s2">&quot;application/views/templates_c&quot;</span><span class="p">;</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_dir</span> <span class="o">=</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s2">&quot;application/views/templates&quot;</span><span class="p">;</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cache_dir</span> <span class="o">=</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s2">&quot;application/views/cache&quot;</span><span class="p">;</span><span class="c1">//缓存目录</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">caching</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>                <span class="c1">//$this-&gt;cache_lifetime = 120; //缓存更新时间</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">debugging</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">compile_check</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// 检查当前的模板是否自上次编译后被更改；如果被更改了，它将重新编译该模板。</span>
-</span><span class='line'>                <span class="c1">//$this-&gt;force_compile = true; // 强制重新编译模板</span>
-</span><span class='line'>                <span class="c1">//$this-&gt;allow_php_templates= true; // 开启PHP模板</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">left_delimiter</span> <span class="o">=</span> <span class="s2">&quot;{&quot;</span><span class="p">;</span> <span class="c1">//左定界符</span>
-</span><span class='line'>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">right_delimiter</span> <span class="o">=</span> <span class="s2">&quot;}&quot;</span><span class="p">;</span> <span class="c1">//右定界符</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>根据代码中的smarty目录配置，需要在application/views中建立templates_c\templates\cache三个目录.
-这就算创建好了。</p>
-
-<p>3: 使用方法。
-控制器中的代码:</p>
-
-<figure class='code'><figcaption><span>application/controllers/debug.php  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Debug</span> <span class="k">extends</span> <span class="nx">MY_Controller</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-</span><span class='line'>    <span class="c1">// Write your own initialize code</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">function</span> <span class="nf">index</span><span class="p">(){</span>
-</span><span class='line'>      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;smarty&#39;</span><span class="p">);</span>
-</span><span class='line'>      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">smarty</span><span class="o">-&gt;</span><span class="na">assign</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="s2">&quot;smarty template&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">smarty</span><span class="o">-&gt;</span><span class="na">assign</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">,</span><span class="s2">&quot;欢迎使用smarty模板引擎&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="nv">$arr</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="s1">&#39;number 1&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="s1">&#39;number 2&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s1">&#39;number 3&#39;</span><span class="p">);</span>
-</span><span class='line'>      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">smarty</span><span class="o">-&gt;</span><span class="na">assign</span><span class="p">(</span><span class="s2">&quot;myarray&quot;</span><span class="p">,</span> <span class="nv">$arr</span><span class="p">);</span>
-</span><span class='line'>      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">smarty</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>模板代码:</p>
-
-<figure class='code'><figcaption><span>application/views/templates/index.html  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
-</span><span class='line'><span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'><span class="nt">&lt;title&gt;</span>smarty模板使用示例<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'><span class="nt">&lt;h1&gt;</span>{$title}<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>{$body}<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;ul&gt;</span>
-</span><span class='line'>        {foreach from=$myarray item=v}
-</span><span class='line'>        <span class="nt">&lt;li&gt;</span>{$v}<span class="nt">&lt;/li&gt;</span>
-</span><span class='line'>       {/foreach}
-</span><span class='line'><span class="nt">&lt;/ul&gt;</span>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-11T16:57:00+08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2012</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/php/'>PHP</a>
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </div>
 

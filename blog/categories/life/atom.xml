@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: life | 蕲春人 - 软件开发]]></title>
+  <title><![CDATA[Category: Life | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-05-29T12:21:26+08:00</updated>
+  <updated>2012-06-03T22:52:48+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -143,6 +143,68 @@ Don't ever leave me, don't ever go.</p>
 一身戎装的真命女神，
 塞拉，塞拉，
 别离开我，永远别走。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[买票记]]></title>
+    <link href="http://qichunren.github.com/blog/2010/02/01/buy-tickets/"/>
+    <updated>2010-02-01T11:54:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2010/02/01/buy-tickets</id>
+    <content type="html"><![CDATA[<p>昨天是周日，下午三点起开售2月10号的票。</p>
+
+<p>早上就搬一个小板凳去排队。</p>
+
+<p>火车站几百个临时售票窗口前条条长队，哦，还有很多武警。</p>
+
+<p>车票信息屏上显示着到全国各地的车票信息。</p>
+
+<p>下午三点正式售票了。我看着车票信息屏，感觉就像是股市开早盘了，不过比股市更疯狂，在不一个小时的时间里，几百张上千张的到各地的2月10号的车票大部分一售而空，剩余票数从几百一下子变成了0。票务系统都有些卡了。</p>
+
+<p>买到票的人兴奋不已，我看到他们一个劲的仔细的看着他的票。</p>
+
+<p>同时我看到了黄牛党混在其中，兴奋不已，搞到一次票后，又来后面排队。</p>
+
+<p>我没有杯具，买到了一张到三亚的票。不过我一个同学就杯具了，问的时候还有票，付钱的时候就没有票了，只能期待今天能买到11号的票了。</p>
+
+<p>一个小时后售票处就冷清下来了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[最近有些郁闷]]></title>
+    <link href="http://qichunren.github.com/blog/2009/12/17/i-fell-unhappy/"/>
+    <updated>2009-12-17T16:30:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2009/12/17/i-fell-unhappy</id>
+    <content type="html"><![CDATA[<p>最近工作得很郁闷，很是不爽。</p>
+
+<p>每天的事情说多也不是太多，主要是我担负着业务数据维护和系统开发两个方面的角色，我感觉很是难处理和协调事情，弄得工作效率十分低下。</p>
+
+<p>一会儿这个人叫我拉点统计数据，一会儿那个叫我改个东西，同时我还要开发业务系统的新功能。感觉人格分裂了。</p>
+
+<p>本来就是两个人做的事情，人走了，都弄给我一个人担当了。</p>
+
+<p>虽然我决定上午做维护方面的工作，下午搞开发写代码，可是还是不行，因为有时上午又没有维护方面的事，那就开发吧，又突然来了个电话，搞得思路全乱了。</p>
+
+<p>这些天我在找一个适合我的todo-list工具，试用了一些，还是没有找到适合我的。我要找的todo-list工具应该可以记录日常数据改动，把list自动转为工作日志这样的。晚上回去在看Delphi7，希望这段时间自己做一个适合自己使用的Todo-list工具。</p>
+
+<p>面对这样子我也不想，我在反思自己：</p>
+
+<p>面对公司其它人经常问我要统计数据的，我之前总是写sql帮他们查，后来我抽时间做出了业务数据统计系统，这方面的事情一下子少了很多。</p>
+
+<p>面对公司其它人经常由于业务原因要回滚业务操作（这里系统设计虽然有问题，但是系统是不可能完全描述实现业务的），我就自己总结写了很多常用的业务维护脚本，这个也节省了我不少时间。</p>
+
+<p>面对开发中调试业务数据十分烦锁，我用rspec跑起了单元测试，这个也一下子节省了我不少时间。</p>
+
+<p>做了以上这些，还是感觉不够，每天还是有很多重复的时候要做。</p>
+
+<p>下一个目标就是安全升级到Rails2.2，再砍掉系统中的垃圾冗余代码。可是实在是太难抽出时间了。</p>
+
+<hr />
+
+<h2>总结：其实现在的环境很是适合我的快速成长， 我觉得在有限的时间里做更多有意义的事情出来，我的2010。</h2>
+
+<p><a href="http://qichunren.iteye.com/blog/550649">我在javaeye上的原文链接</a></p>
 ]]></content>
   </entry>
   

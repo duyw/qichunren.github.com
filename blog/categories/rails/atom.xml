@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Rails | 蕲春人 - 软件开发]]></title>
+  <title><![CDATA[Category: Rails | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-05-29T12:21:26+08:00</updated>
+  <updated>2012-06-03T22:52:48+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -14,56 +14,19 @@
 
   
   <entry>
-    <title type="html"><![CDATA[在Rails3中使用ajax]]></title>
-    <link href="http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note/"/>
-    <updated>2011-12-22T16:36:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note</id>
-    <content type="html"><![CDATA[<p>今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。</p>
+    <title type="html"><![CDATA[最近实践中学到的Rails测试技巧]]></title>
+    <link href="http://qichunren.github.com/blog/2011/04/19/rails-test-note/"/>
+    <updated>2011-04-19T00:00:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2011/04/19/rails-test-note</id>
+    <content type="html"><![CDATA[<p>最近花时间又将项目中的测试再次仔细地过了一遍。通过挖掘发现了几个提高测试效率的技巧，记一下。 <em>不学习就要落后啊，Ruby的世界进化得太快了，测试技术也是如此。</em></p>
 
-<p>我之前在Rails3项目中使用ajax是这样的：</p>
+<ul>
+<li><p>FactoryGirl这个东西好用级了，之前虽然已经在项目中使用她了，但我之前还是没有完全挖掘出她的特性。对其中的association这个特性我是最喜欢了，让我完全不用关注关联记录的外键数据对应。想起曾经的Rails自带的Fixtures，还阵阵寒，那是给人给的东西么。当应用中的数据表关联多了，再加上业务功能多了，用Fixtures测试绝对会折磨死人，在不同的Fixtures文件中穿梭，人肉拼装适合各种业务场景的数据，那真费脑细胞。而FactoryGirl真的是用起来称心如意啊，她不是数据的fixture,她应该是作为一种数据的构建器(data builder)，在测试中可以让你专注去构建 测试场景的数据和写测试断言。</p></li>
+<li><p>自动测试gem： autotest. 我和同事之前商量约定好，说提交代码前一定先在本地运行一遍rspec测试，然后再提交。这样工作得很好。我今天研究了一下autotest这东西，发现真是好东西啊。它可以检测到你改动了某个文件，然后就自动地为你执行一次这个文件关联的测试。这可好了，又省了不少事。</p></li>
+<li><p>接第二条，比起自动监测改动的文件自动测试，你还得关心测试的结果，更好的是有自动通知测试结果的好工具。mac下的 <a href="http://growl.info/">growl</a> 就是这样一个工具。autotest-growl这样的一个Gem很好的做了这个事情。你再不不用切换到测试的终端窗口去查看测试结果，你只需要专心地写着代码，然后屏幕边上会自动显现一个半透明的提示框来告知测试结果（最喜欢看到就是一个绿宝石的提示框）。当然这个工具只有在Mac OSX上才有的。</p></li>
+<li><p>测试不是很快，这个也有解决方法。Spork就是这样的一个工具，它事先启动一个后端的DRB服务器（端口8989），加载Rails应用的环境。然后每次rspec的测试可以直接与spork打交道，省了加载Rails应用环境这个比较耗时的步骤，直接运行测试用例，速度飞快。</p></li>
+</ul>
 
-<p>如果是直接发送一个ajax请求，我就给标签加上:remote => true。如果我在此基础上还要做其它的操作，如ajax表单提交前要对表单字段验证，我之前以为那样UJS就不能搞定了，需要我自己写代码来处理。然后我就使用jquery中的相关ajax操作来处理。</p>
-
-<p>今天我才了解到UJS的AJAX操作已经为我们提供了6个自定义事件方法：</p>
-
-<p><code>
-ajax:before – right before ajax call
-ajax:loading – before ajax call, but after XmlHttpRequest object is created)
-ajax:success – successful ajax call
-ajax:failure – failed ajax call
-ajax:complete – completion of ajax call (after ajax:success and ajax:failure)
-ajax:after – after ajax call is sent (note: not after it returns)
-</code></p>
-
-<p>所以对于上面我说的那个事例，如果要对一个ajax表单在提交前作表单验证或者其它的一些检查，只需要写提交前的检查代码，然后通过事件绑定的方式，将余下的表单ajax提交让UJS来完成，这是多么地简单啊，我以前真是做了好多无用功。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>sample code  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#new_post_comment&quot;</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;ajax:before&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#post_comment_body&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;&quot;</span><span class="p">){</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h3>参考资料</h3>
-
-<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-unobtrusive-javascript-and-ajax-with-rails-3/">Using Unobtrusive JavaScript and AJAX with Rails 3</a>
-<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms-data-type-with-jquery/">Rails 3 Remote Links and Forms Part 2: Data-type (with jQuery)</a></p>
 ]]></content>
   </entry>
   

@@ -3,16 +3,17 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>蕲春人 - 软件开发</title>
+    <title>蕲春人的博客</title>
     <meta name="author" content="qichunren">
 
     
-    <meta name="description" content="在Mac上使用gitX gitX是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。 安装方法： 最简单的安装方法就是下载它的二进制包，直接运行。
-在它的wiki页面找到二进制包的下载地址,下载后，解压，直接运行，程序界面就出来了。 &hellip;">
+    <meta name="description" content="学习和了解Redis Redis
+redis-rb gem install redis redis-objects是基于redis-rb的一个ruby对象与redis对象映射的gem May 13th, 2011 database 使用Unicorn Install 1
+gem install &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-    <link href="/atom.xml" rel="alternate" title="蕲春人 - 软件开发" type="application/atom+xml">
+    <link href="/atom.xml" rel="alternate" title="蕲春人的博客" type="application/atom+xml">
     <link rel="canonical" href="">
     <link href="/favicon.png" rel="shortcut icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -36,7 +37,7 @@
 </head>
 
 <body>
-	<header class="inner"><h1 class="left"><a href="/">蕲春人 - 软件开发</a></h1>
+	<header class="inner"><h1 class="left"><a href="/">蕲春人的博客</a></h1>
 <nav class="menu left"><ul class="main">
 	<li><a href="/">Blog</a></li>
 	<li><a href="/blog/archives">Archives</a></li>
@@ -83,6 +84,245 @@
 
 
     <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/13/learn-redis-db/">学习和了解Redis</a></h1>
+    <div class="entry">
+        <p><a href="http://redis.io/">Redis</a>
+<a href="https://github.com/ezmobius/redis-rb">redis-rb</a> gem install redis <br/>
+<a href="https://github.com/nateware/redis-objects">redis-objects</a>是基于redis-rb的一个ruby对象与redis对象映射的gem</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/database/'>database</a>
+  
+</div>
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/12/use-unicorn-in-rails/">使用Unicorn</a></h1>
+    <div class="entry">
+        <h3>Install</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install unicorn</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then add gem &#8216;unicorn&#8217; to Gemfile.
+bundle exec unicorn_rails to start rails app at 8080 port.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:qichunren.github.com caojinhua$ unicorn_rails --help
+</span><span class='line'>Usage: unicorn_rails [ruby options] [unicorn_rails options] [rackup config file]
+</span><span class='line'>Ruby options:
+</span><span class='line'>  -e, --eval LINE          evaluate a LINE of code
+</span><span class='line'>  -d, --debug              set debugging flags (set $DEBUG to true)
+</span><span class='line'>  -w, --warn               turn warnings on for your script
+</span><span class='line'>  -I, --include PATH       specify $LOAD_PATH (may be used more than once)
+</span><span class='line'>  -r, --require LIBRARY    require the library, before executing your script
+</span><span class='line'>unicorn_rails options:
+</span><span class='line'>  -o, --host HOST          listen on HOST (default: 0.0.0.0)
+</span><span class='line'>  -p, --port PORT          use PORT (default: 8080)
+</span><span class='line'>  -E, --env RAILS_ENV      use RAILS_ENV for defaults (default: development)
+</span><span class='line'>  -D, --daemonize          run daemonized in the background
+</span><span class='line'>  -l {HOST:PORT|PATH},     listen on HOST:PORT or PATH
+</span><span class='line'>      --listen             this may be specified multiple times
+</span><span class='line'>                           (default: 0.0.0.0:8080)
+</span><span class='line'>  -c, --config-file FILE   Unicorn-specific config file
+</span><span class='line'>
+</span><span class='line'>      --path PATH          Runs Rails app mounted at a specific path.
+</span><span class='line'>                           (default: /)
+</span><span class='line'>Common options:
+</span><span class='line'>  -h, --help               Show this message
+</span><span class='line'>  -v, --version            Show version</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is a smaple unicorn config file:</p>
+
+<figure class='code'><figcaption><span>config/unicorn.conf.rb  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">worker_processes</span> <span class="mi">2</span>
+</span><span class='line'><span class="n">working_directory</span> <span class="s2">&quot;/www/temp/ntmenu2/current&quot;</span>
+</span><span class='line'><span class="n">listen</span> <span class="mi">3000</span><span class="p">,</span> <span class="ss">:tcp_nopush</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'><span class="n">timeout</span> <span class="mi">30</span>
+</span><span class='line'><span class="n">pid</span> <span class="s2">&quot;/www/temp/ntmenu2/current/tmp/pids/unicorn.pid&quot;</span>
+</span><span class='line'><span class="n">stderr_path</span> <span class="s2">&quot;/www/temp/unicorn.stderr.log&quot;</span>
+</span><span class='line'><span class="n">stdout_path</span> <span class="s2">&quot;/www/temp/unicorn.stdout.log&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2011/05/12/use-juggernaut-for-realtime-app/">使用Juggernaut</a></h1>
+    <div class="entry">
+        <p><a href="https://github.com/maccman/juggernaut">Juggernaut</a>是基于<a href="http://nodejs.org/">Node.js</a>的一个实时(Realtime)Web的解决方案。使用起来很方便。</p>
+
+<h3>安装方法</h3>
+
+<ol>
+<li>安装Node.js: brew install node</li>
+<li>安装<a href="http://code.google.com/p/redis">Redis</a>: brew install redis</li>
+<li>安装<a href="http://npmjs.org/">NPM</a>: curl http://npmjs.org/install.sh | sh</li>
+<li>安装Juggernaut: 这个会把Juggernaut安装到当前目录，所以我应该先进行项目的/vendor/third目录，然后执行 npm install juggernaut</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:third qichunren$ npm install juggernaut
+</span><span class='line'>redis@0.5.11 ./node_modules/juggernaut/node_modules/redis
+</span><span class='line'>node-static-maccman@0.5.3 ./node_modules/juggernaut/node_modules/node-static-maccman
+</span><span class='line'>socket.io@0.6.17 ./node_modules/juggernaut/node_modules/socket.io
+</span><span class='line'>juggernaut@2.0.4 ./node_modules/juggernaut
+</span><span class='line'>usermatoMacBook-Pro:third qichunren$  </span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>安装Juggernaut gem:</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install juggernaut</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>使用方法</h3>
+
+<p>我们在自己的项目中只需要引入http://localhost:8080/application.js 这个js文件即可。
+然后在页面中可以这样接收服务器端的消息：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">jug</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juggernaut</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">jug</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got data: &quot;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>服务器端直接发消息：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s2">&quot;juggernaut&quot;</span>
+</span><span class='line'><span class="no">Juggernaut</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="s2">&quot;Some data&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>另外在启动了Juggernaut后，它默认在8080端口上有一个Helloword的应用，可以了解一下。</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+        <div class="tags">
+
+</div>
+        
+    </div>
+</article>
+
+
+    <article class="post">
     <h1 class="title"><a href="/blog/2011/05/11/use-gitX-on-mac/">在Mac上使用gitX</a></h1>
     <div class="entry">
         <p><a href="https://github.com/pieter/gitx">gitX</a>是mac上一个git的可视化工具，可以与gravatar\gist集成在一起。我比较喜欢它的界面形式，感觉很舒服。</p>
@@ -118,6 +358,12 @@
 
 <time datetime="2011-05-11T00:00:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time></div>
         <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/mac/'>Mac</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+  
+</div>
 
 </div>
         
@@ -219,639 +465,14 @@ Your browser does not support the audio tag.
   
 
 
-<time datetime="2011-05-09T00:00:00+08:00" pubdate data-updated="true">May 9<span>th</span>, 2011</time></div>
+<time datetime="2011-05-09T11:30:00+08:00" pubdate data-updated="true">May 9<span>th</span>, 2011</time></div>
         <div class="tags">
 
-</div>
-        
-    </div>
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/05/07/add-rspec2-task-to-rakefile/">将Rspec的测试任务添加到Rakefile中</a></h1>
-    <div class="entry">
-        <p>写好Rspec测试好，一般是通过rspec spec/xxx_spec.rb这样来进行测试，这样不能批量进行多个spec文件的测试，解决方法是将rspec的测试任务添加了项目根目录中的Rakefile文件中去，以后直接执行rake或者rake spec就直接测试所有用例了。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rake&#39;</span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rspec/core/rake_task&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">task</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="ss">:spec</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">RSpec</span><span class="o">::</span><span class="no">Core</span><span class="o">::</span><span class="no">RakeTask</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:spec</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">t</span><span class="o">.</span><span class="n">pattern</span> <span class="o">=</span> <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;spec/**/*_spec.rb&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">t</span><span class="o">.</span><span class="n">rspec_opts</span> <span class="o">=</span> <span class="s1">&#39;--format progress -c&#39;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Resources</h3>
-
-<ul>
-<li><a href="http://lukaszwrobel.pl/blog/rspec-rake-task">RSpec Rake Task</a> 已过期，它是Rspec 1</li>
-<li><a href="https://github.com/rspec/rspec-core/blob/master/lib/rspec/core/rake_task.rb">rspec/core/rake_task.rb</a></li>
-<li><a href="https://github.com/rspec/rspec-rails/blob/master/lib/rspec/rails/tasks/rspec.rake">rake test in rails project</a></li>
-</ul>
-
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
+<div class="cat">
   
-
-
-<time datetime="2011-05-07T00:00:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2011</time></div>
-        <div class="tags">
-
-</div>
-        
-    </div>
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/05/05/try_rails_31_beta/">初试Rails 3.1 Beta</a></h1>
-    <div class="entry">
-        <p>看到<a href="http://weblog.rubyonrails.org/2011/5/5/rails-3-1-beta-1-released">消息</a> 说Rails3.1 Beta出来了，我立刻就想试试，先从大体上了解一下看做了哪些改变。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:code qichunren$ rvm use 1.9.2
-</span><span class='line'>Using /Users/qichunren/.rvm/gems/ruby-1.9.2-p0
-</span><span class='line'>usermatoMacBook-Pro:jjsc_web_backend qichunren$ gem install rails --pre
-</span><span class='line'>Successfully installed multi_json-1.0.1
-</span><span class='line'>Successfully installed activesupport-3.1.0.beta1
-</span><span class='line'>Successfully installed i18n-0.6.0beta1
-</span><span class='line'>Successfully installed activemodel-3.1.0.beta1
-</span><span class='line'>Successfully installed rack-1.3.0.beta
-</span><span class='line'>Successfully installed rack-cache-1.0.1
-</span><span class='line'>Successfully installed rack-test-0.6.0
-</span><span class='line'>Successfully installed rack-mount-0.7.2
-</span><span class='line'>Successfully installed hike-1.0.0
-</span><span class='line'>Successfully installed sprockets-2.0.0.beta.2
-</span><span class='line'>Successfully installed tzinfo-0.3.27
-</span><span class='line'>Successfully installed erubis-2.7.0
-</span><span class='line'>Successfully installed actionpack-3.1.0.beta1
-</span><span class='line'>Successfully installed arel-2.1.0
-</span><span class='line'>Successfully installed activerecord-3.1.0.beta1
-</span><span class='line'>Successfully installed activeresource-3.1.0.beta1
-</span><span class='line'>Successfully installed mail-2.3.0
-</span><span class='line'>Successfully installed actionmailer-3.1.0.beta1
-</span><span class='line'>Successfully installed rack-ssl-1.3.2
-</span><span class='line'>Successfully installed railties-3.1.0.beta1
-</span><span class='line'>Successfully installed rails-3.1.0.beta1
-</span><span class='line'>21 gems installed
-</span><span class='line'>Installing ri documentation for multi_json-1.0.1...
-</span><span class='line'>Building YARD (yri) index for multi_json-1.0.1...
-</span><span class='line'>Installing ri documentation for activesupport-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for activesupport-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for i18n-0.6.0beta1...
-</span><span class='line'>Building YARD (yri) index for i18n-0.6.0beta1...
-</span><span class='line'>Installing ri documentation for activemodel-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for activemodel-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for rack-1.3.0.beta...
-</span><span class='line'>Building YARD (yri) index for rack-1.3.0.beta...
-</span><span class='line'>Installing ri documentation for rack-cache-1.0.1...
-</span><span class='line'>Building YARD (yri) index for rack-cache-1.0.1...
-</span><span class='line'>Installing ri documentation for rack-test-0.6.0...
-</span><span class='line'>Building YARD (yri) index for rack-test-0.6.0...
-</span><span class='line'>Installing ri documentation for rack-mount-0.7.2...
-</span><span class='line'>Building YARD (yri) index for rack-mount-0.7.2...
-</span><span class='line'>Installing ri documentation for hike-1.0.0...
-</span><span class='line'>Building YARD (yri) index for hike-1.0.0...
-</span><span class='line'>Installing ri documentation for sprockets-2.0.0.beta.2...
-</span><span class='line'>Building YARD (yri) index for sprockets-2.0.0.beta.2...
-</span><span class='line'>Installing ri documentation for tzinfo-0.3.27...
-</span><span class='line'>Building YARD (yri) index for tzinfo-0.3.27...
-</span><span class='line'>Installing ri documentation for erubis-2.7.0...
-</span><span class='line'>Building YARD (yri) index for erubis-2.7.0...
-</span><span class='line'>Installing ri documentation for actionpack-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for actionpack-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for arel-2.1.0...
-</span><span class='line'>Installing ri documentation for activerecord-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for activerecord-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for activeresource-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for activeresource-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for mail-2.3.0...
-</span><span class='line'>Building YARD (yri) index for mail-2.3.0...
-</span><span class='line'>Installing ri documentation for actionmailer-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for actionmailer-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for rack-ssl-1.3.2...
-</span><span class='line'>Building YARD (yri) index for rack-ssl-1.3.2...
-</span><span class='line'>Installing ri documentation for railties-3.1.0.beta1...
-</span><span class='line'>Building YARD (yri) index for railties-3.1.0.beta1...
-</span><span class='line'>Installing ri documentation for rails-3.1.0.beta1...
-</span><span class='line'>file 'lib' not found
-</span><span class='line'>Building YARD (yri) index for rails-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for multi_json-1.0.1...
-</span><span class='line'>Installing RDoc documentation for activesupport-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for i18n-0.6.0beta1...
-</span><span class='line'>Installing RDoc documentation for activemodel-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for rack-1.3.0.beta...
-</span><span class='line'>Installing RDoc documentation for rack-cache-1.0.1...
-</span><span class='line'>Installing RDoc documentation for rack-test-0.6.0...
-</span><span class='line'>Installing RDoc documentation for rack-mount-0.7.2...
-</span><span class='line'>Installing RDoc documentation for hike-1.0.0...
-</span><span class='line'>Installing RDoc documentation for sprockets-2.0.0.beta.2...
-</span><span class='line'>Installing RDoc documentation for tzinfo-0.3.27...
-</span><span class='line'>Installing RDoc documentation for erubis-2.7.0...
-</span><span class='line'>Installing RDoc documentation for actionpack-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for activerecord-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for activeresource-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for mail-2.3.0...
-</span><span class='line'>Installing RDoc documentation for actionmailer-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for rack-ssl-1.3.2...
-</span><span class='line'>Installing RDoc documentation for railties-3.1.0.beta1...
-</span><span class='line'>Installing RDoc documentation for rails-3.1.0.beta1...
-</span><span class='line'>file 'lib' not found  
-</span><span class='line'>usermatoMacBook-Pro:code qichunren$ rails -v
-</span><span class='line'>Rails 3.1.0.beta1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>看看rails命令有没有一些改动：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:code qichunren$ rails --help
-</span><span class='line'>Usage:
-</span><span class='line'>  rails new APP_PATH [options]
-</span><span class='line'>
-</span><span class='line'>Options:
-</span><span class='line'>  -r, [--ruby=PATH]              # Path to the Ruby binary of your choice
-</span><span class='line'>                                 # Default: /Users/qichunren/.rvm/rubies/ruby-1.9.2-p0/bin/ruby
-</span><span class='line'>  -b, [--builder=BUILDER]        # Path to a application builder (can be a filesystem path or URL)
-</span><span class='line'>  -m, [--template=TEMPLATE]      # Path to an application template (can be a filesystem path or URL)
-</span><span class='line'>      [--skip-gemfile]           # Don't create a Gemfile
-</span><span class='line'>  -G, [--skip-git]               # Skip Git ignores and keeps
-</span><span class='line'>  -O, [--skip-active-record]     # Skip Active Record files
-</span><span class='line'>  -d, [--database=DATABASE]      # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/jdbcmysql/jdbcsqlite3/jdbcpostgresql)
-</span><span class='line'>                                 # Default: sqlite3
-</span><span class='line'>  -j, [--javascript=JAVASCRIPT]  # Preconfigure for selected JavaScript library
-</span><span class='line'>                                 # Default: jquery
-</span><span class='line'>  -J, [--skip-javascript]        # Skip JavaScript files
-</span><span class='line'>      [--dev]                    # Setup the application with Gemfile pointing to your Rails checkout
-</span><span class='line'>      [--edge]                   # Setup the application with Gemfile pointing to Rails repository
-</span><span class='line'>  -T, [--skip-test-unit]         # Skip Test::Unit files
-</span><span class='line'>      [--old-style-hash]         # Force using old style hash (:foo =&gt; 'bar') on Ruby &gt;= 1.9
-</span><span class='line'>
-</span><span class='line'>Runtime options:
-</span><span class='line'>  -f, [--force]    # Overwrite files that already exist
-</span><span class='line'>  -p, [--pretend]  # Run but do not make any changes
-</span><span class='line'>  -q, [--quiet]    # Supress status output
-</span><span class='line'>  -s, [--skip]     # Skip files that already exist
-</span><span class='line'>
-</span><span class='line'>Rails options:
-</span><span class='line'>  -h, [--help]     # Show this help message and quit
-</span><span class='line'>  -v, [--version]  # Show Rails version number and quit
-</span><span class='line'>
-</span><span class='line'>Description:
-</span><span class='line'>    The 'rails new' command creates a new Rails application with a default
-</span><span class='line'>    directory structure and configuration at the path you specify.
-</span><span class='line'>
-</span><span class='line'>Example:
-</span><span class='line'>    rails new ~/Code/Ruby/weblog
-</span><span class='line'>
-</span><span class='line'>    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
-</span><span class='line'>    See the README in the newly created application to get going.
-</span><span class='line'>usermatoMacBook-Pro:code qichunren$</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>继续建立一个新项目</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:code qichunren$ rails new rails3
-</span><span class='line'>      create  
-</span><span class='line'>      create  README
-</span><span class='line'>      create  Rakefile
-</span><span class='line'>      create  config.ru
-</span><span class='line'>      create  .gitignore
-</span><span class='line'>      create  Gemfile
-</span><span class='line'>      create  app
-</span><span class='line'>      create  app/assets/images/rails.png
-</span><span class='line'>      create  app/assets/javascripts/application.js
-</span><span class='line'>      create  app/assets/stylesheets/application.css
-</span><span class='line'>      create  app/controllers/application_controller.rb
-</span><span class='line'>      create  app/helpers/application_helper.rb
-</span><span class='line'>      create  app/mailers
-</span><span class='line'>      create  app/models
-</span><span class='line'>      create  app/views/layouts/application.html.erb
-</span><span class='line'>      create  app/mailers/.gitkeep
-</span><span class='line'>      create  app/models/.gitkeep
-</span><span class='line'>      create  config
-</span><span class='line'>      create  config/routes.rb
-</span><span class='line'>      create  config/application.rb
-</span><span class='line'>      create  config/environment.rb
-</span><span class='line'>      create  config/environments
-</span><span class='line'>      create  config/environments/development.rb
-</span><span class='line'>      create  config/environments/production.rb
-</span><span class='line'>      create  config/environments/test.rb
-</span><span class='line'>      create  config/initializers
-</span><span class='line'>      create  config/initializers/backtrace_silencers.rb
-</span><span class='line'>      create  config/initializers/inflections.rb
-</span><span class='line'>      create  config/initializers/mime_types.rb
-</span><span class='line'>      create  config/initializers/secret_token.rb
-</span><span class='line'>      create  config/initializers/session_store.rb
-</span><span class='line'>      create  config/initializers/wrap_parameters.rb
-</span><span class='line'>      create  config/locales
-</span><span class='line'>      create  config/locales/en.yml
-</span><span class='line'>      create  config/boot.rb
-</span><span class='line'>      create  config/database.yml
-</span><span class='line'>      create  db
-</span><span class='line'>      create  db/seeds.rb
-</span><span class='line'>      create  doc
-</span><span class='line'>      create  doc/README_FOR_APP
-</span><span class='line'>      create  lib
-</span><span class='line'>      create  lib/tasks
-</span><span class='line'>      create  lib/tasks/.gitkeep
-</span><span class='line'>      create  log
-</span><span class='line'>      create  log/.gitkeep
-</span><span class='line'>      create  public
-</span><span class='line'>      create  public/404.html
-</span><span class='line'>      create  public/422.html
-</span><span class='line'>      create  public/500.html
-</span><span class='line'>      create  public/favicon.ico
-</span><span class='line'>      create  public/index.html
-</span><span class='line'>      create  public/robots.txt
-</span><span class='line'>      create  script
-</span><span class='line'>      create  script/rails
-</span><span class='line'>      create  test/fixtures
-</span><span class='line'>      create  test/fixtures/.gitkeep
-</span><span class='line'>      create  test/functional
-</span><span class='line'>      create  test/functional/.gitkeep
-</span><span class='line'>      create  test/integration
-</span><span class='line'>      create  test/integration/.gitkeep
-</span><span class='line'>      create  test/unit
-</span><span class='line'>      create  test/unit/.gitkeep
-</span><span class='line'>      create  test/performance/browsing_test.rb
-</span><span class='line'>      create  test/test_helper.rb
-</span><span class='line'>      create  tmp/cache
-</span><span class='line'>      create  tmp/cache/.gitkeep
-</span><span class='line'>      create  vendor/assets/stylesheets
-</span><span class='line'>      create  vendor/assets/stylesheets/.gitkeep
-</span><span class='line'>      create  vendor/plugins
-</span><span class='line'>      create  vendor/plugins/.gitkeep
-</span><span class='line'>usermatoMacBook-Pro:code qichunren$ </span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>创建一个scaffold user后，发现在页面里/assets/application.js中包括了jQuery 1.6，还有rails.js for jquery这个。再也不需要之前的那个手工引入jQuery了，或者使用jquery-rails这个gem.
-另外还生成有一个/assets/user.js.coffee文件，得要花时间学一下这个<a href="https://github.com/jashkenas/coffee-script">coffee-script</a>了。</p>
-
-<p>还发现一个有趣的现象，rails团队似乎偏爱json,在scaffold生成的代码中没有了以前的xml format</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">index</span>
-</span><span class='line'>  <span class="vi">@users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">all</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
-</span><span class='line'>    <span class="nb">format</span><span class="o">.</span><span class="n">html</span> <span class="c1"># index.html.erb</span>
-</span><span class='line'>    <span class="nb">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">render</span> <span class="n">json</span><span class="p">:</span> <span class="vi">@users</span> <span class="p">}</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>另外多了一个assets的generator:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Example:
-</span><span class='line'>    `rails generate assets posts`
-</span><span class='line'>
-</span><span class='line'>    Posts assets.
-</span><span class='line'>        Javascript:     app/assets/javascripts/posts.js
-</span><span class='line'>        Stylesheet:     app/assets/stylesheets/posts.css  </span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>总体上看，变化不大，将jQuery，coffee_script,scss加入默认了。一切都继续演进。</p>
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
+    <a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/web/'>web</a>
   
-
-
-<time datetime="2011-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2011</time></div>
-        <div class="tags">
-
 </div>
-        
-    </div>
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2011/05/04/use_feedzirra_to_fetch_feed/">使用feedzirra分析提取Feed</a></h1>
-    <div class="entry">
-        <p><a href="https://github.com/pauldix/feedzirra">feedzirra</a> 是一个很好用的提取和分析feed的工具。用法如下：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># encoding: utf-8</span>
-</span><span class='line'><span class="nb">require</span> <span class="s2">&quot;feedzirra&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">fetch_feed</span><span class="p">(</span><span class="n">feed_url</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">feed</span> <span class="o">=</span> <span class="no">Feedzirra</span><span class="o">::</span><span class="no">Feed</span><span class="o">.</span><span class="n">fetch_and_parse</span><span class="p">(</span><span class="n">feed_url</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">feed_entries</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">entries</span>
-</span><span class='line'>  <span class="n">feed_entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="n">entry</span><span class="o">.</span><span class="n">inspect</span>
-</span><span class='line'>  <span class="k">end</span> <span class="c1"># end each</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">fetch_feed</span> <span class="s2">&quot;http://tech.163.com/special/000944OI/kejitongxin.xml&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>结果：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:gitcard qichunren$ ruby lib/blog_fetcher.rb 
-</span><span class='line'>#&lt;Feedzirra::Parser::RSSEntry:0x00000102137858 @title="外媒分析称微软是黑莓和必应合作最大赢家", @url="http://tech.163.com/11/0504/16/737NSCOS000915BE.html", @summary="【赛迪网讯】5月4日消息，据国外媒体报道，在BlackBerry World上RIM请到一位令人意外的客座讲师——微软CEO史蒂夫-鲍尔默（Steve Ballmer）。鲍尔默在会上公开了与RIM的合作关系，称日后微软的Bing将代替谷歌成为黑莓移动设备上的默认搜索引擎。微软明显将从合作关系中获利，但RIM能够得到什么利益？鲍尔默表示，微软将对黑 ......", @published="2011-05-04 16:55:22"&gt;
-</span><span class='line'>#&lt;Feedzirra::Parser::RSSEntry:0x0000010212e140 @title="工信部4月上半月发放241款电信设备进网许可证", @url="http://tech.163.com/11/0504/09/736SR7MQ000915BE.html", @summary="飞象网讯（崔玉贤/文）飞象网得知工信部4月份上半月发放了241款电信设备进网许可证，其中包含10款进网试用批文。 据悉，4月份上半月工信部共发放了TD终端22款，TD-SCDMA/GSM双模数字移动电话机15款，TD-SCDMA/GSM双模无线数据终端2款，TD-SCDMA固定无线终端5款。其中，TD-SCDMA/GSM双模数字移动电话机有5款进网试用批文，夏 ......", @published="2011-05-04 09:02:53"&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-04T00:00:00+08:00" pubdate data-updated="true">May 4<span>th</span>, 2011</time></div>
-        <div class="tags">
 
 </div>
         

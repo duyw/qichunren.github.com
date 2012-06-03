@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[蕲春人 - 软件开发]]></title>
+  <title><![CDATA[蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-05-29T12:21:26+08:00</updated>
+  <updated>2012-06-03T22:52:48+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixed a problem with creating texture background]]></title>
+    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background/"/>
+    <updated>2012-06-03T22:01:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background</id>
+    <content type="html"><![CDATA[<p>我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'GL_CLAMP_TO_EDGE should be used in NPOT dimensions'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我的代码是这样的:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CCSprite *wall = [CCSprite spriteWithFile:@"pattern1.png" rect:CGRectMake(0, 0, 320, 480)];
+</span><span class='line'>wall.anchorPoint = ccp(0,0);
+</span><span class='line'>[self addChild:wall z:-1 tag:111];
+</span><span class='line'>ccTexParams params = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT};
+</span><span class='line'>//ccTexParams params = {GL_LINEAR,GL_LINEAR,GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE};
+</span><span class='line'>[wall.texture setTexParameters:&params];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我运行cocos2d项目的测试例子, 却发现它的例子是工作正常的, 百思不得其解啊. 然后我看到它代码的注释中写着:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// The .png image MUST be power of 2 in order to create a continue effect.
+</span><span class='line'>// eg: 32x64, 512x128, 256x1024, 64x64, etc..</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我想可能是我的图片尺寸不符合规格，检查了一下，果然发现纹理图片的不是2的次方的正方形。</p>
+
+<p><em>总结，使用小图片重复平铺来创建背景纹理图片的小图片尺寸必须设置成2的n次方的正方形大小。</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fix problem annotate is broken with rails 3.1.1]]></title>
+    <link href="http://qichunren.github.com/blog/2012/06/03/fix-annotate-gem-with-rails3-1-1/"/>
+    <updated>2012-06-03T22:01:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2012/06/03/fix-annotate-gem-with-rails3-1-1</id>
+    <content type="html"><![CDATA[<p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:tts_cacher caojinhua$ annotate
+</span><span class='line'>/Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railties/databases.rake:3:in `&lt;top (required)&gt;': undefined method `namespace' for main:Object (NoMethodError)
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `block in &lt;class:Railtie&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `call'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `block in load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `each'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `all'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application.rb:103:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
+</span><span class='line'>  from Rakefile:7:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load_tasks'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/bin/annotate:66:in `&lt;top (required)&gt;'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `load'
+</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `&lt;main&gt;'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后在stackoverflow上找到了解决方法，就是使用最新的annotate.</p>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;git://github.com/ctran/annotate_models.git&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Resources:</h3>
+
+<p><a href="http://stackoverflow.com/questions/7295505/annotate-gem-and-rails-3-1">annotate-gem-and-rails-3-1</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[怎么样从git提交历史里永久删除一个文件?]]></title>
@@ -837,6 +940,53 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[使用ffaker来产生随机数据]]></title>
+    <link href="http://qichunren.github.com/blog/2012/01/19/use-ffaker/"/>
+    <updated>2012-01-19T22:01:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2012/01/19/use-ffaker</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/EmmanuelOga/ffaker">ffaker</a>是一个用来产生随机name\email之类的工具，可以用在开发时先产生一些有意义的随机数据，将数据写在db/seeds.rb中，这样你就不用每次急燥地添加一些asasddfdsf这样的数据。一个好的工作开发环境，可以让心情舒畅，效率加倍。</p>
+
+<p>在db/seeds.rb中，如果要产生100个用户名，直接这样做：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;ffaker&#39;</span>
+</span><span class='line'>
+</span><span class='line'> <span class="mi">100</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>   <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Name</span><span class="o">.</span><span class="n">name</span> <span class="o">=&gt;</span> <span class="s2">&quot;David Cao&quot;</span>
+</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Internet</span><span class="o">.</span><span class="n">email</span> <span class="o">=&gt;</span> <span class="s2">&quot;qichunren@cqror.com&quot;</span>
+</span><span class='line'>   <span class="n">user</span><span class="o">.</span><span class="n">save</span>
+</span><span class='line'> <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我前一段时间，提交了<a href="https://github.com/EmmanuelOga/ffaker/pull/9">一点代码</a> ，可以产生天朝的姓名：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;ffaker&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">first_name</span> <span class="c1"># =&gt; 鑫洋</span>
+</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">last_name</span> <span class="c1"># =&gt; 禹</span>
+</span><span class='line'><span class="no">Faker</span><span class="o">::</span><span class="no">NameCN</span><span class="o">.</span><span class="n">name</span> <span class="c1"># =&gt; 俊伶漫</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ffaker目前最新的版本是1.2，可以产生中文的姓名。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Customizing rails generator templates]]></title>
     <link href="http://qichunren.github.com/blog/2012/01/12/customizing-rails-generator-templates/"/>
     <updated>2012-01-12T13:49:00+08:00</updated>
@@ -918,6 +1068,37 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[iOS中的arc4random方法]]></title>
+    <link href="http://qichunren.github.com/blog/2012/01/04/arc4random-in-ios/"/>
+    <updated>2012-01-04T22:49:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2012/01/04/arc4random-in-ios</id>
+    <content type="html"><![CDATA[<p>通过arc4random() 获取0到x-1之间的整数的代码如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int value = arc4random() % x; </span></code></pre></td></tr></table></div></figure>
+
+
+<p>获取1到x之间的整数的代码如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int value = (arc4random() % x) + 1;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后如果想生成一个浮点数，可以在项目中定义如下宏：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#define ARC4RANDOM_MAX      0x100000000 </span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后就可以使用arc4random() 来获取0到100之间浮点数了（精度是rand（）的两倍），代码如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>double val = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 100.0f);</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[在Rails3中使用ajax]]></title>
     <link href="http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note/"/>
     <updated>2011-12-22T16:36:00+08:00</updated>
@@ -978,9 +1159,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
     <id>http://qichunren.github.com/blog/2011/12/20/mongodb-ui-client-mongohub</id>
     <content type="html"><![CDATA[<p>最近在使用mongodb,经常要调试，然后找到了MongoHub这款工具，感觉很好。</p>
 
-<p><a href="mongohub.todayclose.com/download">MongoHub网站</a></p>
+<p><a href="http://mongohub.todayclose.com/">MongoHub网站</a></p>
 
-<p><img src="http://qichunren.github.com/assets/posts/2011-12-20-mongohub.png" title="will_paginate bar" alt="MongoHub" /></p>
+<p><img src="http://mongohub.todayclose.com/media/img/icon.png" alt="MongoHub" /></p>
 ]]></content>
   </entry>
   
@@ -1005,7 +1186,7 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   <entry>
     <title type="html"><![CDATA[Shell学习小记录]]></title>
     <link href="http://qichunren.github.com/blog/2011/10/18/learning-shell-tip-note/"/>
-    <updated>2011-10-18T00:00:00+08:00</updated>
+    <updated>2011-10-18T20:44:00+08:00</updated>
     <id>http://qichunren.github.com/blog/2011/10/18/learning-shell-tip-note</id>
     <content type="html"><![CDATA[<p>最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。以前认为用Ruby来做这个事情是一个不错的选择，现在知道了，那是因为相比起Shell来，更熟悉Ruby，程序员总是喜欢自己熟悉的领域，而排斥自己不熟悉的领域。其实多了解一下其它方面的，更利用自己工作的开展，提高工作效率。</p>
 
@@ -1110,68 +1291,6 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 <h4>参考资料</h4>
 
 <p><a href="http://learn.akae.cn/media/ch31s05.html">Shell脚本语法</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Fix problem annotate is broken with rails 3.1.1]]></title>
-    <link href="http://qichunren.github.com/blog/2011/10/14/fix-annotate-gem-with-rails3-1-1/"/>
-    <updated>2011-10-14T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/10/14/fix-annotate-gem-with-rails3-1-1</id>
-    <content type="html"><![CDATA[<p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:tts_cacher caojinhua$ annotate
-</span><span class='line'>/Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railties/databases.rake:3:in `&lt;top (required)&gt;': undefined method `namespace' for main:Object (NoMethodError)
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.1/lib/active_record/railtie.rb:26:in `block in &lt;class:Railtie&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `call'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `block in load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `each'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie.rb:183:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `block in load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `each'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application/railties.rb:8:in `all'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/engine.rb:396:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/application.rb:103:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
-</span><span class='line'>  from Rakefile:7:in `&lt;top (required)&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/lib/annotate.rb:17:in `load_tasks'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/gems/annotate-2.4.0/bin/annotate:66:in `&lt;top (required)&gt;'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `load'
-</span><span class='line'>  from /Users/caojinhua/.rvm/gems/ruby-1.9.2-p180/bin/annotate:19:in `&lt;main&gt;'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后在stackoverflow上找到了解决方法，就是使用最新的annotate.</p>
-
-<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;annotate&#39;</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;git://github.com/ctran/annotate_models.git&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Resources:</h3>
-
-<p><a href="http://stackoverflow.com/questions/7295505/annotate-gem-and-rails-3-1">annotate-gem-and-rails-3-1</a></p>
 ]]></content>
   </entry>
   
@@ -1689,7 +1808,7 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   <entry>
     <title type="html"><![CDATA[Install mongo on mac]]></title>
     <link href="http://qichunren.github.com/blog/2011/06/04/install-mongodb/"/>
-    <updated>2011-06-04T00:00:00+08:00</updated>
+    <updated>2011-06-04T22:01:00+08:00</updated>
     <id>http://qichunren.github.com/blog/2011/06/04/install-mongodb</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1757,176 +1876,6 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
 </span><span class='line'>osascript -e <span class="s1">&#39;tell app &quot;TextMate&quot; to reload bundles&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[学习和了解Redis]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/13/learn-redis-db/"/>
-    <updated>2011-05-13T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/13/learn-redis-db</id>
-    <content type="html"><![CDATA[<p><a href="http://redis.io/">Redis</a>
-<a href="https://github.com/ezmobius/redis-rb">redis-rb</a> gem install redis <br/>
-<a href="https://github.com/nateware/redis-objects">redis-objects</a>是基于redis-rb的一个ruby对象与redis对象映射的gem</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用Unicorn]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/12/use-unicorn-in-rails/"/>
-    <updated>2011-05-12T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/12/use-unicorn-in-rails</id>
-    <content type="html"><![CDATA[<h3>Install</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem install unicorn</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then add gem &#8216;unicorn&#8217; to Gemfile.
-bundle exec unicorn_rails to start rails app at 8080 port.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>caojinhua:qichunren.github.com caojinhua$ unicorn_rails --help
-</span><span class='line'>Usage: unicorn_rails [ruby options] [unicorn_rails options] [rackup config file]
-</span><span class='line'>Ruby options:
-</span><span class='line'>  -e, --eval LINE          evaluate a LINE of code
-</span><span class='line'>  -d, --debug              set debugging flags (set $DEBUG to true)
-</span><span class='line'>  -w, --warn               turn warnings on for your script
-</span><span class='line'>  -I, --include PATH       specify $LOAD_PATH (may be used more than once)
-</span><span class='line'>  -r, --require LIBRARY    require the library, before executing your script
-</span><span class='line'>unicorn_rails options:
-</span><span class='line'>  -o, --host HOST          listen on HOST (default: 0.0.0.0)
-</span><span class='line'>  -p, --port PORT          use PORT (default: 8080)
-</span><span class='line'>  -E, --env RAILS_ENV      use RAILS_ENV for defaults (default: development)
-</span><span class='line'>  -D, --daemonize          run daemonized in the background
-</span><span class='line'>  -l {HOST:PORT|PATH},     listen on HOST:PORT or PATH
-</span><span class='line'>      --listen             this may be specified multiple times
-</span><span class='line'>                           (default: 0.0.0.0:8080)
-</span><span class='line'>  -c, --config-file FILE   Unicorn-specific config file
-</span><span class='line'>
-</span><span class='line'>      --path PATH          Runs Rails app mounted at a specific path.
-</span><span class='line'>                           (default: /)
-</span><span class='line'>Common options:
-</span><span class='line'>  -h, --help               Show this message
-</span><span class='line'>  -v, --version            Show version</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is a smaple unicorn config file:</p>
-
-<figure class='code'><figcaption><span>config/unicorn.conf.rb  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">worker_processes</span> <span class="mi">2</span>
-</span><span class='line'><span class="n">working_directory</span> <span class="s2">&quot;/www/temp/ntmenu2/current&quot;</span>
-</span><span class='line'><span class="n">listen</span> <span class="mi">3000</span><span class="p">,</span> <span class="ss">:tcp_nopush</span> <span class="o">=&gt;</span> <span class="kp">true</span>
-</span><span class='line'><span class="n">timeout</span> <span class="mi">30</span>
-</span><span class='line'><span class="n">pid</span> <span class="s2">&quot;/www/temp/ntmenu2/current/tmp/pids/unicorn.pid&quot;</span>
-</span><span class='line'><span class="n">stderr_path</span> <span class="s2">&quot;/www/temp/unicorn.stderr.log&quot;</span>
-</span><span class='line'><span class="n">stdout_path</span> <span class="s2">&quot;/www/temp/unicorn.stdout.log&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用Juggernaut]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app/"/>
-    <updated>2011-05-12T00:00:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/maccman/juggernaut">Juggernaut</a>是基于<a href="http://nodejs.org/">Node.js</a>的一个实时(Realtime)Web的解决方案。使用起来很方便。</p>
-
-<h3>安装方法</h3>
-
-<ol>
-<li>安装Node.js: brew install node</li>
-<li>安装<a href="http://code.google.com/p/redis">Redis</a>: brew install redis</li>
-<li>安装<a href="http://npmjs.org/">NPM</a>: curl http://npmjs.org/install.sh | sh</li>
-<li>安装Juggernaut: 这个会把Juggernaut安装到当前目录，所以我应该先进行项目的/vendor/third目录，然后执行 npm install juggernaut</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>usermatoMacBook-Pro:third qichunren$ npm install juggernaut
-</span><span class='line'>redis@0.5.11 ./node_modules/juggernaut/node_modules/redis
-</span><span class='line'>node-static-maccman@0.5.3 ./node_modules/juggernaut/node_modules/node-static-maccman
-</span><span class='line'>socket.io@0.6.17 ./node_modules/juggernaut/node_modules/socket.io
-</span><span class='line'>juggernaut@2.0.4 ./node_modules/juggernaut
-</span><span class='line'>usermatoMacBook-Pro:third qichunren$  </span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>安装Juggernaut gem:</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem install juggernaut</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>使用方法</h3>
-
-<p>我们在自己的项目中只需要引入http://localhost:8080/application.js 这个js文件即可。
-然后在页面中可以这样接收服务器端的消息：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">jug</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Juggernaut</span><span class="p">;</span>
-</span><span class='line'>  <span class="nx">jug</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got data: &quot;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>服务器端直接发消息：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s2">&quot;juggernaut&quot;</span>
-</span><span class='line'><span class="no">Juggernaut</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;channel1&quot;</span><span class="p">,</span> <span class="s2">&quot;Some data&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>另外在启动了Juggernaut后，它默认在8080端口上有一个Helloword的应用，可以了解一下。</p>
 ]]></content>
   </entry>
   

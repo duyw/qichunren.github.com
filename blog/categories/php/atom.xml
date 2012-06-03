@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: PHP | 蕲春人 - 软件开发]]></title>
+  <title><![CDATA[Category: php | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-05-29T12:21:26+08:00</updated>
+  <updated>2012-06-03T22:52:48+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>

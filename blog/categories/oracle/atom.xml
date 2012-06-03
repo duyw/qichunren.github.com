@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: oracle | 蕲春人的博客]]></title>
+  <link href="http://qichunren.github.com/blog/categories/oracle/atom.xml" rel="self"/>
+  <link href="http://qichunren.github.com/"/>
+  <updated>2012-06-03T22:52:48+08:00</updated>
+  <id>http://qichunren.github.com/</id>
+  <author>
+    <name><![CDATA[qichunren]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rails中连接Oracle数据库]]></title>
+    <link href="http://qichunren.github.com/blog/2009/05/07/connect-to-oracle-in-rails/"/>
+    <updated>2009-05-07T12:01:00+08:00</updated>
+    <id>http://qichunren.github.com/blog/2009/05/07/connect-to-oracle-in-rails</id>
+    <content type="html"><![CDATA[<h3>步骤</h3>
+
+<ul>
+<li><p>在Oracle官方网站下载sdk-10.2.0.5.0-linux-x64.zip和basic-10.2.0.5.0-linux-x64.zip这两个文件。将这两个文件放在同一个地方，然后分别执行：</p>
+
+<p>  unzip sdk-10.2.0.5.0-linux-x64.zip
+  unzip basic-10.2.0.5.0-linux-x64.zip</p></li>
+</ul>
+
+
+<p>这样执行后，会在当前目录下有一个instantclient_10_2目录，刚才解压的zip文件的内容就在其中。<br/>
+* 安装Ruby-OCI2:
+在安装Ruby-OCI2之前必须要先配置LD_LIBRARY_PATH变量</p>
+
+<pre><code>    export LD_LIBRARY_PATH=/opt/instantclient_10_2/ 
+</code></pre>
+
+<ul>
+<li><p>然后</p>
+
+<pre><code>  gem install ruby-oci8     
+</code></pre></li>
+<li><p>安装adapter for rails:</p>
+
+<pre><code>  gem install activerecord-oracle_enhanced-adapter   
+</code></pre></li>
+</ul>
+
+
+<h3>Resources</h3>
+
+<ul>
+<li><a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">OracleInstantClient下载</a></li>
+<li><a href="http://github.com/rsim/oracle-enhanced">oracle-enhanced adapter</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
