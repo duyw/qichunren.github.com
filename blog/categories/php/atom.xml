@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Create custom tags in Smarty 3]]></title>
-    <link href="http://qichunren.github.com/blog/2012/02/26/create-custom-tags-in-smarty/"/>
+    <link href="http://qichunren.github.com/blog/2012-02-26-create-custom-tags-in-smarty/"/>
     <updated>2012-02-26T14:21:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/02/26/create-custom-tags-in-smarty</id>
+    <id>http://qichunren.github.com/blog/create-custom-tags-in-smarty</id>
     <content type="html"><![CDATA[<p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码
 ```</p>
 
@@ -117,9 +117,9 @@
   
   <entry>
     <title type="html"><![CDATA[Use Smarty template in CodeIgniter]]></title>
-    <link href="http://qichunren.github.com/blog/2012/02/11/use-smarty-template-in-codeigniter/"/>
+    <link href="http://qichunren.github.com/blog/2012-02-11-use-smarty-template-in-codeigniter/"/>
     <updated>2012-02-11T16:57:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/02/11/use-smarty-template-in-codeigniter</id>
+    <id>http://qichunren.github.com/blog/use-smarty-template-in-codeigniter</id>
     <content type="html"><![CDATA[<p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
 
 <p><a href="http://www.smarty.net/">Smarty</a>是目前业界最著名的PHP模板引擎之一。它分离了逻辑代码和外在的内容，提供了一种易于管理和使用的方法，用来将原本与HTML代码混杂在一起的PHP代码逻辑分离。</p>

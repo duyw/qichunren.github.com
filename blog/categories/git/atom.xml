@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么样从git提交历史里永久删除一个文件?]]></title>
-    <link href="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/"/>
+    <link href="http://qichunren.github.com/blog/2012-05-17-how-to-remove-a-file-from-git-history-forever/"/>
     <updated>2012-05-17T15:04:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever</id>
+    <id>http://qichunren.github.com/blog/how-to-remove-a-file-from-git-history-forever</id>
     <content type="html"><![CDATA[<p>需要整理</p>
 
 <h2>参考资料</h2>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to update a forked repository from original repository at github?]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/09/update-forked-repository-from-original-repository-at-github/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-09-update-forked-repository-from-original-repository-at-github/"/>
     <updated>2012-01-09T12:39:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/09/update-forked-repository-from-original-repository-at-github</id>
+    <id>http://qichunren.github.com/blog/update-forked-repository-from-original-repository-at-github</id>
     <content type="html"><![CDATA[<p>If you use github, you can follow this.</p>
 
 <p>I use <a href="https://github.com/huacnlee/ruby-china">huachlee/ruby-china</a> repository for example.</p>

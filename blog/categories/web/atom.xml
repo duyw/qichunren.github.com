@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用Juggernaut]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app/"/>
+    <link href="http://qichunren.github.com/blog/2011-05-12-use-juggernaut-for-realtime-app/"/>
     <updated>2011-05-12T17:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/12/use-juggernaut-for-realtime-app</id>
+    <id>http://qichunren.github.com/blog/use-juggernaut-for-realtime-app</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/maccman/juggernaut">Juggernaut</a>是基于<a href="http://nodejs.org/">Node.js</a>的一个实时(Realtime)Web的解决方案。使用起来很方便。</p>
 
 <h3>安装方法</h3>
@@ -83,9 +83,9 @@ gem install juggernaut
   
   <entry>
     <title type="html"><![CDATA[学习HTML5杂记]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/09/learn-html5/"/>
+    <link href="http://qichunren.github.com/blog/2011-05-09-learn-html5/"/>
     <updated>2011-05-09T11:30:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/09/learn-html5</id>
+    <id>http://qichunren.github.com/blog/learn-html5</id>
     <content type="html"><![CDATA[<h3>什么是 HTML5？</h3>
 
 <p>HTML5 将成为 HTML、XHTML 以及 HTML DOM 的新标准。

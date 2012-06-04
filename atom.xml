@@ -4,7 +4,7 @@
   <title><![CDATA[蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Fixed a problem with creating texture background in cocos2d]]></title>
-    <link href="http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d/"/>
+    <link href="http://qichunren.github.com/blog/2012-06-03-fixed-a-problem-with-creating-texture-background-in-cocos2d/"/>
     <updated>2012-06-03T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/06/03/fixed-a-problem-with-creating-texture-background-in-cocos2d</id>
+    <id>http://qichunren.github.com/blog/fixed-a-problem-with-creating-texture-background-in-cocos2d</id>
     <content type="html"><![CDATA[<p>我尝试在cocos2d游戏中使用小图片重复平铺的方式来创建游戏背景时, 总是遇到这个问题，报错如下:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -56,9 +56,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么样从git提交历史里永久删除一个文件?]]></title>
-    <link href="http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever/"/>
+    <link href="http://qichunren.github.com/blog/2012-05-17-how-to-remove-a-file-from-git-history-forever/"/>
     <updated>2012-05-17T15:04:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/05/17/how-to-remove-a-file-from-git-history-forever</id>
+    <id>http://qichunren.github.com/blog/how-to-remove-a-file-from-git-history-forever</id>
     <content type="html"><![CDATA[<p>需要整理</p>
 
 <h2>参考资料</h2>
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[通过update-rc.d来管理Ubuntu系统的自动启动程序]]></title>
-    <link href="http://qichunren.github.com/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d/"/>
+    <link href="http://qichunren.github.com/blog/2012-03-14-how-to-managing-services-with-update-rc-dot-d/"/>
     <updated>2012-03-14T11:30:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/03/14/how-to-managing-services-with-update-rc-dot-d</id>
+    <id>http://qichunren.github.com/blog/how-to-managing-services-with-update-rc-dot-d</id>
     <content type="html"><![CDATA[<p>转载, 并记下我的使用心得。</p>
 
 <p>Linux services can be started, stopped and reloaded with the use of scripts stocked in /etc/init.d/.
@@ -420,9 +420,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Use Rubyencoder encrypt ruby code]]></title>
-    <link href="http://qichunren.github.com/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code/"/>
+    <link href="http://qichunren.github.com/blog/2012-02-27-use-rubyencoder-encrypt-ruby-code/"/>
     <updated>2012-02-27T13:10:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/02/27/use-rubyencoder-encrypt-ruby-code</id>
+    <id>http://qichunren.github.com/blog/use-rubyencoder-encrypt-ruby-code</id>
     <content type="html"><![CDATA[<p>前些时候研究了一下ruby encoder的加密技术应用，在这里记录一下它的使用过程。</p>
 
 <p><a href="http://rubyencoder.com/">Ruby Encoder</a>将ruby代码加密成不易阅读的格式，然后通过它提供的加载类型来载入ruby代码，从而达到加密的目的。它是一个付费软件，一个许可证要159美金，提供试用版，可以试用一个星期，支持Linux \ FreeBSD \ Mac OS X \ Windows系统。</p>
@@ -607,9 +607,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Create custom tags in Smarty 3]]></title>
-    <link href="http://qichunren.github.com/blog/2012/02/26/create-custom-tags-in-smarty/"/>
+    <link href="http://qichunren.github.com/blog/2012-02-26-create-custom-tags-in-smarty/"/>
     <updated>2012-02-26T14:21:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/02/26/create-custom-tags-in-smarty</id>
+    <id>http://qichunren.github.com/blog/create-custom-tags-in-smarty</id>
     <content type="html"><![CDATA[<p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -712,9 +712,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Use Smarty template in CodeIgniter]]></title>
-    <link href="http://qichunren.github.com/blog/2012/02/11/use-smarty-template-in-codeigniter/"/>
+    <link href="http://qichunren.github.com/blog/2012-02-11-use-smarty-template-in-codeigniter/"/>
     <updated>2012-02-11T16:57:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/02/11/use-smarty-template-in-codeigniter</id>
+    <id>http://qichunren.github.com/blog/use-smarty-template-in-codeigniter</id>
     <content type="html"><![CDATA[<p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
 
 <p><a href="http://www.smarty.net/">Smarty</a>是目前业界最著名的PHP模板引擎之一。它分离了逻辑代码和外在的内容，提供了一种易于管理和使用的方法，用来将原本与HTML代码混杂在一起的PHP代码逻辑分离。</p>
@@ -879,9 +879,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[使用ffaker来产生随机数据]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/19/use-ffaker/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-19-use-ffaker/"/>
     <updated>2012-01-19T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/19/use-ffaker</id>
+    <id>http://qichunren.github.com/blog/use-ffaker</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/EmmanuelOga/ffaker">ffaker</a>是一个用来产生随机name\email之类的工具，可以用在开发时先产生一些有意义的随机数据，将数据写在db/seeds.rb中，这样你就不用每次急燥地添加一些asasddfdsf这样的数据。一个好的工作开发环境，可以让心情舒畅，效率加倍。</p>
 
 <p>在db/seeds.rb中，如果要产生100个用户名，直接这样做：</p>
@@ -926,9 +926,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Customizing rails generator templates]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/12/customizing-rails-generator-templates/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-12-customizing-rails-generator-templates/"/>
     <updated>2012-01-12T13:49:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/12/customizing-rails-generator-templates</id>
+    <id>http://qichunren.github.com/blog/customizing-rails-generator-templates</id>
     <content type="html"><![CDATA[<p>Rails framework and twitter bootstrap are good for your startup project, build-in generators generate source code by its way. It is  a good starting point.</p>
 
 <p>But I often have to change default generted source code:</p>
@@ -948,9 +948,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[How to update a forked repository from original repository at github?]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/09/update-forked-repository-from-original-repository-at-github/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-09-update-forked-repository-from-original-repository-at-github/"/>
     <updated>2012-01-09T12:39:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/09/update-forked-repository-from-original-repository-at-github</id>
+    <id>http://qichunren.github.com/blog/update-forked-repository-from-original-repository-at-github</id>
     <content type="html"><![CDATA[<p>If you use github, you can follow this.</p>
 
 <p>I use <a href="https://github.com/huacnlee/ruby-china">huachlee/ruby-china</a> repository for example.</p>
@@ -1007,9 +1007,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[iOS中的arc4random方法]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/04/arc4random-in-ios/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-04-arc4random-in-ios/"/>
     <updated>2012-01-04T22:49:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/04/arc4random-in-ios</id>
+    <id>http://qichunren.github.com/blog/arc4random-in-ios</id>
     <content type="html"><![CDATA[<p>通过arc4random() 获取0到x-1之间的整数的代码如下:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1038,9 +1038,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[在Rails3中使用ajax]]></title>
-    <link href="http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note/"/>
+    <link href="http://qichunren.github.com/blog/2011-12-22-use-ajax-in-rails3-note/"/>
     <updated>2011-12-22T16:36:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/12/22/use-ajax-in-rails3-note</id>
+    <id>http://qichunren.github.com/blog/use-ajax-in-rails3-note</id>
     <content type="html"><![CDATA[<p>今天写代码的时候突然发现 我之前在Rails3中使用ajax的方式是不太正确的，我走了弯路。</p>
 
 <p>我之前在Rails3项目中使用ajax是这样的：</p>
@@ -1092,9 +1092,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[mongodb的可视化客户端工具:MongoHub]]></title>
-    <link href="http://qichunren.github.com/blog/2011/12/20/mongodb-ui-client-mongohub/"/>
+    <link href="http://qichunren.github.com/blog/2011-12-20-mongodb-ui-client-mongohub/"/>
     <updated>2011-12-20T17:31:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/12/20/mongodb-ui-client-mongohub</id>
+    <id>http://qichunren.github.com/blog/mongodb-ui-client-mongohub</id>
     <content type="html"><![CDATA[<p>最近在使用mongodb,经常要调试，然后找到了MongoHub这款工具，感觉很好。</p>
 
 <p><a href="http://mongohub.todayclose.com/">MongoHub网站</a></p>
@@ -1105,9 +1105,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[近期iOS学习点]]></title>
-    <link href="http://qichunren.github.com/blog/2011/12/18/ios-learn-note/"/>
+    <link href="http://qichunren.github.com/blog/2011-12-18-ios-learn-note/"/>
     <updated>2011-12-18T20:44:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/12/18/ios-learn-note</id>
+    <id>http://qichunren.github.com/blog/ios-learn-note</id>
     <content type="html"><![CDATA[<p>虽然我业余在学iOS，但是感觉进步缓慢。为了使我的iOS开发的学习效率高一点，我决定先列一个简要的提纲，明确当前一个阶段的学习计划。</p>
 
 <ol>
@@ -1123,9 +1123,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Shell学习小记录]]></title>
-    <link href="http://qichunren.github.com/blog/2011/10/18/learning-shell-tip-note/"/>
+    <link href="http://qichunren.github.com/blog/2011-10-18-learning-shell-tip-note/"/>
     <updated>2011-10-18T20:44:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/10/18/learning-shell-tip-note</id>
+    <id>http://qichunren.github.com/blog/learning-shell-tip-note</id>
     <content type="html"><![CDATA[<p>最近为了一些自动化的任务，要写一些脚本。可以使用Ruby脚本、Ruby的rake\thor等等，我为了简洁和性能，我了解了一下Shell，发现用Shell来做这个事情更合适。性能，命令行，管道，丰富的现有工具，基于Linux本身，Shell真是一个好东西。以前认为用Ruby来做这个事情是一个不错的选择，现在知道了，那是因为相比起Shell来，更熟悉Ruby，程序员总是喜欢自己熟悉的领域，而排斥自己不熟悉的领域。其实多了解一下其它方面的，更利用自己工作的开展，提高工作效率。</p>
 
 <p>我随便总结一下几个知识点</p>
@@ -1234,9 +1234,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[网页截屏的方法]]></title>
-    <link href="http://qichunren.github.com/blog/2011/10/13/capture-webpage/"/>
+    <link href="http://qichunren.github.com/blog/2011-10-13-capture-webpage/"/>
     <updated>2011-10-13T06:09:09+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/10/13/capture-webpage</id>
+    <id>http://qichunren.github.com/blog/capture-webpage</id>
     <content type="html"><![CDATA[<p>曾经很想有这样一个app, 它可以将微博上用户的微博用图片的形式自动保存起来，留此存照。前几个月的那段时间，微博上很
 网页截屏的基本原理就是通过取得webkit渲染（render）的数据来生成图片的，我经过一段时间研究，找到了两个方法来解决这个问题。</p>
 
@@ -1349,9 +1349,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[使用Jruby来部署Rails应用]]></title>
-    <link href="http://qichunren.github.com/blog/2011/08/27/deploy-rails-project-with-jruby/"/>
+    <link href="http://qichunren.github.com/blog/2011-08-27-deploy-rails-project-with-jruby/"/>
     <updated>2011-08-27T06:36:22+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/08/27/deploy-rails-project-with-jruby</id>
+    <id>http://qichunren.github.com/blog/deploy-rails-project-with-jruby</id>
     <content type="html"><![CDATA[<p>为了保护最近做的产品的源代码，需要将项目中的源代码进行保护起来。我目前了解到的方案有以下两种：</p>
 
 <ol>
@@ -1694,9 +1694,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Set proxy in server side to get crossing domain ajax request]]></title>
-    <link href="http://qichunren.github.com/blog/2011/08/18/proxy-in-server-side-for-ajax-crossing-domain/"/>
+    <link href="http://qichunren.github.com/blog/2011-08-18-proxy-in-server-side-for-ajax-crossing-domain/"/>
     <updated>2011-08-18T07:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/08/18/proxy-in-server-side-for-ajax-crossing-domain</id>
+    <id>http://qichunren.github.com/blog/proxy-in-server-side-for-ajax-crossing-domain</id>
     <content type="html"><![CDATA[
 
 <figure class='code'><figcaption><span>proxy_controller.rb  </span></figcaption>
@@ -1745,9 +1745,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Install mongo on mac]]></title>
-    <link href="http://qichunren.github.com/blog/2011/06/04/install-mongodb/"/>
+    <link href="http://qichunren.github.com/blog/2011-06-04-install-mongodb/"/>
     <updated>2011-06-04T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/06/04/install-mongodb</id>
+    <id>http://qichunren.github.com/blog/install-mongodb</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1794,9 +1794,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[Fix problem annotate is broken with rails 3.1.1]]></title>
-    <link href="http://qichunren.github.com/blog/2011/06/03/fix-annotate-gem-with-rails3-1-1/"/>
+    <link href="http://qichunren.github.com/blog/2011-06-03-fix-annotate-gem-with-rails3-1-1/"/>
     <updated>2011-06-03T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/06/03/fix-annotate-gem-with-rails3-1-1</id>
+    <id>http://qichunren.github.com/blog/fix-annotate-gem-with-rails3-1-1</id>
     <content type="html"><![CDATA[<p>今天在做一个小工具，使用最新的Rails版本3.1.1, 在使用annotate(2.4.0)这个gem的时候出错了：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1856,9 +1856,9 @@ To force apache2 to be started with priorities 91 for both Start and Kill, we ne
   
   <entry>
     <title type="html"><![CDATA[去掉textmate源代码中的隐形空格]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/17/remove-hidden-space-soure-code/"/>
+    <link href="http://qichunren.github.com/blog/2011-05-17-remove-hidden-space-soure-code/"/>
     <updated>2011-05-17T01:20:33+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/17/remove-hidden-space-soure-code</id>
+    <id>http://qichunren.github.com/blog/remove-hidden-space-soure-code</id>
     <content type="html"><![CDATA[<p>有这个需要，主要是因为不想在git提交后的diff中无看到不有意思的diff显示。使用textmate的同学可以用<a href="https://github.com/glennr/uber-glory-tmbundle">这个工具</a>来解决这个小问题。</p>
 
 <h3>安装方法</h3>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: test | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用ffaker来产生随机数据]]></title>
-    <link href="http://qichunren.github.com/blog/2012/01/19/use-ffaker/"/>
+    <link href="http://qichunren.github.com/blog/2012-01-19-use-ffaker/"/>
     <updated>2012-01-19T22:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2012/01/19/use-ffaker</id>
+    <id>http://qichunren.github.com/blog/use-ffaker</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/EmmanuelOga/ffaker">ffaker</a>是一个用来产生随机name\email之类的工具，可以用在开发时先产生一些有意义的随机数据，将数据写在db/seeds.rb中，这样你就不用每次急燥地添加一些asasddfdsf这样的数据。一个好的工作开发环境，可以让心情舒畅，效率加倍。</p>
 
 <p>在db/seeds.rb中，如果要产生100个用户名，直接这样做：</p>
@@ -63,9 +63,9 @@
   
   <entry>
     <title type="html"><![CDATA[最近实践中学到的Rails测试技巧]]></title>
-    <link href="http://qichunren.github.com/blog/2011/04/20/rails-test-note/"/>
+    <link href="http://qichunren.github.com/blog/2011-04-20-rails-test-note/"/>
     <updated>2011-04-20T07:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/04/20/rails-test-note</id>
+    <id>http://qichunren.github.com/blog/rails-test-note</id>
     <content type="html"><![CDATA[<p>最近花时间又将项目中的测试再次仔细地过了一遍。通过挖掘发现了几个提高测试效率的技巧，记一下。 <em>不学习就要落后啊，Ruby的世界进化得太快了，测试技术也是如此。</em></p>
 
 <ul>
@@ -80,9 +80,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么样写好的ruby业务代码]]></title>
-    <link href="http://qichunren.github.com/blog/2011/04/19/write-buautiful-ruby-business-code/"/>
+    <link href="http://qichunren.github.com/blog/2011-04-19-write-buautiful-ruby-business-code/"/>
     <updated>2011-04-19T05:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/04/19/write-buautiful-ruby-business-code</id>
+    <id>http://qichunren.github.com/blog/write-buautiful-ruby-business-code</id>
     <content type="html"><![CDATA[<p><em>标题很强，心中却很烦乱，写下这个解解闷，吐吐苦水。</em></p>
 
 <p>最近与一个小Ruby程序员共事，交流起来还没有什么问题，可是看他写的代码，虽然坏不到哪里去，但我还是心里一阵阵反感，这和我平时阅读从github 上拉下的代码的感觉是完成不一样的。</p>
@@ -111,9 +111,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用capybara来自动化测试业务流程]]></title>
-    <link href="http://qichunren.github.com/blog/2011/03/26/use-capybara-to-integrate-test/"/>
+    <link href="http://qichunren.github.com/blog/2011-03-26-use-capybara-to-integrate-test/"/>
     <updated>2011-03-26T05:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/03/26/use-capybara-to-integrate-test</id>
+    <id>http://qichunren.github.com/blog/use-capybara-to-integrate-test</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/jnicklas/capybara">capybara</a> 是一个基于 <a href="https://github.com/brynary/webrat">webrat</a></p>
 
 <p>修改的浏览器测试工具，我最近使用它来为我做的后台系统自动化一些工作，而不用我每次重复了无意义的步骤。<br/>
@@ -128,9 +128,9 @@
   
   <entry>
     <title type="html"><![CDATA[说说rspec的测试(1)]]></title>
-    <link href="http://qichunren.github.com/blog/2010/12/21/talk-about-rspec-1/"/>
+    <link href="http://qichunren.github.com/blog/2010-12-21-talk-about-rspec-1/"/>
     <updated>2010-12-21T17:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2010/12/21/talk-about-rspec-1</id>
+    <id>http://qichunren.github.com/blog/talk-about-rspec-1</id>
     <content type="html"><![CDATA[<p>虽然之前就用过rspec来测试系统的各种业务流程和业务逻辑，最近又在开始一个新的系统的测试，写起来又感觉很开心，很安心。所以就想说说用rspec来写rails项目测试的总结和体会。</p>
 
 <p>rspec项目 在github上很活跃，rspec2较之 1.x的版本变得更模块化了，从<a href="https://github.com/rspec/">这里</a> 看以到rspec的各个子项目，rspec2依赖于<a href="https://github.com/rspec/rspec-core">rspec-core</a> <a href="https://github.com/rspec/rspec-expectations">rspec-expectations</a> <a href="https://github.com/rspec/rspec-mocks">rspec-mocks</a></p>

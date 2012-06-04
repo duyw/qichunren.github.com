@@ -4,7 +4,7 @@
   <title><![CDATA[Category: database | 蕲春人的博客]]></title>
   <link href="http://qichunren.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T00:27:31+08:00</updated>
+  <updated>2012-06-04T17:14:02+08:00</updated>
   <id>http://qichunren.github.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[mongodb的可视化客户端工具:MongoHub]]></title>
-    <link href="http://qichunren.github.com/blog/2011/12/20/mongodb-ui-client-mongohub/"/>
+    <link href="http://qichunren.github.com/blog/2011-12-20-mongodb-ui-client-mongohub/"/>
     <updated>2011-12-20T17:31:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/12/20/mongodb-ui-client-mongohub</id>
+    <id>http://qichunren.github.com/blog/mongodb-ui-client-mongohub</id>
     <content type="html"><![CDATA[<p>最近在使用mongodb,经常要调试，然后找到了MongoHub这款工具，感觉很好。</p>
 
 <p><a href="http://mongohub.todayclose.com/">MongoHub网站</a></p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[学习和了解Redis]]></title>
-    <link href="http://qichunren.github.com/blog/2011/05/14/learn-redis-db/"/>
+    <link href="http://qichunren.github.com/blog/2011-05-14-learn-redis-db/"/>
     <updated>2011-05-14T07:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/2011/05/14/learn-redis-db</id>
+    <id>http://qichunren.github.com/blog/learn-redis-db</id>
     <content type="html"><![CDATA[<p><a href="http://redis.io/">Redis</a>
 <a href="https://github.com/ezmobius/redis-rb">redis-rb</a> gem install redis <br/>
 <a href="https://github.com/nateware/redis-objects">redis-objects</a>是基于redis-rb的一个ruby对象与redis对象映射的gem</p>
@@ -39,27 +39,32 @@
   
   <entry>
     <title type="html"><![CDATA[Rails中连接Oracle数据库]]></title>
-    <link href="http://qichunren.github.com/blog/2009/05/07/connect-to-oracle-in-rails/"/>
+    <link href="http://qichunren.github.com/blog/2009-05-07-connect-to-oracle-in-rails/"/>
     <updated>2009-05-07T12:01:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/2009/05/07/connect-to-oracle-in-rails</id>
+    <id>http://qichunren.github.com/blog/connect-to-oracle-in-rails</id>
     <content type="html"><![CDATA[<h3>步骤</h3>
 
 <ul>
-<li><p>在Oracle官方网站下载sdk-10.2.0.5.0-linux-x64.zip和basic-10.2.0.5.0-linux-x64.zip这两个文件。将这两个文件放在同一个地方，然后分别执行：</p>
-
-<p>  unzip sdk-10.2.0.5.0-linux-x64.zip
-  unzip basic-10.2.0.5.0-linux-x64.zip</p></li>
+<li>在Oracle官方网站下载sdk-10.2.0.5.0-linux-x64.zip和basic-10.2.0.5.0-linux-x64.zip这两个文件。将这两个文件放在同一个地方，然后分别执行：</li>
 </ul>
 
 
-<p>这样执行后，会在当前目录下有一个instantclient_10_2目录，刚才解压的zip文件的内容就在其中。<br/>
-* 安装Ruby-OCI2:
-在安装Ruby-OCI2之前必须要先配置LD_LIBRARY_PATH变量</p>
+<p>```</p>
 
-<pre><code>    export LD_LIBRARY_PATH=/opt/instantclient_10_2/ 
+<pre><code>unzip sdk-10.2.0.5.0-linux-x64.zip
+unzip basic-10.2.0.5.0-linux-x64.zip   
 </code></pre>
 
+<p>```</p>
+
+<p>这样执行后，会在当前目录下有一个instantclient_10_2目录，刚才解压的zip文件的内容就在其中。</p>
+
 <ul>
+<li>安装Ruby-OCI2:
+在安装Ruby-OCI2之前必须要先配置LD_LIBRARY_PATH变量
+
+<pre><code>  export LD_LIBRARY_PATH=/opt/instantclient_10_2/ 
+</code></pre></li>
 <li><p>然后</p>
 
 <pre><code>  gem install ruby-oci8     
