@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: deploy | 蕲春人的博客]]></title>
-  <link href="http://qichunren.github.com/blog/categories/deploy/atom.xml" rel="self"/>
-  <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T17:22:30+08:00</updated>
-  <id>http://qichunren.github.com/</id>
+  <link href="http://cqror.com/blog/categories/deploy/atom.xml" rel="self"/>
+  <link href="http://cqror.com/"/>
+  <updated>2012-06-06T17:10:01+08:00</updated>
+  <id>http://cqror.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用Jruby来部署Rails应用]]></title>
-    <link href="http://qichunren.github.com/blog/2011-08-27-deploy-rails-project-with-jruby/"/>
+    <link href="http://cqror.com/blog/2011-08-27-deploy-rails-project-with-jruby/"/>
     <updated>2011-08-27T06:36:22+08:00</updated>
-    <id>http://qichunren.github.com/blog/deploy-rails-project-with-jruby</id>
+    <id>http://cqror.com/blog/deploy-rails-project-with-jruby</id>
     <content type="html"><![CDATA[<p>为了保护最近做的产品的源代码，需要将项目中的源代码进行保护起来。我目前了解到的方案有以下两种：</p>
 
 <ol>
@@ -360,15 +360,16 @@ warble war:debug   # Dump diagnostic information
   
   <entry>
     <title type="html"><![CDATA[使用Unicorn]]></title>
-    <link href="http://qichunren.github.com/blog/2011-05-13-use-unicorn-in-rails/"/>
+    <link href="http://cqror.com/blog/2011-05-13-use-unicorn-in-rails/"/>
     <updated>2011-05-13T07:12:12+08:00</updated>
-    <id>http://qichunren.github.com/blog/use-unicorn-in-rails</id>
+    <id>http://cqror.com/blog/use-unicorn-in-rails</id>
     <content type="html"><![CDATA[<h3>Install</h3>
 
 <p><code>
 gem install unicorn
-</code>
-Then add gem 'unicorn' to Gemfile.
+</code></p>
+
+<p>Then add gem 'unicorn' to Gemfile.
 bundle exec unicorn_rails to start rails app at 8080 port.</p>
 
 <p>```
@@ -402,8 +403,9 @@ unicorn_rails options:
   -v, --version            Show version
 ```</p>
 
-<p>This is a smaple unicorn config file:
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>config/unicorn.conf.rb  </span></figcaption>
+<p>This is a smaple unicorn config file:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>config/unicorn.conf.rb  </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>

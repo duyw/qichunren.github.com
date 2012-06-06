@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: php | 蕲春人的博客]]></title>
-  <link href="http://qichunren.github.com/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://qichunren.github.com/"/>
-  <updated>2012-06-04T17:22:30+08:00</updated>
-  <id>http://qichunren.github.com/</id>
+  <link href="http://cqror.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://cqror.com/"/>
+  <updated>2012-06-06T17:10:01+08:00</updated>
+  <id>http://cqror.com/</id>
   <author>
     <name><![CDATA[qichunren]]></name>
     
@@ -15,11 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Create custom tags in Smarty 3]]></title>
-    <link href="http://qichunren.github.com/blog/2012-02-26-create-custom-tags-in-smarty/"/>
+    <link href="http://cqror.com/blog/2012-02-26-create-custom-tags-in-smarty/"/>
     <updated>2012-02-26T14:21:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/create-custom-tags-in-smarty</id>
-    <content type="html"><![CDATA[<p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码
-```</p>
+    <id>http://cqror.com/blog/create-custom-tags-in-smarty</id>
+    <content type="html"><![CDATA[<p>接着上一篇，还是来说说PHP模板引擎Smarty。PHP的众多CMS框架，如DEDE CMS，对于前端展示都是有一套自己开发的标签，用于显示管理后台维护的数据。在DEDECMS中，如下的代码</p>
+
+<p>```</p>
 
 <h2>最近新闻</h2>
 
@@ -31,15 +32,17 @@
 </ul>
 
 
-<p>```
-就可以显示最近type id为1的10条新闻。在Smarty中创建属于自己的标签是很容易的，我之前在网络上搜索的关于创建smarty标签的内容大多数都是基于Smarty2的，我基于Smarty3中的plugins目录的代码了解到在Smarty3中创建自定义标签更为简单直观。</p>
+<p>```</p>
+
+<p>就可以显示最近type id为1的10条新闻。在Smarty中创建属于自己的标签是很容易的，我之前在网络上搜索的关于创建smarty标签的内容大多数都是基于Smarty2的，我基于Smarty3中的plugins目录的代码了解到在Smarty3中创建自定义标签更为简单直观。</p>
 
 <p>在smarty程序包的plugins目录中，可以看到有block \ function \ modifier 等几种前缀的php文件。像block前缀的php文件可以创建闭合的标签，就如上文提到的那个dede cms新闻标签的例子。现在我正是要创建这样类型的标签。</p>
 
 <p>我结合CodeIgniter来说明，我现在创建一个用户列表的标签，可以显示最近注册的用户。
 在smarty的plugins目录中创建的文件会自动被smarty加载而识别的，文件名和其中的function 名称需要特定的约定好的格式。
-我现在想创建一个users标签,还有一个limit参数，用来显示取多少条数据
-```
+我现在想创建一个users标签,还有一个limit参数，用来显示取多少条数据</p>
+
+<p>```
 用户列表：</p>
 
 <ul>
@@ -49,9 +52,11 @@
 </ul>
 
 
-<p>```
-那么文件名就应该指定为block.users.php，然后function应该命名为smarty_block_users：
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>```</p>
+
+<p>那么文件名就应该指定为block.users.php，然后function应该命名为smarty_block_users：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -109,17 +114,18 @@
 </span><span class='line'>
 </span><span class='line'><span class="x">&lt;p&gt;}</span>
 </span><span class='line'><span class="x">?&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-这个function中有四个参数，$params参数存储的是标签中的属性信息，如上面的limit。$content是标签中间的内容，$smarty是smarty的实例对象，$repeat用于指定block是否重复执行。
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>这个function中有四个参数，$params参数存储的是标签中的属性信息，如上面的limit。$content是标签中间的内容，$smarty是smarty的实例对象，$repeat用于指定block是否重复执行。
 解释完了function的参数，我想其中的执行原理应该很容易看明白了吧。</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Use Smarty template in CodeIgniter]]></title>
-    <link href="http://qichunren.github.com/blog/2012-02-11-use-smarty-template-in-codeigniter/"/>
+    <link href="http://cqror.com/blog/2012-02-11-use-smarty-template-in-codeigniter/"/>
     <updated>2012-02-11T16:57:00+08:00</updated>
-    <id>http://qichunren.github.com/blog/use-smarty-template-in-codeigniter</id>
+    <id>http://cqror.com/blog/use-smarty-template-in-codeigniter</id>
     <content type="html"><![CDATA[<p><a href="http://codeigniter.com/">CodeIgniter</a>是一个不错的PHP开发框架，很合我的口味，我做的一些PHP项目就是用的它。</p>
 
 <p><a href="http://www.smarty.net/">Smarty</a>是目前业界最著名的PHP模板引擎之一。它分离了逻辑代码和外在的内容，提供了一种易于管理和使用的方法，用来将原本与HTML代码混杂在一起的PHP代码逻辑分离。</p>
